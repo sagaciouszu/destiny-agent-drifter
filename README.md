@@ -14,7 +14,7 @@
   <img src='header.png' alt='The Drifter - Agent Brain / Wrapper' width='100%'/>
 </p>
 
-**Version:** 0.4.0 | **Status:** Active
+**Version:** 0.4.1 | **Status:** Active
 
 > Single entry point: `INDEX.md`. Load that first; it maps every module.
 

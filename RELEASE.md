@@ -1,4 +1,4 @@
-# Release v0.4.0 - Drifter Agent with SQLite Lore
+# Release v0.4.1 - Drifter Agent with SQLite Lore
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~1K tokens
