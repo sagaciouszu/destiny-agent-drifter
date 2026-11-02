@@ -77,16 +77,16 @@
 
   <!-- Title block (left) -->
   <g font-family="'Haas Grot Disp Trial', 'Haas Grot Text Trial', sans-serif" filter="url(#textblur)" opacity="0.7">
-    <text x="72" y="180" font-size="24" font-weight="500" fill="#000000" letter-spacing="12">[ DESTINY 2  ·  AGENT BRAIN ]</text>
-    <text x="72" y="300" font-size="96" font-weight="700" fill="#000000" letter-spacing="3">THE DRIFTER</text>
-    <text x="72" y="370" font-size="28" font-weight="500" fill="#000000" letter-spacing="6">AGENT BRAIN  /  WRAPPER</text>
-    <text x="72" y="440" font-size="20" font-weight="400" fill="#000000" letter-spacing="6">ALRIGHT  ·  ALRIGHT  ·  ALRIGHT</text>
+    <text x="72" y="180" font-size="26" font-weight="500" fill="#000000" letter-spacing="12">[ DESTINY 2  ·  AGENT BRAIN ]</text>
+    <text x="72" y="305" font-size="98" font-weight="700" fill="#000000" letter-spacing="3">THE DRIFTER</text>
+    <text x="72" y="375" font-size="30" font-weight="500" fill="#000000" letter-spacing="6">AGENT BRAIN  /  WRAPPER</text>
+    <text x="72" y="445" font-size="22" font-weight="400" fill="#000000" letter-spacing="6">ALRIGHT  ·  ALRIGHT  ·  ALRIGHT</text>
   </g>
   <g font-family="'Haas Grot Disp Trial', 'Haas Grot Text Trial', sans-serif">
-    <text x="72" y="180" font-size="24" font-weight="500" fill="#3dd68c" letter-spacing="12">[ DESTINY 2  ·  AGENT BRAIN ]</text>
-    <text x="72" y="300" font-size="96" font-weight="700" fill="#f5f5f5" letter-spacing="3">THE DRIFTER</text>
-    <text x="72" y="370" font-size="28" font-weight="500" fill="#a7f3d0" letter-spacing="6">AGENT BRAIN  /  WRAPPER</text>
-    <text x="72" y="440" font-size="20" font-weight="400" fill="#8a8a8a" letter-spacing="6">ALRIGHT  ·  ALRIGHT  ·  <tspan fill="#3dd68c">ALRIGHT</tspan></text>
+    <text x="72" y="180" font-size="26" font-weight="500" fill="#3dd68c" letter-spacing="12">[ DESTINY 2  ·  AGENT BRAIN ]</text>
+    <text x="72" y="305" font-size="98" font-weight="700" fill="#f5f5f5" letter-spacing="3">THE DRIFTER</text>
+    <text x="72" y="375" font-size="30" font-weight="500" fill="#a7f3d0" letter-spacing="6">AGENT BRAIN  /  WRAPPER</text>
+    <text x="72" y="445" font-size="22" font-weight="400" fill="#8a8a8a" letter-spacing="6">ALRIGHT  ·  ALRIGHT  ·  <tspan fill="#3dd68c">ALRIGHT</tspan></text>
   </g>
 
   <!-- Accent line -->

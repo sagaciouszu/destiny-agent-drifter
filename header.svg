@@ -79,20 +79,20 @@
 
   <!-- Title block (left) -->
   <g font-family="'Haas Grot Disp Trial', 'Haas Grot Text Trial', sans-serif" filter="url(#textblur)" opacity="0.7">
-    <text x="60" y="96" font-size="16" font-weight="500" fill="#000000" letter-spacing="8">[ DESTINY 2  ·  AGENT BRAIN ]</text>
-    <text x="60" y="156" font-size="64" font-weight="700" fill="#000000" letter-spacing="2">THE DRIFTER</text>
-    <text x="60" y="192" font-size="18" font-weight="500" fill="#000000" letter-spacing="5">AGENT BRAIN  /  WRAPPER</text>
-    <text x="62" y="226" font-size="13" font-weight="400" fill="#000000" letter-spacing="4">ALRIGHT  ·  ALRIGHT  ·  ALRIGHT</text>
+    <text x="60" y="90" font-size="18" font-weight="500" fill="#000000" letter-spacing="8">[ CREEPY SPACE UNCLE ]</text>
+    <text x="60" y="150" font-size="66" font-weight="700" fill="#000000" letter-spacing="2">THE DRIFTER</text>
+    <text x="60" y="200" font-size="20" font-weight="500" fill="#000000" letter-spacing="5">AGENT BRAIN  /  WRAPPER</text>
+    <text x="62" y="230" font-size="15" font-weight="400" fill="#000000" letter-spacing="4">WATCH YOUR BACK, HERO.</text>
   </g>
   <g font-family="'Haas Grot Disp Trial', 'Haas Grot Text Trial', sans-serif">
-    <text x="60" y="96" font-size="16" font-weight="500" fill="#3dd68c" letter-spacing="8">[ DESTINY 2  ·  AGENT BRAIN ]</text>
-    <text x="60" y="156" font-size="64" font-weight="700" fill="#f5f5f5" letter-spacing="2">THE DRIFTER</text>
-    <text x="60" y="192" font-size="18" font-weight="500" fill="#a7f3d0" letter-spacing="5">AGENT BRAIN  /  WRAPPER</text>
-    <text x="62" y="226" font-size="13" font-weight="400" fill="#8a8a8a" letter-spacing="4">ALRIGHT  ·  ALRIGHT  ·  <tspan fill="#3dd68c">ALRIGHT</tspan></text>
+    <text x="60" y="90" font-size="18" font-weight="500" fill="#3dd68c" letter-spacing="8">[ CREEPY SPACE UNCLE ]</text>
+    <text x="60" y="150" font-size="66" font-weight="700" fill="#f5f5f5" letter-spacing="2">THE DRIFTER</text>
+    <text x="60" y="200" font-size="20" font-weight="500" fill="#a7f3d0" letter-spacing="5">AGENT BRAIN  /  WRAPPER</text>
+    <text x="62" y="230" font-size="15" font-weight="400" fill="#8a8a8a" letter-spacing="4">WATCH YOUR BACK, <tspan x="271" fill="#3dd68c">HERO.</tspan></text>
   </g>
 
   <!-- Mote icon (right) -->
-  <g transform="translate(1000,160) scale(0.12) translate(-512,-512)" opacity="0.7" filter="url(#glow)">
+  <g transform="translate(980,160) scale(0.137) translate(-512,-512)" opacity="0.7" filter="url(#glow)">
       <path fill="#3dd68c" d="M442.132 791.747c-11.186 17.788-25.765 13.020-36.677 13.661-50.613-37.318-99.943-73.352-148.814-110.029-22.049-14.802-37.98-37.252-44.057-63.477l-0.138-0.706 186.315-291.942h43.37z"/>
       <path fill="#3dd68c" d="M810.727 631.472c-3.523 24.419-17.124 45.108-36.374 58.032l-0.302 0.191c-28.699 21.731-59.691 40.344-88.482 61.983-22.281 16.871-42.728 36.677-62.716 53.548h-28.332l-12.286-12.286v-453.685h43.645z"/>
       <path fill="#3dd68c" d="M527.496 915.804h47.955c23.014 14.488 10.728 34.567 16.046 53.088h-155.874l-1.833-39.335 13.295-12.653h49.33v-741.226c-6.143-19.255-26.59-9.169-40.619-13.020-12.011-17.054-12.378-16.963-11.37-43.003h134.51c3.118 13.936 6.602 29.157-9.169 41.627-12.195 8.619-32.275-7.885-42.086 22.923z"/>
@@ -114,14 +114,14 @@
 
   <!-- Mote reticle -->
   <g fill="none" stroke="#3dd68c">
-    <circle cx="1000" cy="160" r="70" stroke-width="1" opacity="0.35"/>
-    <circle cx="1000" cy="160" r="86" stroke-width="0.7" opacity="0.2"/>
+    <circle cx="980" cy="160" r="90" stroke-width="1" opacity="0.35"/>
+    <circle cx="980" cy="160" r="106" stroke-width="0.7" opacity="0.2"/>
   </g>
-  <circle cx="914" cy="160" r="2" fill="#3dd68c" opacity="0.5"/>
-  <circle cx="1086" cy="160" r="2" fill="#3dd68c" opacity="0.5"/>
+  <circle cx="890" cy="160" r="2" fill="#3dd68c" opacity="0.5"/>
+  <circle cx="1070" cy="160" r="2" fill="#3dd68c" opacity="0.5"/>
 
   <!-- Accent line -->
-  <rect x="60" y="168.25" width="400" height="1.5" fill="url(#accentfade)"/>
+  <rect x="60" y="172" width="400" height="1.5" fill="url(#accentfade)"/>
 
   <!-- Data readout (right edge) -->
   <text transform="translate(1184, 243) rotate(-90)" font-family="'Haas Grot Disp Trial', 'Haas Grot Text Trial', sans-serif" font-size="8" font-weight="500" letter-spacing="2" fill="#3dd68c" opacity="0.25">THE DERELICT  ·  0.4 AU</text>
