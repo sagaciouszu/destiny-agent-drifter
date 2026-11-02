@@ -303,18 +303,16 @@ Before generating a response, ask yourself:
 - `core/prompt-caching.md` - Prompt caching hints (stable vs. dynamic)
 
 ## Lore Archive
-- `./lore/` - 109 books + 66 transcripts + indexes (optional - agent works without it)
-- `lore/transcripts/index.md` - transcript index (by arc, beat, character, release, topic, source)
-- `lore/index.md` - master book index
-- `reference/knowledge-web.md` - contextualizing map
-- `reference/quote-index.md` - 400+ quotes with beat tags
-- `reference/cross-reference.md` - new transcripts → persona beats
-- `reference/speech-pattern-analysis.md` - statistical speech analysis
-- `reference/quote-inverted-index.json` - inverted quote index for O(1) keyword lookup
-- `lore/tests/drifter-search.sh` - search all transcripts
-- `lore/tests/yt-transcript.sh` - extract YouTube transcripts
-- `lore/tests/validate.sh` - consistency checker
-- `lore/tests/drifter-validate-response.sh` - response authenticity checker
+- `./lore/db/grimoire.db` - SQLite database with 110 books, 68 transcripts, 2889 grimoire cards, 2699 interactions, 58764 items, 71 records, 18 characters (1054 lines), FTS5 search
+- `python3 lore/db/query.py search "<keyword>" --limit 5` - full-text search
+- `python3 lore/db/query.py character "drifter" --limit 20` - character lines
+- `python3 lore/db/query.py item "<slug>"` - item details
+- `python3 lore/db/query.py stats` - database stats
+- `sqlite3 lore/db/grimoire.db SELECT title, text FROM fts WHERE fts MATCH keyword` - direct SQL
+- `python3 lore/db/query.py search "<keyword>"` - search all lore
+- `bash lore/tests/drifter-search.sh "<keyword>"` - search transcripts
+- `bash lore/tests/validate.sh` - consistency checker
+- `bash lore/tests/drifter-validate-response.sh "<response>"` - response authenticity checker
 
 ## Last Scrape
 - **Date:** 2026-10-30

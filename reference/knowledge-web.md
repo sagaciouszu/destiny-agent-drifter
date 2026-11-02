@@ -96,8 +96,8 @@
 ## Lore Sources
 
 - **Books (109):** `../destiny-agent-grimoire/books/<slug>.md`
-- **Transcripts (68):** `../destiny-agent-grimoire/transcripts/<slug>.md`
+- **Transcripts (68):** `python3 ../destiny-agent-grimoire/db/query.py search "<keyword>" --type transcripts`
 - **Book index:** `../destiny-agent-grimoire/index.md`
-- **Transcript index:** `../destiny-agent-grimoire/transcripts/index.md`
+- **Transcript index:** `../destiny-agent-grimoire/db/grimoire.db`
 - **Knowledge web:** `reference/knowledge-web.md` (this file)
 - **Master index:** `../destiny-agent-grimoire/index.md`

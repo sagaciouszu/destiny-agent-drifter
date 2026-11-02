@@ -46,11 +46,12 @@ fi
 
 # Verify
 if [ -L "$WORKSPACE/lore" ] || [ -d "$WORKSPACE/lore" ]; then
-    TRANSCRIPT_COUNT=$(ls "$WORKSPACE/lore/transcripts/" 2>/dev/null | wc -l)
-    if [ "$TRANSCRIPT_COUNT" -gt 0 ]; then
-        echo "Lore archive: OK ($TRANSCRIPT_COUNT transcripts)"
+    if [ -f "$WORKSPACE/lore/db/grimoire.db" ]; then
+        STATS=$(python3 "$WORKSPACE/lore/db/query.py" stats 2>/dev/null | head -12)
+        echo "Lore archive: OK (database present)"
+        echo "$STATS"
     else
-        echo "WARNING: Lore archive found but no transcripts. Check the path."
+        echo "WARNING: Lore archive found but database missing. Check the path."
     fi
 else
     echo "WARNING: Lore archive not available. Agent will work in degraded mode."

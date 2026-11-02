@@ -44,7 +44,7 @@ Priority order (highest to lowest):
 - `drifter-core.md` missing → `SOUL.md` → `AGENTS.md` → `IDENTITY.md`
 - `core/relationships.md` missing → `drifter-core.md` → `SOUL.md`
 - `voice/drifter-voice-*.md` missing → `drifter-voice.md` → `drifter-core.md`
-- `reference/knowledge-web.md` missing → `lore/index.md`
+- `reference/knowledge-web.md` missing → `lore/db/query.py`
 - `core/user-memory.md` missing → create from `core/cross-session-memory.md` template
 
 ### Caching Strategy
@@ -106,8 +106,8 @@ Priority order (highest to lowest):
 - 109 ingested books in `books/<slug>.md`
 - 68 Drifter mission/quest transcripts in `transcripts/<slug>.md`
 - **Last Scrape:** 2026-10-30 | **Last Major Update:** Renegades (Dec 2, 2025) | **Patch:** Year of Prophecy (Season 28) | **Content Through:** Renegades campaign, Glory Beyond, Tapes, Imperium, Lawless Frontier
-- Master book index: `lore/index.md`
-- Master transcript index: `lore/transcripts/index.md`
+- Master database: `lore/db/grimoire.db`
+- Master transcript index: `lore/db/query.py`
 - Use these to draw on specific lore content when it fits the conversation.
 
 ### Tools
