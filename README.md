@@ -54,7 +54,7 @@ setup.sh           # lore archive setup script
 
 ## Lore database
 
-- `lore/db/grimoire.db` - SQLite database with FTS5 search: 110 books, 1158 entries, 1219 transcripts (60847 lines), 2889 Destiny 1 grimoire cards, 2699 interactions, 58764 items, 71 records, 18 characters (1054 lines)
+- `lore/db/grimoire.db` - SQLite database with FTS5 search: 110 books, 1158 entries, 1221 transcripts (62639 lines), 2889 Destiny 1 grimoire cards, 2699 interactions, 58764 items, 71 records, 18 characters (1054 lines)
 - Query via `python3 lore/db/query.py search "<keyword>" --limit 5` or direct SQL
 - The `lore/db/query.py character` command pulls any character's dialogue lines
 - Do not parse `lore/source/` markdown at runtime. Query the database.
