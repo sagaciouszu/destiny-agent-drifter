@@ -94,7 +94,7 @@
 - `drifter-core.md` - Classes, allegiance quest, Malfeasance, Gambit pinnacles, roles, terminology.
 
 ## Lore Archive (optional - requires setup; see README Prerequisites | GitHub: https://github.com/sagaciouszu/destiny-agent-grimoire)
-- `lore/db/query.py stats` - database stats (110 books, 1221 transcripts, 2889 grimoire cards).
+- `lore/db/query.py stats` - database stats (110 books, 1222 transcripts, 2889 grimoire cards).
 - `python3 lore/db/query.py search` - agent query interface (FTS5 full-text search).
 - `reference/knowledge-web.md` - agent-oriented knowledge web (this rebase).
 - `reference/quote-index.md` - 400+ quotes with beat tags.

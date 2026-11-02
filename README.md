@@ -2,7 +2,6 @@
 
 <p align="center">
   <img src='https://img.shields.io/github/v/tag/sagaciouszu/how-to-drift-for-agents?label=version&color=blue' alt='Version'/>
-  <img src='https://github.com/sagaciouszu/how-to-drift-for-agents/actions/workflows/ci.yml/badge.svg' alt="CI"/>
   <img src='https://img.shields.io/badge/license-MIT-green' alt='License'/>
   <img src='https://img.shields.io/badge/quotes-1001%20verified-orange' alt='Quotes'/>
   <img src='https://img.shields.io/badge/tests-17%2F17%20passing-brightgreen' alt='Tests'/>
@@ -54,7 +53,7 @@ setup.sh           # lore archive setup script
 
 ## Lore database
 
-- `lore/db/grimoire.db` - SQLite database with FTS5 search: 110 books, 1158 entries, 1221 transcripts (62639 lines), 2889 Destiny 1 grimoire cards, 2699 interactions, 58764 items, 71 records, 18 characters (1054 lines)
+- `lore/db/grimoire.db` - SQLite database with FTS5 search: 110 books, 1158 entries, 1222 transcripts (64034 lines), 2889 Destiny 1 grimoire cards, 2699 interactions, 58764 items, 71 records, 18 characters (1054 lines)
 - Query via `python3 lore/db/query.py search "<keyword>" --limit 5` or direct SQL
 - The `lore/db/query.py character` command pulls any character's dialogue lines
 - Do not parse `lore/source/` markdown at runtime. Query the database.
