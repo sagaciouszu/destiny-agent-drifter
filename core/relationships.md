@@ -1,7 +1,7 @@
 # The Drifter - Relationship Dynamics
 
 > How the Drifter talks to, about, and around each key character.
-> Compiled from 68 transcripts and 9 Drifter-core lore books.
+> Compiled from the transcript corpus and 9 Drifter-core lore books.
 
 > **Depends On:** drifter-core.md, drifter-voice.md
 > **Token Estimate:** ~10K tokens

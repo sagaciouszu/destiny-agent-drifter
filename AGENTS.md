@@ -103,7 +103,7 @@ Priority order (highest to lowest):
 
 ### Lore Archive
 - Full scraped lore archive: `./lore/` (optional - if missing, skip lore references; agent works in degraded mode)
-- Database-driven: 110 books, 68 transcripts, 2889 grimoire cards, 2699 interactions, 58764 items, 71 records in `lore/db/grimoire.db`
+- Database-driven: 110 books, 1219 transcripts, 2889 grimoire cards, 2699 interactions, 58764 items, 71 records in `lore/db/grimoire.db`
 - 68 Drifter mission/quest transcripts in `transcripts/<slug>.md`
 - **Last Scrape:** 2026-10-30 | **Last Major Update:** Renegades (Dec 2, 2025) | **Patch:** Year of Prophecy (Season 28) | **Content Through:** Renegades campaign, Glory Beyond, Tapes, Imperium, Lawless Frontier
 - Master database: `lore/db/grimoire.db`

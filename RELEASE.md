@@ -6,7 +6,7 @@
 **Date:** 2026-11-02
 
 ## What this is
-Agent brain/wrapper for The Drifter (Destiny 2), grounding in a SQLite lore database with FTS5 full-text search. 785 verified Drifter quotes from canonical transcripts. Zero unverified quotes.
+Agent brain/wrapper for The Drifter (Destiny 2), grounding in a SQLite lore database with FTS5 full-text search. 1001 verified Drifter quotes from canonical transcripts. Zero unverified quotes.
 
 ## Structure
 - `drifter-core.md` - consolidated brain (~6K, START HERE)
@@ -25,7 +25,7 @@ All lore queries route through `lore/db/grimoire.db`:
 ## Test results
 - drifter-master-audit.sh: 17/17 PASS
 - validate.sh: 0 unverified, 0 missing refs
-- drifter-quote-verify.sh (SQLite): 0 unverified
+- drifter-quote-verify.sh (SQLite): 2897 checked, 0 unverified
 - multi-turn emotional arc: 10/10
 - voice-scorer: 100.4/100 PASS
 - CI pipeline: 25/25 PASS
