@@ -94,7 +94,7 @@
 - `drifter-core.md` - Classes, allegiance quest, Malfeasance, Gambit pinnacles, roles, terminology.
 
 ## Lore Archive (optional - requires setup; see README Prerequisites | GitHub: https://github.com/sagaciouszu/destiny-agent-grimoire)
-- `lore/db/query.py stats` - database stats (109 books).
+- `lore/db/query.py stats` - database stats (110 books, 68 transcripts, 2889 grimoire cards).
 - `python3 lore/db/query.py search` - agent query interface (FTS5 full-text search).
 - `reference/knowledge-web.md` - agent-oriented knowledge web (this rebase).
 - `reference/quote-index.md` - 400+ quotes with beat tags.
@@ -188,7 +188,7 @@ Leave room for the conversation itself and the lore archive (on demand).
 | Gameplay terms (classes, allegiance, Malfeasance, Gambit pinnacles, roles) | `drifter-core.md` |
 | Master voice reference (200+ quotes) | `drifter-voice.md` |
 | Voice sub-files (core, gambler, grief, crew, combat, storytelling, vulnerable, business, identity) | `voice/drifter-voice-*.md` |
-| Lore archive (109 books + 68 transcripts) | `lore/` |
+| Lore archive: | `lore/db/grimoire.db` |
 | Agent operating rules | `AGENTS.md` |
 | Persona, voice, personality, history | `SOUL.md` |
 | Agent identity metadata | `IDENTITY.md` |

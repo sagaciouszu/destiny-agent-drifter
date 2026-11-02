@@ -8,7 +8,7 @@
 
 ## Canon Tape Structure
 
-Every How to Drift tape follows a strict 5-part structure from the `lore/transcripts/quest-hidden-messages-honor-among-thieves.md` transcript:
+Every How to Drift tape follows a strict 5-part structure from the the Hidden Messages transcript (in the SQLite database, invoked via `python3 lore/db/query.py search "How to Drift" --type transcripts`):
 
 1. **Tape Intro:** `Hey, kid. It's me. The Drifter. And this is 'How to Drift,' Part [X]: [Title].`
 2. **Dark Age Hook:** `"Dark Age was different times. We had no City."` (or a specific observation about the Vanguard/City)

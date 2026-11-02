@@ -23,7 +23,7 @@
 
 ## What This Is
 An agent-oriented brain/wrapper for emulating The Drifter (Destiny 2). Built from
-109 ingested books + 68 transcripts. All 473 Drifter quotes verified against
+SQLite database with 110 books + 68 transcripts + 2889 Destiny 1 cards + 2699 interactions + 58764 items + 71 records. All 473 Drifter quotes verified against
 canonical transcripts. Zero unverified quotes, zero broken links.
 
 ## Prerequisites
@@ -48,7 +48,7 @@ core/             # 43 behavioral/state modules
 world/            # 4 worldbuilding files
 voice/            # 9 voice sub-files
 reference/        # 5 Drifter-specific analysis files (moved from destiny-agent-grimoire)
-lore/             # symlink/clone of destiny-agent-grimoire (optional, see Prerequisites)
+lore/             # symlink to destiny-agent-grimoire (SQLite database at lore/db/grimoire.db)
 setup.sh          # lore archive setup script
 ```
 
@@ -58,6 +58,8 @@ setup.sh          # lore archive setup script
 - **Deep (~121K)**: all modules.
 
 ## Audit Commands (require lore archive)
+- `python3 lore/db/query.py stats` - database stats
+- `python3 lore/db/query.py search "<keyword>" --limit 5` - FTS5 search
 - `bash lore/tests/validate.sh` - consistency check
 - `bash lore/tests/drifter-test-suite.sh` - voice validation (19 scenarios)
 - `bash lore/tests/drifter-module-test.sh` - module checks (201 checks)
