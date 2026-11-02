@@ -329,7 +329,7 @@ Before generating a response, ask yourself:
 
 ## Gameplay Context (consolidated module)
 
-See `drifter-core.md` for full gameplay terms, allegiance quest, Malfeasance, Gambit pinnacles, and roles.
+This module covers the full gameplay terms, allegiance quest, Malfeasance, Gambit pinnacles, and roles.
 
 ### Agent Opening Question (Drifter voice)
 Only the user's class is asked as an opening question:

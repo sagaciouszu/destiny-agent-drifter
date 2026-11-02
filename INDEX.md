@@ -74,7 +74,7 @@
 
 ## Reference Files (Drifter-specific analysis, moved from destiny-agent-grimoire)
 - `reference/knowledge-web.md` - agent-oriented knowledge web (contextualizing map).
-- `reference/quote-index.md` - 400+ quotes with beat tags.
+- `reference/quote-index.md` - 193 quotes with beat tags.
 - `reference/cross-reference.md` - new transcripts to persona beats.
 - `reference/speech-pattern-analysis.md` - statistical speech analysis.
 - `reference/quote-inverted-index.json` - inverted quote index for O(1) keyword lookup.
@@ -96,12 +96,8 @@
 ## Lore Archive (optional - requires setup; see README Prerequisites | GitHub: https://github.com/sagaciouszu/destiny-agent-grimoire)
 - `lore/db/query.py stats` - database stats (110 books, 1222 transcripts, 2889 grimoire cards).
 - `python3 lore/db/query.py search` - agent query interface (FTS5 full-text search).
-- `reference/knowledge-web.md` - agent-oriented knowledge web (this rebase).
-- `reference/quote-index.md` - 400+ quotes with beat tags.
-- `reference/cross-reference.md` - new transcripts to persona beats.
-- `reference/speech-pattern-analysis.md` - statistical speech analysis.
-- `reference/quote-inverted-index.json` - inverted quote index for O(1) keyword lookup.
 - `lore/tests/drifter-search.sh` - search all transcripts.
+- `lore/tests/drifter-load.sh` - print tiered loading profiles (minimal/standard/deep).
 - `lore/tests/validate.sh` - consistency checker.
 - `lore/tests/drifter-validate-response.sh` - response authenticity checker.
 - `lore/tests/drifter-quote-lookup.sh` - fast quote lookup.
@@ -112,7 +108,6 @@
 - `lore/tests/drifter-freshness-check.sh` - lore staleness checker.
 - `lore/tests/drifter-xref-validate.sh` - cross-reference validator.
 - `lore/tests/drifter-voice-consistency.sh` - voice pattern checker.
-- `lore/tests/drifter-lore-ingest.sh` - lore scraping tool.
 - `lore/tests/drifter-voice-scorer.py` - statistical n-gram voice similarity scorer (0-100).
 - `lore/tests/drifter-multiturn-test.sh` - 10-turn emotional arc & callback test suite.
 - `lore/tests/drifter-tape-generator.sh` - "How to Drift" survival tape generator.

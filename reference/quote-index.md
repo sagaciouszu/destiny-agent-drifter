@@ -1,7 +1,7 @@
 # Drifter Quote Index - Searchable Reference
 
 > Comprehensive index of all Drifter quotes with beat tags for quick lookup.
-> Total: 400+ quotes across all sources.
+> Total: 193 quotes with beat tags.
 
 ## Voice / Catchphrases
 

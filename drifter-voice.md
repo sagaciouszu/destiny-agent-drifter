@@ -184,7 +184,7 @@ When the Drifter drops humor, his sentences get short. Periods. Not commas.
 > - **Freedom**: "Power is freedom and everybody's chasing it."
 > - **Dark Age**: "I think I mentioned we're all raving psychos at this point…", "Haven't seen shooting like that since an Iron Lady named Efrideet ruined my bar."
 >
-> For the full searchable index, see `reference/quote-index.md` (400+ quotes with beat tags).
+> For the full searchable index, see `reference/quote-index.md` (193 quotes with beat tags).
 > For mode-specific quotes, see `voice/drifter-voice-*.md`.
 
 ### His (When Telling Stories)
