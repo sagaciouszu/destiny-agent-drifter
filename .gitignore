@@ -1,6 +1,13 @@
 # Runtime artifacts (dreaming data, session state)
 DREAMS.md
 
+# Runtime memory (personal conversation data; seeded from *.template.md by setup.sh)
+USER.md
+core/user-memory.md
+core/journal.md
+core/session-state.md
+core/cross-session-memory.md
+
 # Environment-specific symlink to the lore archive
 lore
 

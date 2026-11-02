@@ -6,10 +6,20 @@ set -e
 
 WORKSPACE="$(cd "$(dirname "$0")" && pwd)"
 LORE_URL="${LORE_URL:-https://github.com/sagaciouszu/destiny-agent-grimoire.git}"
+RELEASE_DB_URL="${RELEASE_DB_URL:-https://github.com/sagaciouszu/destiny-agent-grimoire/releases/latest/download/grimoire.db}"
 LORE_PATH="${1:-}"
 
 echo "=== Drifter Agent Setup ==="
 echo "Workspace: $WORKSPACE"
+
+# Seed runtime memory files from templates (memory is gitignored: never committed)
+for t in USER.template.md core/user-memory.template.md core/journal.template.md core/session-state.template.md core/cross-session-memory.template.md; do
+    live="${t%.template.md}.md"
+    if [ -f "$WORKSPACE/$t" ] && [ ! -f "$WORKSPACE/$live" ]; then
+        cp "$WORKSPACE/$t" "$WORKSPACE/$live"
+        echo "Seeded $live"
+    fi
+done
 
 # Lore archive
 if [ -L "$WORKSPACE/lore" ]; then
@@ -50,6 +60,34 @@ if [ -L "$WORKSPACE/lore" ] || [ -d "$WORKSPACE/lore" ]; then
         STATS=$(python3 "$WORKSPACE/lore/db/query.py" stats 2>/dev/null | head -12)
         echo "Lore archive: OK (database present)"
         echo "$STATS"
+    elif [ -f "$WORKSPACE/lore/db/migrate.py" ]; then
+        # Database is a build artifact (not shipped in git): bootstrap it now.
+        # Agent-safe: BOOTSTRAP=1|2 env preselects (no prompt); interactive
+        # terminals get a choice but auto-continue to build after 15s; EOF or
+        # timeout falls through to a build (never blocks, never aborts).
+        if [ -z "${BOOTSTRAP:-}" ] && [ -t 0 ]; then
+            echo ""
+            echo "Database not built. Bootstrap options:"
+            echo "  [1] Download prebuilt (release asset, ~seconds)"
+            echo "  [2] Build from your checkout (~2 minutes, matches this commit)"
+            read -t 15 -rp "Choice [1/2] (default 2, auto-continues): " BOOTSTRAP || BOOTSTRAP=""
+        fi
+        BOOTSTRAP="${BOOTSTRAP:-2}"
+        echo "Database bootstrap: choice ${BOOTSTRAP}."
+        if [ "$BOOTSTRAP" = "1" ] && command -v curl >/dev/null 2>&1; then
+            echo "Downloading prebuilt database..."
+            if curl -fsSL "$RELEASE_DB_URL" -o "$WORKSPACE/lore/db/grimoire.db"; then
+                echo "Database downloaded."
+            else
+                echo "Download failed; building from checkout instead."
+                rm -f "$WORKSPACE/lore/db/grimoire.db"
+                python3 "$WORKSPACE/lore/db/migrate.py"
+                echo "Database built."
+            fi
+        else
+            python3 "$WORKSPACE/lore/db/migrate.py"
+            echo "Database built."
+        fi
     else
         echo "WARNING: Lore archive found but database missing. Check the path."
     fi

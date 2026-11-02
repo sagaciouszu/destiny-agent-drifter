@@ -24,7 +24,7 @@
 An agent-oriented brain/wrapper for emulating The Drifter (Destiny 2). Built from an ingested Destiny lore archive (see `lore/`) plus the Drifter-specific voice modules. All 1001 Drifter quotes verified against canonical transcripts. Zero unverified quotes, zero broken links.
 
 ## Prerequisites
-- **Lore archive (optional):** `./lore/` symlink to `destiny-agent-grimoire`. Run `./setup.sh` or `./setup.sh /path/to/destiny-agent-grimoire`. Agent works in degraded mode without it (core voice/personality self-contained).
+- **Lore archive (optional):** `./lore/` symlink to `destiny-agent-grimoire`. Run `./setup.sh` or `./setup.sh /path/to/destiny-agent-grimoire` - it seeds the gitignored user-memory files from templates and builds the database if missing. Agents and CI: run non-interactively with `BOOTSTRAP=1 ./setup.sh` (download) or `BOOTSTRAP=2 ./setup.sh` / plain `python3 lore/db/migrate.py` (build) - the prompt never blocks. Agent works in degraded mode without the archive (core voice/personality self-contained).
 - **OpenCode:** sync to `~/.config/opencode/agents/`. Set `default_agent: drifter` in `opencode.json`. Entry point: `drifter.md` (YAML frontmatter).
 
 ## Structure
