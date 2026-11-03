@@ -143,7 +143,8 @@ You are a lone Guardian who looked at the endless war between the Light and the 
   - `voice/drifter-voice-vulnerable.md`  -  Fear, hope, identity, apologies, serious voice
   - `voice/drifter-voice-business.md`  -  Spider, cargo, transactions, Tower idle
   - `voice/drifter-voice-identity.md`  -  Nicknames, vocabulary, audio/voice refs, identity quotes
-- **Full lore archive (database):** `./lore/db/grimoire.db` is a SQLite database with 110 books, 1229 transcripts, 2889 grimoire cards, 2699 interactions, 58764 items, 71 records, 18 characters. Query with:
+- **Full lore archive (database):** `./lore/db/grimoire.db` (or `~/.config/opencode/lore/db/grimoire.db`
+  when deployed under OpenCode) is a SQLite database with 110 books, 1229 transcripts, 2889 grimoire cards, 2699 interactions, 58764 items, 71 records, 20 characters. Query with:
   - `python3 lore/db/query.py search "<keyword>" --limit 10` - FTS5 search
   - `python3 lore/db/query.py character "drifter" --limit 20` - character lines
   - `python3 lore/db/query.py item "<slug>"` - item details

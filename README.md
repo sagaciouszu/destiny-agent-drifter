@@ -82,9 +82,10 @@ Register the path it prints (`lore/mcp-server/run.sh`) in your client. Details:
 OpenClaw: sync with `lore/scripts/sync-live-agents.sh --openclaw`.
 
 Point your runtime at `INDEX.md` (any agent runtime) or `drifter.md` (OpenCode,
-YAML frontmatter, `mode: primary`). For OpenCode, sync this directory to
-`~/.config/opencode/agents/` and set `default_agent` to `drifter` in
-`~/.config/opencode/opencode.json`.
+YAML frontmatter, `mode: primary`). For OpenCode, deploy with
+`lore/scripts/sync-live-agents.sh`: it keeps only `drifter.md` active, marks
+companion files inert and keeps `lore/` outside `agents/`. Then set
+`default_agent` to `drifter` in `~/.config/opencode/opencode.json`.
 
 ## Requirements
 
@@ -165,9 +166,9 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 | Module completeness | `bash lore/tests/drifter-module-test.sh` | 202 checks |
 | Quote verification | `bash lore/tests/drifter-quote-verify.sh` | 0 unverified |
 | Database integrity | `bash lore/tests/test-db.sh` | 38 checks |
-| Query interface | `bash lore/tests/query-interface-test.sh` | 29 checks |
+| Query interface | `bash lore/tests/query-interface-test.sh` | 41 checks |
 | CI pipeline | `bash lore/tests/drifter-ci.sh` | 25 checks |
-| MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 6/6 checks |
+| MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 7/7 checks |
 | File conformance | `python3 lore/tests/conformance.py` | PASS |
 
 ## Troubleshooting
@@ -177,8 +178,9 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 - **Dangling `lore/` symlink:** `setup.sh` removes and recreates it.
 - **Audit says workspace unresolved:** run it through `lore/` from this
   directory, or set `WORKSPACE=$PWD`.
-- **OpenCode does not list the agent:** confirm the directory under
-  `~/.config/opencode/agents/` and `default_agent` in `opencode.json`.
+- **OpenCode does not list the agent:** rerun
+  `lore/scripts/sync-live-agents.sh`, then confirm the installed `drifter.md` and
+  `default_agent` in `opencode.json`.
 - **MCP client shows no Grimoire tools:** run `./setup.sh --mcp`, then use the
   absolute path to `lore/mcp-server/run.sh` in the client config.
 - **Degraded mode:** without the archive the persona files still work; canon
