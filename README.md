@@ -113,12 +113,11 @@ Load in this order:
 - Lookup: `search`, `character`, `item`, `list`, `stats`; every command accepts
   `--json`, search returns snippets unless `--full`.
 - Standard: `lore/STANDARDS.md` is the database and quote contract.
-- **MCP (optional):** `lore/mcp-server/run.sh` serves six typed tools over stdio:
-  `search`, `character`, `item`, `verify`, `list_records`, `stats`. Read-only,
-  official SDK, limits clamped to 1-100. It ships in the Grimoire archive, so one
-  install serves both agents. Install with `./setup.sh --mcp` (interactive
-  prompt also offers it) or `bash lore/mcp-server/install.sh`; register the
-  printed path.
+- **MCP (optional, for non-shell clients):** one adapter in the Grimoire archive
+  serves every agent that mounts it. Clients get typed tools instead of shell
+  strings, and the server enforces read-only access, no arbitrary SQL, 1-100
+  limits and `verify` before quoting. Install `./setup.sh --mcp`; details in
+  `lore/mcp-server/README.md`.
 - Runtime memory: `USER.md` and `core/*memory*`, `core/journal.md` are gitignored
   and seeded from templates by `setup.sh`. They never leave the machine.
 
