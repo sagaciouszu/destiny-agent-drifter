@@ -16,7 +16,7 @@
 **Version:** 0.9.0 | **Last push:** 2026-11-03 | **Status:** Active
 
 > **Depends On:** INDEX.md
-> **Token Estimate:** ~1.6K tokens
+> **Token Estimate:** ~2.1K tokens
 
 A complete, platform-agnostic roleplay brain for The Drifter: voice rules, memory,
 behavior modules and a verified quote corpus, backed by the Destiny Agent Grimoire
@@ -115,8 +115,9 @@ Load in this order:
 - Quote safety: `python3 lore/db/query.py verify "<line>"` exits 1 when the line
   is not canon. Add `--speaker "Name"` to require attribution and `--exact` to
   reject fragments. An unverified line is never quoted.
-- Lookup: `search`, `character`, `item`, `list`, `stats`; every command accepts
-  `--json`, search returns snippets unless `--full`.
+- Lookup: `search`, `character`, `character_info`, `item`, `book`, `transcript`,
+  `find_item`, `record`, `verify_many`, `list`, `stats`; every command accepts
+  `--json`, search returns snippets unless `--full` and supports `--offset`/`--rank`.
 - Standard: `lore/STANDARDS.md` is the database and quote contract.
 - **MCP (optional):** `lore/mcp-server/run.sh` serves the same canon to non-shell
   clients over local stdio. Install with `./setup.sh --mcp`; tools, limits,
@@ -163,7 +164,7 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 | Database integrity | `bash lore/tests/test-db.sh` | 38 checks |
 | Query interface | `bash lore/tests/query-interface-test.sh` | 29 checks |
 | CI pipeline | `bash lore/tests/drifter-ci.sh` | 25 checks |
-| MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 6/6 |
+| MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 6/6 checks |
 | File conformance | `python3 lore/tests/conformance.py` | PASS |
 
 ## Troubleshooting

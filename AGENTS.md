@@ -34,8 +34,9 @@ agent runtime may load it. Persona detail lives in `SOUL.md` + `drifter-core.md`
 - Character: `python3 lore/db/query.py character "drifter" --limit 20` (`--about <term>` filters)
 - Items: `python3 lore/db/query.py item "<slug>"` | Stats: `python3 lore/db/query.py stats`
 - **Quote check before speaking: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon); add `--speaker "Name"` for attribution and `--exact` for full lines.**
+- Read: `book`, `transcript`, `find_item`, `record`, `character_info`; batch: `verify_many`.
 - Discovery: `python3 lore/db/query.py list books|characters|speakers|records`
-- Every command accepts `--json` for compact output.
+- Every command accepts `--json`; search/list accept `--offset`, search accepts `--rank`.
 - MCP (optional): `lore/mcp-server/run.sh` exposes canon as typed tools; install
   with `./setup.sh --mcp`. One install serves both agents.
 - Database missing (build artifact): run `./setup.sh`, or `python3 lore/db/migrate.py`.
