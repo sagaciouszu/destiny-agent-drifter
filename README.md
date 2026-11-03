@@ -92,7 +92,7 @@ YAML frontmatter, `mode: primary`). For OpenCode, sync this directory to
 | `sqlite3` | optional raw SQL | the query CLI uses Python's built-in driver |
 | `curl` | optional prebuilt database | falls back to a local build |
 | MCP SDK (optional) | typed tools for clients without a shell | Python 3.10+; one-time install |
-| ~450 MB disk | checkout plus built database | database is ~128 MB |
+| ~500 MB disk | checkout plus built database | database is ~164 MB |
 
 No API keys, accounts or network access are required at runtime.
 
@@ -116,11 +116,9 @@ Load in this order:
 - Lookup: `search`, `character`, `item`, `list`, `stats`; every command accepts
   `--json`, search returns snippets unless `--full`.
 - Standard: `lore/STANDARDS.md` is the database and quote contract.
-- **MCP (optional, for non-shell clients):** one adapter in the Grimoire archive
-  serves every agent that mounts it. Clients get typed tools instead of shell
-  strings, and the server enforces read-only access, no arbitrary SQL, 1-100
-  limits and `verify` before quoting. Install `./setup.sh --mcp`; details in
-  `lore/mcp-server/README.md`.
+- **MCP (optional):** `lore/mcp-server/run.sh` serves the same canon to non-shell
+  clients over local stdio. Install with `./setup.sh --mcp`; tools, limits,
+  client config and security: `lore/mcp-server/README.md`.
 - Runtime memory: `USER.md` and `core/*memory*`, `core/journal.md` are gitignored
   and seeded from templates by `setup.sh`. They never leave the machine.
 
@@ -160,7 +158,7 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 | Voice scenarios | `bash lore/tests/drifter-test-suite.sh` | 19 scenarios |
 | Module completeness | `bash lore/tests/drifter-module-test.sh` | 202 checks |
 | Quote verification | `bash lore/tests/drifter-quote-verify.sh` | 0 unverified |
-| Database integrity | `bash lore/tests/test-db.sh` | 36 checks |
+| Database integrity | `bash lore/tests/test-db.sh` | 37 checks |
 | Query interface | `bash lore/tests/query-interface-test.sh` | 23 checks |
 | CI pipeline | `bash lore/tests/drifter-ci.sh` | 25 checks |
 | MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 6/6 |

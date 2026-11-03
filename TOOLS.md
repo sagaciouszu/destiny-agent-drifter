@@ -23,12 +23,8 @@
 - Quote safety: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon).
   `--speaker "Name"` requires attribution; `--exact` requires a full line.
 - Contract: `lore/STANDARDS.md`.
-- MCP (optional): `lore/mcp-server/run.sh` exposes `search`, `character`, `item`,
-  `verify`, `list_records`, `stats` as typed tools over stdio for clients
-  without a shell. It ships with the archive, so one install serves both agents.
-  Install with `./setup.sh --mcp` or `bash lore/mcp-server/install.sh`; register
-  the printed path. Read-only, no SQL tool, limits clamp to 1-100. Details:
-  `lore/mcp-server/README.md`.
+- MCP (optional): install `./setup.sh --mcp`; run `lore/mcp-server/run.sh`.
+  Tools, limits, client config and security: `lore/mcp-server/README.md`.
 - Bootstrap: the database is a build artifact. If it is missing run `./setup.sh`,
   or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) or
   `python3 lore/db/migrate.py` (build).
@@ -38,7 +34,7 @@
 - Full agent audit: `bash lore/drifter-master-audit.sh` (18 suites).
 - Quote verification: `bash lore/tests/drifter-quote-verify.sh` (0 unverified
   against 1002 canonical Drifter lines).
-- Database integrity: `bash lore/tests/test-db.sh` (36 checks).
+- Database integrity: `bash lore/tests/test-db.sh` (37 checks).
 - File conformance: `python3 lore/tests/conformance.py` (PASS).
 
 ## Conventions
