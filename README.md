@@ -1,96 +1,145 @@
 # The Drifter - Agent Brain / Wrapper
 
 <p align="center">
+  <img src='header.png' alt='The Drifter - Agent Brain / Wrapper' width='100%'/>
+</p>
+
+<p align="center">
   <img src='https://img.shields.io/github/v/tag/sagaciouszu/how-to-drift-for-agents?label=version&color=blue' alt='Version'/>
+  <img src='https://img.shields.io/github/last-commit/sagaciouszu/how-to-drift-for-agents?label=last%20push&color=blue' alt='Last push'/>
   <img src='https://img.shields.io/badge/license-MIT-green' alt='License'/>
   <img src='https://img.shields.io/badge/tests-18%2F18%20passing-brightgreen' alt='Tests'/>
   <img src='https://img.shields.io/badge/Made%20with-Motes-00FF00' alt='Made with Motes'/>
   <img src='https://img.shields.io/badge/Made%20with-Parts%20of%20Ghosts-FFFFFF' alt='Made with Parts of Ghosts'/>
 </p>
 
-<p align="center">
-  <img src='header.png' alt='The Drifter - Agent Brain / Wrapper' width='100%'/>
-</p>
-
-**Version:** 0.5.0 | **Status:** Active
-
-> Single entry point: `INDEX.md`. Load that first; it maps every module.
-> Platform-agnostic contract: `AGENTS.md` + `INDEX.md`. OpenCode binding: `drifter.md`. Stand canon: `lore/STANDARDS.md`.
+**Version:** 0.5.0 | **Last push:** 2026-11-02 | **Status:** Active
 
 > **Depends On:** INDEX.md
-> **Token Estimate:** ~1.3K tokens
+> **Token Estimate:** ~1.6K tokens
 
-## What This Is
-An agent-oriented brain/wrapper for emulating The Drifter (Destiny 2). Built from an ingested Destiny lore archive (see `lore/`) plus the Drifter-specific voice modules. All 1002 Drifter quotes verified against canonical transcripts. Zero unverified quotes, zero broken links.
+A complete, platform-agnostic roleplay brain for The Drifter: voice rules, memory,
+behavior modules and a verified quote corpus, backed by the Destiny Agent Grimoire
+database. Every quote traces to canon; every suite is verifiable.
 
-## Prerequisites
-- **Lore archive (optional):** `./lore/` symlink to (or clone of) `destiny-agent-grimoire`. Run `./setup.sh` or `./setup.sh /path/to/destiny-agent-grimoire` - it seeds the gitignored user-memory files from templates and builds the database if missing. Agents and CI: run non-interactively with `BOOTSTRAP=1 ./setup.sh` (download) or `BOOTSTRAP=2 ./setup.sh` / plain `python3 lore/db/migrate.py` (build) - the prompt never blocks. Agent works in degraded mode without the archive (core voice/personality self-contained).
-- **OpenCode:** sync to `~/.config/opencode/agents/`. Set `default_agent: drifter` in `opencode.json`. Entry point: `drifter.md` (YAML frontmatter).
+## Quick start (humans)
 
-## Structure
-```
-INDEX.md           # master index (load first)
-AGENTS.md          # operating rules, authenticity checklist
-SOUL.md            # persona, voice, history, boundaries
-IDENTITY.md        # agent identity metadata
-USER.md            # user-specific context (auto-populated)
-TOOLS.md           # tool reference and conventions
-drifter.md         # OpenCode agent definition (entry point)
-drifter-core.md    # consolidated brain (START HERE, ~6K tokens)
-drifter-voice.md   # master voice reference (200+ verified quotes)
-core/              # 43 behavioral/state modules
-world/             # 4 worldbuilding files
-voice/             # 9 voice sub-files
-reference/         # 5 Drifter-specific analysis files
-lore/              # symlink to or clone of destiny-agent-grimoire (optional, see Prerequisites)
-setup.sh           # lore archive setup script
+```bash
+git clone https://github.com/sagaciouszu/how-to-drift-for-agents.git
+cd how-to-drift-for-agents
+./setup.sh                 # clones the lore archive and bootstraps the database
+bash lore/drifter-master-audit.sh    # expect 18/18
 ```
 
-## Loading Tiers
-- **Minimal (~6.2K):** `drifter-core.md` only.
-- **Standard (~18.6K):** + `voice/drifter-voice-core.md` + `core/relationships.md`.
-- **Deep (~124K):** all modules.
+Non-interactive and offline-friendly options:
 
-## Lore database
+```bash
+BOOTSTRAP=1 ./setup.sh                       # download the prebuilt database
+BOOTSTRAP=2 ./setup.sh                       # build the database from the checkout
+./setup.sh /path/to/destiny-agent-grimoire   # reuse an existing checkout (symlink)
+```
 
-- `lore/db/grimoire.db` - SQLite database with FTS5 search: 110 books, 1158 entries, 1229 transcripts (71221 lines), 2889 Destiny 1 grimoire cards, 2699 interactions, 58764 items, 71 records, 18 characters (1189 lines)
-- Build artifact (not in git): bootstrap with `./setup.sh` if missing (see Prerequisites)
-- Query via `python3 lore/db/query.py search "<keyword>" --limit 5` or direct SQL
-- The `lore/db/query.py character` command pulls any character's dialogue lines
-- Quote check: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon); `--json` anywhere
-- Do not parse `lore/source/` markdown at runtime. Query the database.
+Point your runtime at `INDEX.md` (any agent runtime) or `drifter.md` (OpenCode,
+YAML frontmatter, `mode: primary`). For OpenCode, sync this directory to
+`~/.config/opencode/agents/` and set `default_agent` to `drifter` in
+`~/.config/opencode/opencode.json`.
 
-## Audit Commands (require lore archive)
-- `python3 lore/db/query.py stats` - database stats
-- `python3 lore/db/query.py search "<keyword>" --limit 5` - FTS5 search
-- `bash lore/tests/validate.sh` - consistency check
-- `bash lore/tests/drifter-test-suite.sh` - voice validation (19 scenarios)
-- `bash lore/tests/drifter-module-test.sh` - module checks (202 checks)
-- `bash lore/drifter-master-audit.sh` - unified audit (18 suites)
-- `bash lore/tests/drifter-quote-verify.sh` - quote verification (SQLite-backed, ~2s)
-- `bash lore/tests/drifter-ci.sh` - full CI pipeline (25 checks)
-- `bash lore/tests/test-db.sh` - lore database integrity (35 checks)
+## Requirements
 
-## Key Rules
-1. All quotes verified against canonical transcripts (1002 Drifter lines) + lore books.
-2. No fabricated/unverified quotes. "Trust." is the catch-all.
-3. Nicknames always. No real names in casual speech.
-4. "Heh" not "haha." "Nah" not "no." "Yeah" not "yes."
-5. 2-4 sentences max. Stories start casual, end devastating.
-6. Grief → short sentences, "heh" as wound.
-7. Auto-launch: ask class (Hunter/Titan/Warlock) on first meeting.
-8. If you need lore beyond the DB (e.g. specific item flavor text), use `python3 lore/db/query.py item "<slug>"`.
+| Requirement | Needed for | Notes |
+|---|---|---|
+| `git` | cloning the lore archive | setup falls back to a local path |
+| `bash` 4+ | setup and audits | |
+| `python3` 3.8+ | queries, migration, tests | standard library only |
+| `sqlite3` | optional raw SQL | the query CLI uses Python's built-in driver |
+| `curl` | optional prebuilt database | falls back to a local build |
+| ~450 MB disk | checkout plus built database | database is ~128 MB |
 
-## Attributions
+No API keys, accounts or network access are required at runtime.
 
-Fan-made agent brain/wrapper. Not affiliated with or endorsed by Bungie.
+## For agents
 
-- **Destiny 2** - © Bungie, Inc. All lore, characters, locations are Bungie's property.
-- **Ishtar Collective** (https://www.ishtar-collective.net) - Primary source for all ingested lore text.
-- **Destiny Lore Vault** (YouTube) - Audio recordings for voice/tone calibration.
-- **Destiny 2 community** - Transcription, analysis, and preservation of Destiny lore.
+Load in this order:
 
-All quotes verified against canonical Destiny 2 transcripts ("Drifter: …") and lore books.
+| Tier | Files | Budget |
+|---|---|---|
+| Minimal | `drifter-core.md` | ~6.2K |
+| Standard | + `voice/drifter-voice-core.md` + `core/relationships.md` | ~18.6K |
+| Deep | all modules | ~124K |
 
-## Last Updated
-2026-11-02. Content through Edge of Fate / Renegades. All audits pass (0 unverified, 0 broken links).
+- Contract: `AGENTS.md` (platform-neutral rules, canon and quote policy).
+- Map: `INDEX.md` lists every module, tier and topic route.
+- Canon: `lore/db/grimoire.db` through `lore/` (a symlink or a clone). Never parse
+  `lore/source/` at runtime.
+- Quote safety: `python3 lore/db/query.py verify "<line>"` exits 1 when the line
+  is not canon. An unverified line is never quoted.
+- Lookup: `search`, `character`, `item`, `list`, `stats`; every command accepts
+  `--json`, search returns snippets unless `--full`.
+- Standard: `lore/STANDARDS.md` is the database and quote contract.
+- Runtime memory: `USER.md` and `core/*memory*`, `core/journal.md` are gitignored
+  and seeded from templates by `setup.sh`. They never leave the machine.
+
+Connection matrix:
+
+| From | To | Mechanism |
+|---|---|---|
+| this agent | canon | `lore/db/grimoire.db` via `lore/` (symlink or clone) |
+| `setup.sh` | canon repo | symlink or clone, then bootstrap the database |
+| runtime memory | local only | gitignored, seeded from templates |
+| verification | canon repo | `lore/tests/agent-audit.sh drifter` |
+
+## Repository layout
+
+```
+INDEX.md          # master index (load first)
+AGENTS.md         # operating contract, hard rules, canon policy
+SOUL.md           # persona, voice, history, boundaries
+IDENTITY.md       # identity metadata
+TOOLS.md          # tool reference and conventions
+drifter.md        # OpenCode entry point (YAML frontmatter)
+drifter-core.md   # consolidated brain (minimal tier)
+drifter-voice.md  # master voice reference
+core/             # 38 behavioral and state modules
+voice/            # 9 voice sub-files
+world/            # 4 worldbuilding files
+reference/        # 5 analysis files (quote index, knowledge web, patterns)
+setup.sh          # onboarding: memory templates plus lore bootstrap
+lore/             # created by setup.sh (symlink or clone, gitignored)
+```
+
+## Verification
+
+| Suite | Command | Expected |
+|---|---|---|
+| Full agent audit | `bash lore/drifter-master-audit.sh` | 18/18 |
+| Voice scenarios | `bash lore/tests/drifter-test-suite.sh` | 19 scenarios |
+| Module completeness | `bash lore/tests/drifter-module-test.sh` | 202 checks |
+| Quote verification | `bash lore/tests/drifter-quote-verify.sh` | 0 unverified |
+| Database integrity | `bash lore/tests/test-db.sh` | 35 checks |
+| Query interface | `bash lore/tests/query-interface-test.sh` | 23 checks |
+| CI pipeline | `bash lore/tests/drifter-ci.sh` | 25 checks |
+| File conformance | `python3 lore/tests/conformance.py` | PASS |
+
+## Troubleshooting
+
+- **Database missing:** run `./setup.sh`, or `python3 lore/db/migrate.py`.
+- **`lore/` missing:** run `./setup.sh` (or pass a local grimoire path).
+- **Dangling `lore/` symlink:** `setup.sh` removes and recreates it.
+- **Audit says workspace unresolved:** run it through `lore/` from this
+  directory, or set `WORKSPACE=$PWD`.
+- **OpenCode does not list the agent:** confirm the directory under
+  `~/.config/opencode/agents/` and `default_agent` in `opencode.json`.
+- **Degraded mode:** without the archive the persona files still work; canon
+  queries and quote verification do not.
+
+## License and attribution
+
+MIT licensed. Fan-made. Not affiliated with or endorsed by Bungie.
+
+- **Destiny 2** content is Bungie's property.
+- **Ishtar Collective** (https://www.ishtar-collective.net): primary lore source.
+- **Destiny Lore Vault** (YouTube): audio used for voice calibration.
+- **Destiny community**: transcription, analysis and preservation.
+
+All quotes trace to canonical transcripts and lore books; audits report zero
+unverified quotes and zero broken links.

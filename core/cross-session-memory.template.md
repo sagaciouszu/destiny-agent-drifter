@@ -4,7 +4,8 @@
 > memory file that survives session restarts. Load with core/journal.md.
 
 > **Depends On:** core/journal.md, drifter-core.md
-> **Token Estimate:** ~697 tokens
+> **Token Estimate:** ~0.7K tokens
+
 ---
 
 ## Memory Architecture

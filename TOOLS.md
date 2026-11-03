@@ -1,29 +1,44 @@
-# TOOLS.md - Tool Reference and Conventions
+# TOOLS.md - Tools and Conventions
 
 > **Depends On:** INDEX.md
-> **Token Estimate:** ~200 tokens
+> **Token Estimate:** ~0.44K tokens
 
-## Tool Reference
+## Runtime tools
 
-### Lore Archive (database-first)
-- Repository: `lore` (symlink to or clone of destiny-agent-grimoire)
-- Database: `lore/db/grimoire.db` (SQLite, FTS5 full-text search)
-- Agent query: `python3 lore/db/query.py <command> [args]`
-- Direct SQL: `sqlite3 lore/db/grimoire.db "SELECT ..."`
-- Quote check: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon)
-- Quote policy and schema standards: `lore/STANDARDS.md`
-- Bootstrap: the database is a build artifact (not in git). If `lore/db/grimoire.db` is missing, run `./setup.sh` (choose prebuilt download or build), or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) / `python3 lore/db/migrate.py` (build).
+| Tool | Used for |
+|---|---|
+| `python3` 3.8+ | query CLI, migration, tests (standard library only) |
+| `bash` 4+ | setup, audits, verification suites |
+| `sqlite3` | optional raw SQL against the database |
+| `git` | lore archive clone or update |
+| `curl` | optional prebuilt database download |
 
-### Loading Tiers
-- **Minimal (~6.2K):** `drifter-core.md` only.
-- **Standard (~18.6K):** + `voice/drifter-voice-core.md` + `core/relationships.md`.
-- **Deep (~124K):** all modules (see INDEX.md for full map).
+## Data access
 
-### Quote Verification
-- All quotes verified against canonical transcripts (1002 Drifter lines) + lore books.
-- Run: `bash lore/tests/drifter-quote-verify.sh`
+- Repository: `lore` (a symlink to or clone of `destiny-agent-grimoire`).
+- Database: `lore/db/grimoire.db` (SQLite with FTS5).
+- Query CLI: `python3 lore/db/query.py search|character|item|verify|list|stats`.
+- Every command accepts `--json`; search returns snippets unless `--full`.
+- Direct SQL: `sqlite3 lore/db/grimoire.db "SELECT ..."`.
+- Quote safety: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon).
+- Contract: `lore/STANDARDS.md`.
+- Bootstrap: the database is a build artifact. If it is missing run `./setup.sh`,
+  or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) or
+  `python3 lore/db/migrate.py` (build).
 
-### Conventions
+## Verification
+
+- Full agent audit: `bash lore/drifter-master-audit.sh` (18 suites).
+- Quote verification: `bash lore/tests/drifter-quote-verify.sh` (0 unverified
+  against 1002 canonical Drifter lines).
+- Database integrity: `bash lore/tests/test-db.sh` (35 checks).
+- File conformance: `python3 lore/tests/conformance.py` (PASS).
+
+## Conventions
+
 - No em-dashes or en-dashes.
-- No personal paths.
-- All file references resolve to existing paths.
+- No personal paths in tracked files.
+- Every file reference resolves to an existing path.
+- Never quote unverified text; verify first, then speak.
+- Never parse `lore/source/` markdown at runtime; query the database.
+- Runtime memory (`USER.md`, core memory files) is gitignored and local only.

@@ -31,7 +31,8 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 - `drifter-voice.md` - master voice reference by mode.
 - `SOUL.md` - persona, history, boundaries.
 - `AGENTS.md` - operating rules, platform contract, quote policy.
-- `IDENTITY.md` - identity metadata. `TOOLS.md` - tool conventions.
+- `IDENTITY.md` - identity metadata.
+- `TOOLS.md` - tool conventions.
 - `USER.md` - local runtime context (gitignored; seeded from `USER.template.md`).
 
 ## Modules
@@ -47,8 +48,8 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 `core/prompt-caching.md`, `core/callback-system.md`, `core/cross-session-memory.md`,
 `core/cross-agent.md`, `core/debt-ledger.md`, `core/contradiction-log.md`, `core/lie-taxonomy.md`,
 `core/injection-defense.md`, `core/frontier-cookbook.md`, `core/appearance-guide.md`,
-`core/relationship-evolution.md`,
-`core/blue-ghost.md`, `core/how-to-drift.md`, `core/journal-append.sh`, `core/debt-ledger-auto.sh`, `core/test-manifest.txt`
+`core/blue-ghost.md`, `core/how-to-drift.md`, `core/relationship-evolution.md`,
+`core/journal-append.sh`, `core/debt-ledger-auto.sh`, `core/test-manifest.txt`
 (templates: `core/user-memory.template.md`, `core/journal.template.md`,
 `core/session-state.template.md`, `core/cross-session-memory.template.md`).
 

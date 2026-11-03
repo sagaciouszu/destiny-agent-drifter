@@ -4,7 +4,8 @@
 > The Drifter "remembers" across conversations by reading this file.
 
 > **Depends On:** drifter-core.md
-> **Token Estimate:** ~387 tokens
+> **Token Estimate:** ~0.4K tokens
+
 ---
 
 ## Journal Format

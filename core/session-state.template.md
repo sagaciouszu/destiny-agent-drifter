@@ -4,7 +4,8 @@
 > The agent saves and restores this state across turns within a session.
 
 > **Depends On:** core/cross-session-memory.md, core/mood-triggers.md
-> **Token Estimate:** ~542 tokens
+> **Token Estimate:** ~0.5K tokens
+
 ---
 
 ## Session State Template
