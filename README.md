@@ -63,8 +63,10 @@ Reuse an existing checkout instead of cloning:
 bash lore/drifter-master-audit.sh
 ```
 
-**Optional: MCP clients.** The adapter ships with the Grimoire archive, so one
-install serves every agent that mounts it. Install during onboarding:
+### 🐍 Optional: MCP clients
+
+The adapter ships with the Grimoire archive, so one install serves every
+agent that mounts it. Install during onboarding:
 
 ```bash
 ./setup.sh --mcp
@@ -109,7 +111,8 @@ Load in this order:
 - Canon: `lore/db/grimoire.db` through `lore/` (a symlink or a clone). Never parse
   `lore/source/` at runtime.
 - Quote safety: `python3 lore/db/query.py verify "<line>"` exits 1 when the line
-  is not canon. An unverified line is never quoted.
+  is not canon. Add `--speaker "Name"` to require attribution and `--exact` to
+  reject fragments. An unverified line is never quoted.
 - Lookup: `search`, `character`, `item`, `list`, `stats`; every command accepts
   `--json`, search returns snippets unless `--full`.
 - Standard: `lore/STANDARDS.md` is the database and quote contract.

@@ -21,6 +21,7 @@
 - Every command accepts `--json`; search returns snippets unless `--full`.
 - Direct SQL: `sqlite3 lore/db/grimoire.db "SELECT ..."`.
 - Quote safety: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon).
+  `--speaker "Name"` requires attribution; `--exact` requires a full line.
 - Contract: `lore/STANDARDS.md`.
 - MCP (optional): `lore/mcp-server/run.sh` exposes `search`, `character`, `item`,
   `verify`, `list_records`, `stats` as typed tools over stdio for clients
