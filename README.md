@@ -65,11 +65,11 @@ setup.sh           # lore archive setup script
 - `python3 lore/db/query.py search "<keyword>" --limit 5` - FTS5 search
 - `bash lore/tests/validate.sh` - consistency check
 - `bash lore/tests/drifter-test-suite.sh` - voice validation (19 scenarios)
-- `bash lore/tests/drifter-module-test.sh` - module checks (201 checks)
+- `bash lore/tests/drifter-module-test.sh` - module checks (202 checks)
 - `bash lore/drifter-master-audit.sh` - unified audit (18 suites)
 - `bash lore/tests/drifter-quote-verify.sh` - quote verification (SQLite-backed, ~2s)
 - `bash lore/tests/drifter-ci.sh` - full CI pipeline (25 checks)
-- `bash lore/tests/test-db.sh` - lore database integrity (29 checks) [via `lore/tests/test-db.sh`]
+- `bash lore/tests/test-db.sh` - lore database integrity (35 checks)
 
 ## Key Rules
 1. All quotes verified against canonical transcripts (1002 Drifter lines) + lore books.
