@@ -95,7 +95,7 @@
 
 ## Lore Archive (optional - requires setup; see README Prerequisites | GitHub: https://github.com/sagaciouszu/destiny-agent-grimoire)
 - Bootstrap: the database is a build artifact (not in git). If `lore/db/grimoire.db` is missing, run `./setup.sh` (choose prebuilt download or build), or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) / `python3 lore/db/migrate.py` (build).
-- `lore/db/query.py stats` - database stats (110 books, 1225 transcripts, 2889 grimoire cards).
+- `lore/db/query.py stats` - database stats (110 books, 1229 transcripts, 2889 grimoire cards).
 - `python3 lore/db/query.py search` - agent query interface (FTS5 full-text search).
 - `lore/tests/drifter-search.sh` - search all transcripts.
 - `lore/tests/drifter-load.sh` - print tiered loading profiles (minimal/standard/deep).
