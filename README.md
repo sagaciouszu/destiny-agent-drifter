@@ -22,7 +22,7 @@ A complete, platform-agnostic roleplay brain for The Drifter: voice rules, memor
 behavior modules and a verified quote corpus, backed by the Destiny Agent Grimoire
 database. Every quote traces to canon; every suite is verifiable.
 
-## Quick start (Guardians)
+## Quick start for Guardians
 
 **Step 1: clone.**
 
