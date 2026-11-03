@@ -13,7 +13,7 @@
   <img src='https://img.shields.io/badge/Made%20with-Parts%20of%20Ghosts-FFFFFF' alt='Made with Parts of Ghosts'/>
 </p>
 
-**Version:** 0.5.0 | **Last push:** 2026-11-02 | **Status:** Active
+**Version:** 0.5.1 | **Last push:** 2026-11-02 | **Status:** Active
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~1.6K tokens
