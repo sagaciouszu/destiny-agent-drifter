@@ -23,7 +23,7 @@
 - Quote safety: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon).
   `--speaker "Name"` requires attribution; `--exact` requires a full line.
 - Contract: `lore/STANDARDS.md`.
-- MCP (optional): install `./setup.sh --mcp`; run `lore/mcp-server/run.sh`.
+- MCP (optional): install `./setup.sh --mcp` (or `--no-mcp` to skip); run `lore/mcp-server/run.sh`.
   Tools, limits, client config and security: `lore/mcp-server/README.md`.
 - Bootstrap: the database is a build artifact. If it is missing run `./setup.sh`,
   or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) or

@@ -72,7 +72,8 @@ agent that mounts it. Install during onboarding:
 ./setup.sh --mcp
 ```
 
-Or after the fact with `bash lore/mcp-server/install.sh`.
+Or after the fact with `bash lore/mcp-server/install.sh`. Use `./setup.sh --no-mcp`
+to skip the prompt, or `./setup.sh --help` for options.
 
 Register the path it prints (`lore/mcp-server/run.sh`) in your client. Details:
 `lore/mcp-server/README.md`.
