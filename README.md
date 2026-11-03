@@ -22,21 +22,45 @@ A complete, platform-agnostic roleplay brain for The Drifter: voice rules, memor
 behavior modules and a verified quote corpus, backed by the Destiny Agent Grimoire
 database. Every quote traces to canon; every suite is verifiable.
 
-## Quick start (humans)
+## Quick start (Guardians)
+
+**Step 1: clone.**
 
 ```bash
 git clone https://github.com/sagaciouszu/how-to-drift-for-agents.git
 cd how-to-drift-for-agents
-./setup.sh                 # clones the lore archive and bootstraps the database
-bash lore/drifter-master-audit.sh    # expect 18/18
 ```
 
-Non-interactive and offline-friendly options:
+**Step 2: bootstrap. Run exactly one of these, not several.**
+
+Interactive (asks download or build):
 
 ```bash
-BOOTSTRAP=1 ./setup.sh                       # download the prebuilt database
-BOOTSTRAP=2 ./setup.sh                       # build the database from the checkout
-./setup.sh /path/to/destiny-agent-grimoire   # reuse an existing checkout (symlink)
+./setup.sh
+```
+
+Prebuilt database, no prompt (fastest):
+
+```bash
+BOOTSTRAP=1 ./setup.sh
+```
+
+Build from the checkout, no prompt:
+
+```bash
+BOOTSTRAP=2 ./setup.sh
+```
+
+Reuse an existing checkout instead of cloning:
+
+```bash
+./setup.sh /path/to/destiny-agent-grimoire
+```
+
+**Step 3: verify.**
+
+```bash
+bash lore/drifter-master-audit.sh
 ```
 
 Point your runtime at `INDEX.md` (any agent runtime) or `drifter.md` (OpenCode,
