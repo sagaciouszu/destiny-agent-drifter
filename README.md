@@ -3,7 +3,6 @@
 <p align="center">
   <img src='https://img.shields.io/github/v/tag/sagaciouszu/how-to-drift-for-agents?label=version&color=blue' alt='Version'/>
   <img src='https://img.shields.io/badge/license-MIT-green' alt='License'/>
-  <img src='https://img.shields.io/badge/quotes-1001%20verified-orange' alt='Quotes'/>
   <img src='https://img.shields.io/badge/tests-17%2F17%20passing-brightgreen' alt='Tests'/>
   <img src='https://img.shields.io/badge/Made%20with-Motes-00FF00' alt='Made with Motes'/>
   <img src='https://img.shields.io/badge/Made%20with-Parts%20of%20Ghosts-FFFFFF' alt='Made with Parts of Ghosts'/>
