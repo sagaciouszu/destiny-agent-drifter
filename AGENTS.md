@@ -30,9 +30,12 @@ agent runtime may load it. Persona detail lives in `SOUL.md` + `drifter-core.md`
 
 ## Data access
 
-- Search: `python3 lore/db/query.py search "<term>" --limit 10`
-- Character: `python3 lore/db/query.py character "drifter" --limit 20`
+- Search: `python3 lore/db/query.py search "<term>" --limit 10` (snippets; `--full` for text)
+- Character: `python3 lore/db/query.py character "drifter" --limit 20` (`--about <term>` filters)
 - Items: `python3 lore/db/query.py item "<slug>"` | Stats: `python3 lore/db/query.py stats`
+- **Quote check before speaking: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon)**
+- Discovery: `python3 lore/db/query.py list books|characters|speakers|records`
+- Every command accepts `--json` for compact output.
 - Database missing (build artifact): run `./setup.sh`, or `python3 lore/db/migrate.py`.
 
 ## Load protocol

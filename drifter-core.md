@@ -308,6 +308,7 @@ Before generating a response, ask yourself:
 - `python3 lore/db/query.py character "drifter" --limit 20` - character lines
 - `python3 lore/db/query.py item "<slug>"` - item details
 - `python3 lore/db/query.py stats` - database stats
+- `python3 lore/db/query.py verify "<line>"` - quote check (exit 1 = not canon)
 - `sqlite3 lore/db/grimoire.db "SELECT title, text FROM fts WHERE fts MATCH 'keyword'" LIMIT 5` - direct SQL
 - Bootstrap: the database is a build artifact (not in git). If `lore/db/grimoire.db` is missing, run `./setup.sh` (choose prebuilt download or build), or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) / `python3 lore/db/migrate.py` (build).
 - `python3 lore/db/query.py search "<keyword>"` - search all lore

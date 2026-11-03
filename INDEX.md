@@ -19,7 +19,7 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 | From | To | Mechanism |
 |------|----|-----------|
 | agent | canon lore | `lore/db/grimoire.db` (`lore/` symlink to destiny-agent-grimoire) |
-| agent | canon interface | `python3 lore/db/query.py <search\|character\|item\|stats>` |
+| agent | canon interface | `python3 lore/db/query.py <search\|character\|item\|verify\|list\|stats>` |
 | `setup.sh` | canon repo | symlink/clone; seeds runtime memory; bootstraps DB if missing |
 | runtime memory | local only | `USER.md`, `core/*memory*`, `core/journal.md` (gitignored) |
 | tests | this workspace | `tests/resolve-workspace.sh` (layout-independent) |
@@ -76,6 +76,7 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
   seeds memory and bootstraps the DB; agents may run `python3 lore/db/migrate.py`.
 - Quote policy: `lore/STANDARDS.md`. Another character's line is never presented
   as the Drifter's voice.
+- Interface: `python3 lore/db/query.py verify "<line>"` (quote check), `list` (discovery), `--json` anywhere.
 - Commands: `bash lore/drifter-master-audit.sh` (all suites),
   `bash lore/tests/drifter-quote-verify.sh` (0 unverified),
   `python3 lore/tests/drifter-voice-scorer.py "<line>"` (voice score).

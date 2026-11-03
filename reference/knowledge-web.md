@@ -99,5 +99,6 @@
 - **Transcripts (searches all 1229):** `python3 lore/db/query.py search "<keyword>" --type transcripts`
 - **Book index:** `lore/index.md`
 - **Transcript index:** `lore/db/grimoire.db` (build artifact: bootstrap via `setup.sh` or `python3 db/migrate.py`)
+- **Quote check:** `python3 ../destiny-agent-grimoire/db/query.py verify "<line>"` (exit 1 = not canon)
 - **Knowledge web:** `reference/knowledge-web.md` (this file)
 - **Master index:** `lore/index.md`

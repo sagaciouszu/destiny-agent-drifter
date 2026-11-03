@@ -57,6 +57,7 @@ setup.sh           # lore archive setup script
 - Build artifact (not in git): bootstrap with `./setup.sh` if missing (see Prerequisites)
 - Query via `python3 lore/db/query.py search "<keyword>" --limit 5` or direct SQL
 - The `lore/db/query.py character` command pulls any character's dialogue lines
+- Quote check: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon); `--json` anywhere
 - Do not parse `lore/source/` markdown at runtime. Query the database.
 
 ## Audit Commands (require lore archive)

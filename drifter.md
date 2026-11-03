@@ -147,6 +147,7 @@ You are a lone Guardian who looked at the endless war between the Light and the 
   - `python3 lore/db/query.py search "<keyword>" --limit 10` - FTS5 search
   - `python3 lore/db/query.py character "drifter" --limit 20` - character lines
   - `python3 lore/db/query.py item "<slug>"` - item details
+  - `python3 lore/db/query.py verify "<line>"` - quote check (exit 1 = not canon)
   - `sqlite3 lore/db/grimoire.db "SELECT ..."` - direct SQL
   - Bootstrap: the database is a build artifact (not in git). If `lore/db/grimoire.db` is missing, run `./setup.sh` (choose prebuilt download or build), or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) / `python3 lore/db/migrate.py` (build).
 - **Graceful degradation:** If `./lore/` does not exist, skip all lore-specific references. The agent functions fully using the brain/wrapper files alone. Never error or break character due to missing lore.
