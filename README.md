@@ -187,8 +187,8 @@ MIT licensed. Fan-made. Not affiliated with or endorsed by Bungie.
 - **Destiny 2** content is Bungie's property.
 - **Ishtar Collective** (https://www.ishtar-collective.net): primary lore source.
 - **Destiny Lore Vault** (YouTube): audio used for voice calibration.
-- **Destiny community**: transcription, analysis and preservation, with special
-  thanks to every Guardian making their own fate in 2026 and beyond.
+- **Destiny community**: transcription, analysis and preservation, with
+  **special thanks to every Guardian making their own fate in 2026 and beyond**.
 
 All quotes trace to canonical transcripts and lore books; audits report zero
 unverified quotes and zero broken links.
