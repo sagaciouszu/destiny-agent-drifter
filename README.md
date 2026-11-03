@@ -14,7 +14,7 @@
   <img src='https://img.shields.io/badge/Made%20with-Parts%20of%20Ghosts-FFFFFF' alt='Made with Parts of Ghosts'/>
 </p>
 
-**Version:** 0.10.0 | **Last push:** 2026-11-03 | **Status:** Active
+**Version:** 0.11.0 | **Last push:** 2026-11-03 | **Status:** Active
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~2.1K tokens
@@ -79,7 +79,7 @@ to skip the prompt, or `./setup.sh --help` for options.
 Register the path it prints (`lore/mcp-server/run.sh`) in your client. Details:
 `lore/mcp-server/README.md`.
 
-OpenClaw: sync with `lore/scripts/sync-live-agents.sh --openclaw`.
+OpenClaw: sync with `lore/scripts/sync-live-agents.sh --openclaw` (one workspace per agent; consult agents are wired in OpenClaw config).
 
 Point your runtime at `INDEX.md` (any agent runtime) or `drifter.md` (OpenCode,
 YAML frontmatter, `mode: primary`; sync also installs a read-only `-consult` copy for peers). For

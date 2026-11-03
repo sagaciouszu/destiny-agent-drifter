@@ -58,7 +58,7 @@ Load minimal by default. Escalate only when the conversation needs depth.
 |----------|-------|
 | OpenCode | `drifter.md` (YAML frontmatter, `mode: primary`; a read-only `-consult` copy handles subagent calls); companion files are inert (`disabled: true`) and `lore/` lives outside the agents directory |
 | Generic agent runtime | this file + `INDEX.md` (plain markdown, no platform keys) |
-| OpenClaw | `lore/scripts/sync-live-agents.sh --openclaw` seeds this repo into `~/.openclaw/workspace-drifter` |
+| OpenClaw | `lore/scripts/sync-live-agents.sh --openclaw` writes `~/.openclaw/workspace-<id>`; config wires `<id>-consult` for read-only delegation |
 
 ## Series collaboration
 
