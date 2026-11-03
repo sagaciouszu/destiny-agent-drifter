@@ -59,7 +59,7 @@ Load minimal by default. Escalate only when the conversation needs depth.
 
 | From | To | Mechanism |
 |------|----|-----------|
-| this agent | canon | `lore/db/grimoire.db` via `lore/` symlink |
+| this agent | canon | `lore/db/grimoire.db` via `lore/` (symlink or clone) |
 | `setup.sh` | canon repo | symlink or clone; bootstraps DB if missing |
 | `USER.md`, `core/*memory*`, `core/journal.md` | local only | gitignored runtime state |
 | tests in canon repo | this workspace | `tests/resolve-workspace.sh` |

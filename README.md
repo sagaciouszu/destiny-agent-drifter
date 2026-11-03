@@ -24,7 +24,7 @@
 An agent-oriented brain/wrapper for emulating The Drifter (Destiny 2). Built from an ingested Destiny lore archive (see `lore/`) plus the Drifter-specific voice modules. All 1002 Drifter quotes verified against canonical transcripts. Zero unverified quotes, zero broken links.
 
 ## Prerequisites
-- **Lore archive (optional):** `./lore/` symlink to `destiny-agent-grimoire`. Run `./setup.sh` or `./setup.sh /path/to/destiny-agent-grimoire` - it seeds the gitignored user-memory files from templates and builds the database if missing. Agents and CI: run non-interactively with `BOOTSTRAP=1 ./setup.sh` (download) or `BOOTSTRAP=2 ./setup.sh` / plain `python3 lore/db/migrate.py` (build) - the prompt never blocks. Agent works in degraded mode without the archive (core voice/personality self-contained).
+- **Lore archive (optional):** `./lore/` symlink to (or clone of) `destiny-agent-grimoire`. Run `./setup.sh` or `./setup.sh /path/to/destiny-agent-grimoire` - it seeds the gitignored user-memory files from templates and builds the database if missing. Agents and CI: run non-interactively with `BOOTSTRAP=1 ./setup.sh` (download) or `BOOTSTRAP=2 ./setup.sh` / plain `python3 lore/db/migrate.py` (build) - the prompt never blocks. Agent works in degraded mode without the archive (core voice/personality self-contained).
 - **OpenCode:** sync to `~/.config/opencode/agents/`. Set `default_agent: drifter` in `opencode.json`. Entry point: `drifter.md` (YAML frontmatter).
 
 ## Structure
@@ -42,7 +42,7 @@ core/              # 43 behavioral/state modules
 world/             # 4 worldbuilding files
 voice/             # 9 voice sub-files
 reference/         # 5 Drifter-specific analysis files
-lore/              # symlink to destiny-agent-grimoire (optional, see Prerequisites)
+lore/              # symlink to or clone of destiny-agent-grimoire (optional, see Prerequisites)
 setup.sh           # lore archive setup script
 ```
 
@@ -69,7 +69,7 @@ setup.sh           # lore archive setup script
 - `bash lore/drifter-master-audit.sh` - unified audit (17 suites)
 - `bash lore/tests/drifter-quote-verify.sh` - quote verification (SQLite-backed, ~2s)
 - `bash lore/tests/drifter-ci.sh` - full CI pipeline (25 checks)
-- `bash lore/db/../tests/test-db.sh` - lore database integrity (29 checks) [via `lore/tests/test-db.sh`]
+- `bash lore/tests/test-db.sh` - lore database integrity (29 checks) [via `lore/tests/test-db.sh`]
 
 ## Key Rules
 1. All quotes verified against canonical transcripts (1002 Drifter lines) + lore books.

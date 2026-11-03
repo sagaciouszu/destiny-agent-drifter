@@ -6,7 +6,7 @@
 ## Tool Reference
 
 ### Lore Archive (database-first)
-- Repository: `lore` (symlink to destiny-agent-grimoire)
+- Repository: `lore` (symlink to or clone of destiny-agent-grimoire)
 - Database: `lore/db/grimoire.db` (SQLite, FTS5 full-text search)
 - Agent query: `python3 lore/db/query.py <command> [args]`
 - Direct SQL: `sqlite3 lore/db/grimoire.db "SELECT ..."`

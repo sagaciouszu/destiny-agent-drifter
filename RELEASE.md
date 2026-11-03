@@ -1,4 +1,4 @@
-# Release v0.5.0 - Drifter Agent: Platform-Agnostic Contract + Interface v2
+# Release v0.5.0 - Platform-Agnostic Contract + Interface v2
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~0.4K tokens
@@ -14,11 +14,17 @@
 - **Agent-safe bootstrap** - setup offers prebuilt download or local build, honors `BOOTSTRAP=1|2`, never blocks (timeout + EOF-safe)
 - **Voice integrity** - cross-character attribution check (exchanges, headings, reported speech, impressions handled); all other characters' lines removed from Drifter voice files
 - **Measured tiers** - minimal ~6.2K, standard ~18.6K, deep ~124K (previously asserted, now measured)
+- **Clone-mode parity** - tests accept `lore/` as a symlink or a clone and never scan inside it
 
 ## Verification
 
-- `lore/drifter-master-audit.sh`: 17/17
-- quotes: 0 unverified; attribution: 0 non-Drifter quotes
-- fresh-clone onboarding: seeded memory + built database + 17/17
+| Suite | Result |
+|-------|--------|
+| drifter-master-audit | 17/17 |
+| grimoire master-audit | 11/11 |
+| eris-morn master-audit | 8/8 |
+| quote verification | 0 unverified |
+| attribution | 0 non-Drifter quotes |
+| fresh-clone onboarding | seeded memory + built database + 17/17 |
 
 Fan-made. Not affiliated with or endorsed by Bungie.
