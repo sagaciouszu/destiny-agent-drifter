@@ -17,7 +17,7 @@
 
 - Repository: `lore` (a symlink to or clone of `destiny-agent-grimoire`).
 - Database: `lore/db/grimoire.db` (SQLite with FTS5).
-- Query CLI: `python3 lore/db/query.py search|character|character-info|item|book|transcript|find-item|record|verify|verify-many|list|stats`.
+- Query CLI: one of `python3 lore/db/query.py search|character|character-info|item|book|transcript|find-item|record|verify|verify-many|list|stats`; MCP tool names use underscores.
 - Every command accepts `--json`; search returns snippets unless `--full`.
 - Direct SQL: `sqlite3 lore/db/grimoire.db "SELECT ..."`.
 - Quote safety: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon).

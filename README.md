@@ -117,8 +117,9 @@ Load in this order:
   is not canon. Add `--speaker "Name"` to require attribution and `--exact` to
   reject fragments. An unverified line is never quoted.
 - Lookup: `search`, `character`, `character_info`, `item`, `book`, `transcript`,
-  `find_item`, `record`, `verify_many`, `list`, `stats`; every command accepts
-  `--json`, search returns snippets unless `--full` and supports `--offset`/`--rank`.
+  `find_item`, `record`, `verify_many`, `list`, `stats` (MCP names; CLI uses
+  hyphens for `character-info`, `find-item`, `verify-many`). Every command
+  accepts `--json`; search returns snippets unless `--full`, with `--offset`/`--rank`.
 - Standard: `lore/STANDARDS.md` is the database and quote contract.
 - **MCP (optional):** `lore/mcp-server/run.sh` serves the same canon to non-shell
   clients over local stdio. Install with `./setup.sh --mcp`; tools, limits,
