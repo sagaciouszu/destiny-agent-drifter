@@ -1,4 +1,4 @@
-# v0.8.0 - MCP reading tools and pagination
+# v0.9.0 - Retrieval quality and deeper MCP
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~0.2K tokens
@@ -7,11 +7,12 @@
 
 ## What's Changed
 
-- **MCP reading tools:** `book`, `transcript`, `find_item`, `record`, plus `offset` on search, character and listings
-- **Resources:** books, characters, records and stats are exposed as read-only resources
-- **CLI parity:** the same reading commands and pagination are available through `lore/db/query.py`
-- **Tests:** MCP matrix now covers 138 calls across ten tools and four resources
+- **MCP:** twelve tools, per-document resources and two prompts; relevance-ordered search
+- **Batch checks:** `verify_many` for up to 20 quotes
+- **Character metadata:** `character_info` with aliases and line counts
+- **Paging:** search reports totals and next offsets
+- **Database:** 170 MB with item-title and verification indexes
 
 ## Verification
 
-18/18 audit, 6/6 MCP contract, 0 unverified quotes, fresh-clone onboarding PASS.
+18/18 audit, 6/6 MCP contract, 141-call matrix, 0 unverified quotes, fresh-clone onboarding PASS.
