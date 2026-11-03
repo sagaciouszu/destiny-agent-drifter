@@ -10,6 +10,7 @@
 - Database: `lore/db/grimoire.db` (SQLite, FTS5 full-text search)
 - Agent query: `python3 lore/db/query.py <command> [args]`
 - Direct SQL: `sqlite3 lore/db/grimoire.db "SELECT ..."`
+- Bootstrap: the database is a build artifact (not in git). If `lore/db/grimoire.db` is missing, run `./setup.sh` (choose prebuilt download or build), or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) / `python3 lore/db/migrate.py` (build).
 
 ### Loading Tiers
 - **Minimal (~6K):** `drifter-core.md` only.

@@ -170,6 +170,6 @@
 15. **He uses "Dredgen" as a title** - for top Gambit players
 
 ## Last Scrape
-- **Date:** 2026-10-30
+- **Date:** 2026-11-02
 - **Last Major Update:** Renegades (December 2, 2025)
 - **Patch Version:** Year of Prophecy (Season 28)

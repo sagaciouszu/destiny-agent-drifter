@@ -2,7 +2,7 @@
 
 > Single master index for the entire Drifter agent brain/wrapper.
 > INDEX.md is the MAP. drifter-core.md is the CONTENT. Load INDEX.md first, then drifter-core.md.
-> Rebuilt 2026-10-30.
+> Rebuilt 2026-11-02.
 
 > **Depends On:** none (root - load first)
 > **Token Estimate:** ~3K tokens
@@ -94,6 +94,7 @@
 - `drifter-core.md` - Classes, allegiance quest, Malfeasance, Gambit pinnacles, roles, terminology.
 
 ## Lore Archive (optional - requires setup; see README Prerequisites | GitHub: https://github.com/sagaciouszu/destiny-agent-grimoire)
+- Bootstrap: the database is a build artifact (not in git). If `lore/db/grimoire.db` is missing, run `./setup.sh` (choose prebuilt download or build), or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) / `python3 lore/db/migrate.py` (build).
 - `lore/db/query.py stats` - database stats (110 books, 1222 transcripts, 2889 grimoire cards).
 - `python3 lore/db/query.py search` - agent query interface (FTS5 full-text search).
 - `lore/tests/drifter-search.sh` - search all transcripts.
@@ -192,6 +193,6 @@ Leave room for the conversation itself and the lore archive (on demand).
 | Top-level README | `README.md` |
 
 ## Last Updated
-- Date: 2026-10-30
+- Date: 2026-11-02
 - Content Through: Renegades campaign, Glory Beyond, Tapes, Imperium, Lawless Frontier, Destinypedia, Ishtar Collective.
 - Audit: Quote/source cross-check (0 unverified), broken-link check (0 missing), index completeness (all modules referenced).

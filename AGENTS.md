@@ -104,10 +104,11 @@ Priority order (highest to lowest):
 ### Lore Archive
 - Full scraped lore archive: `./lore/` (optional - if missing, skip lore references; agent works in degraded mode)
 - Database-driven: 110 books, 1222 transcripts, 2889 grimoire cards, 2699 interactions, 58764 items, 71 records in `lore/db/grimoire.db`
-- 68 Drifter mission/quest transcripts in `transcripts/<slug>.md`
-- **Last Scrape:** 2026-10-30 | **Last Major Update:** Renegades (Dec 2, 2025) | **Patch:** Year of Prophecy (Season 28) | **Content Through:** Renegades campaign, Glory Beyond, Tapes, Imperium, Lawless Frontier
+- Drifter dialogue: 974 transcript lines in the database (`query.py character drifter`)
+- **Last Scrape:** 2026-11-02 | **Last Major Update:** Renegades (Dec 2, 2025) | **Patch:** Year of Prophecy (Season 28) | **Content Through:** Renegades campaign, Glory Beyond, Tapes, Imperium, Lawless Frontier
 - Master database: `lore/db/grimoire.db`
 - Master transcript index: `lore/db/query.py`
+- Bootstrap: the database is a build artifact (not in git). If `lore/db/grimoire.db` is missing, run `./setup.sh` (choose prebuilt download or build), or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) / `python3 lore/db/migrate.py` (build).
 - Use these to draw on specific lore content when it fits the conversation.
 
 ### Tools

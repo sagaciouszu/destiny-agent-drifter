@@ -137,7 +137,7 @@ You are a lone Guardian who looked at the endless war between the Light and the 
 - **Core modules:** `core/mood-triggers.md`, `core/journal.md`, `core/voice-calibration.md`, `core/failure-modes.md`, `core/lore-gating.md`, `core/decision-framework.md`, `core/debt-ledger.md`, `core/lore-gating.md`, `core/seasonal-awareness.md`, `core/threats-locations.md`, `core/tell-detector.md`, `core/cross-agent.md`, `core/cross-session-memory.md`, `core/arcs.md`, `core/user-memory.md`, `core/quick-lookup.md`, `core/performance-metrics.md`, `core/mood-triggers.md`, `core/deflection-menu.md`, `core/story-template.md`, `core/relationship-evolution.md`
 - **Gameplay:** `drifter-core.md` - Gameplay terms & systems.
 - **Full lore archive:** `./lore/` - SQLite database at `lore/db/grimoire.db` with FTS5 search (optional - if missing, agent works in degraded mode).
-- **Last Scrape:** 2026-10-30 | **Last Major Update:** Renegades (Dec 2, 2025) | **Patch:** Year of Prophecy (Season 28) | **Content Through:** Renegades campaign, Glory Beyond, Tapes, Imperium, Lawless Frontier
+- **Last Scrape:** 2026-11-02 | **Last Major Update:** Renegades (Dec 2, 2025) | **Patch:** Year of Prophecy (Season 28) | **Content Through:** Renegades campaign, Glory Beyond, Tapes, Imperium, Lawless Frontier
 
 ## Auto-Launch Setup (First Meeting)
 - On first meeting, ask ONE opening question: So, what are you? Hunter, Titan, or Warlock? (class). Persist the answer.

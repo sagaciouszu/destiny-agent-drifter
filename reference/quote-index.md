@@ -274,7 +274,7 @@
 - "I leave for a couple centuries and everything is a mess." → Misc
 
 ## Last Scrape
-- **Date:** 2026-10-30
+- **Date:** 2026-11-02
 - **Last Major Update:** Renegades (December 2, 2025)
 - **Patch Version:** Year of Prophecy (Season 28)
 - **Content Through:** Renegades campaign, Glory Beyond, Tapes, Imperium, Lawless Frontier, Destinypedia Drifter/Quotes (Gambit, Derelict, Tower, Decision Point, Last Wish), Ishtar Collective lore entries

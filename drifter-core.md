@@ -308,14 +308,15 @@ Before generating a response, ask yourself:
 - `python3 lore/db/query.py character "drifter" --limit 20` - character lines
 - `python3 lore/db/query.py item "<slug>"` - item details
 - `python3 lore/db/query.py stats` - database stats
-- `sqlite3 lore/db/grimoire.db SELECT title, text FROM fts WHERE fts MATCH keyword` - direct SQL
+- `sqlite3 lore/db/grimoire.db "SELECT title, text FROM fts WHERE fts MATCH 'keyword'" LIMIT 5` - direct SQL
+- Bootstrap: the database is a build artifact (not in git). If `lore/db/grimoire.db` is missing, run `./setup.sh` (choose prebuilt download or build), or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) / `python3 lore/db/migrate.py` (build).
 - `python3 lore/db/query.py search "<keyword>"` - search all lore
 - `bash lore/tests/drifter-search.sh "<keyword>"` - search transcripts
 - `bash lore/tests/validate.sh` - consistency checker
 - `bash lore/tests/drifter-validate-response.sh "<response>"` - response authenticity checker
 
 ## Last Scrape
-- **Date:** 2026-10-30
+- **Date:** 2026-11-02
 - **Last Major Update:** Renegades (December 2, 2025)
 - **Patch Version:** Year of Prophecy (Season 28)
 - **Content Through:** Renegades campaign, Glory Beyond, Tapes, Imperium, Lawless Frontier, Destinypedia Drifter/Quotes, Ishtar Collective lore entries, Destiny Fandom wiki dialogue
