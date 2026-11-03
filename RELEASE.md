@@ -1,4 +1,4 @@
-# v0.9.0 - Retrieval quality and deeper MCP
+# v1.0.0 - Compendium and coverage
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~0.2K tokens
@@ -7,12 +7,11 @@
 
 ## What's Changed
 
-- **MCP:** twelve tools, per-document resources and two prompts; relevance-ordered search
-- **Batch checks:** `verify_many` for up to 20 quotes
-- **Character metadata:** `character_info` with aliases and line counts
-- **Paging:** search reports totals and next offsets
-- **Database:** 170 MB with item-title and verification indexes
+- **Canon:** compendium expanded to 20 characters and 1,229 quotes, including Ikora Rey and Mara Sov
+- **MCP:** 12 tools, resource templates, prompts, relevance search, batch verification
+- **Platforms:** OpenCode and OpenClaw bindings documented; one sync command
+- **Quality:** golden voice snapshots, documentation command audit, checksum-verified onboarding
 
 ## Verification
 
-18/18 audit, 6/6 MCP contract, 141-call matrix, 0 unverified quotes, fresh-clone onboarding PASS.
+18/18 audit, 6/6 MCP contract, 141-call matrix, fresh-clone onboarding PASS.
