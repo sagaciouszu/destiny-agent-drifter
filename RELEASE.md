@@ -1,7 +1,7 @@
 # Release v0.4.1 - Drifter Agent with SQLite Lore
 
 > **Depends On:** INDEX.md
-> **Token Estimate:** ~1K tokens
+> **Token Estimate:** ~0.4K tokens
 
 **Date:** 2026-11-02
 

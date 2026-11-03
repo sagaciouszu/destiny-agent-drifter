@@ -6,7 +6,7 @@
 ## Voice / Catchphrases
 
 > **Depends On:** drifter-core.md, drifter-voice.md
-> **Token Estimate:** ~8K tokens
+> **Token Estimate:** ~4.5K tokens
 
 - "I dig it." → Voice
 

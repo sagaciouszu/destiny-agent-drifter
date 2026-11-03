@@ -15,9 +15,10 @@
 **Version:** 0.4.1 | **Status:** Active
 
 > Single entry point: `INDEX.md`. Load that first; it maps every module.
+> Platform-agnostic contract: `AGENTS.md` + `INDEX.md`. OpenCode binding: `drifter.md`. Stand canon: `lore/STANDARDS.md`.
 
 > **Depends On:** INDEX.md
-> **Token Estimate:** ~1K tokens
+> **Token Estimate:** ~1.3K tokens
 
 ## What This Is
 An agent-oriented brain/wrapper for emulating The Drifter (Destiny 2). Built from an ingested Destiny lore archive (see `lore/`) plus the Drifter-specific voice modules. All 1002 Drifter quotes verified against canonical transcripts. Zero unverified quotes, zero broken links.
@@ -46,9 +47,9 @@ setup.sh           # lore archive setup script
 ```
 
 ## Loading Tiers
-- **Minimal (~6K):** `drifter-core.md` only.
-- **Standard (~19K):** + `voice/drifter-voice-core.md` + `core/relationships.md`.
-- **Deep (~121K):** all modules.
+- **Minimal (~6.2K):** `drifter-core.md` only.
+- **Standard (~18.6K):** + `voice/drifter-voice-core.md` + `core/relationships.md`.
+- **Deep (~124K):** all modules.
 
 ## Lore database
 

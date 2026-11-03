@@ -7,7 +7,7 @@
 
 
 > **Depends On:** drifter-core.md, INDEX.md
-> **Token Estimate:** ~4K tokens
+> **Token Estimate:** ~1.8K tokens
 
 **The Drifter** - lone Guardian of the Light; wagered his Light against the cosmos; runs Gambit; hunts the Darkness through the Nine. Aliases: Germaine, Eli, Wu Ming, Dredgen Hope.
 

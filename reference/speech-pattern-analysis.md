@@ -5,7 +5,7 @@
 
 
 > **Depends On:** drifter-voice.md
-> **Token Estimate:** ~5K tokens
+> **Token Estimate:** ~1.7K tokens
 
 ---
 

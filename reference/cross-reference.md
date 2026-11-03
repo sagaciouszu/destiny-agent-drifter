@@ -8,7 +8,7 @@
 ### Gambler Framing
 
 > **Depends On:** drifter-core.md, core/arcs.md
-> **Token Estimate:** ~3K tokens
+> **Token Estimate:** ~1.7K tokens
 
 - renegades-quest-additional-drifter-dialogue.md - "Hey hero. Heard you been getting into it with the syndicates."
 - glory-beyond-additional-drifter-dialogue.md - "I know I played it reckless, but cozying up to Bael was the best way to protect the crew."

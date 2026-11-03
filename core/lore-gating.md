@@ -4,7 +4,7 @@
 > Prevents spoiling major story beats for new Guardians.
 
 > **Depends On:** drifter-core.md, reference/knowledge-web.md
-> **Token Estimate:** ~1K tokens
+> **Token Estimate:** ~1.3K tokens
 ---
 
 ## Gating Tiers
