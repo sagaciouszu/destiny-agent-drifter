@@ -182,6 +182,13 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 
 MIT licensed. Fan-made. Not affiliated with or endorsed by Bungie.
 
+### Licensing
+
+- Original code, tests and documentation are MIT licensed; see `LICENSE`.
+- Destiny lore, text, characters and art belong to Bungie. No license is granted
+  to Bungie IP.
+- This is a fan-made, non-commercial project; `NOTICE` records the split.
+
 - **Destiny 1 and Destiny 2** content and related intellectual property belong to Bungie.
 - **Ishtar Collective** (https://www.ishtar-collective.net): the primary text
   archive; their transcription work is the foundation this project rests on.
