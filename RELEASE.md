@@ -14,17 +14,18 @@
 - **Agent-safe bootstrap** - setup offers prebuilt download or local build, honors `BOOTSTRAP=1|2`, never blocks (timeout + EOF-safe)
 - **Voice integrity** - cross-character attribution check (exchanges, headings, reported speech, impressions handled); all other characters' lines removed from Drifter voice files
 - **Measured tiers** - minimal ~6.2K, standard ~18.6K, deep ~124K (previously asserted, now measured)
-- **Clone-mode parity** - tests accept `lore/` as a symlink or a clone and never scan inside it
+- **Clone-mode parity**
+- **Centralized tests** - agent suites live in the archive; one shared `tests/agent-audit.sh` runner and `tests/check-agent-structure.py`; both agents share the same setup flow and `.gitignore` - tests accept `lore/` as a symlink or a clone and never scan inside it
 
 ## Verification
 
 | Suite | Result |
 |-------|--------|
-| drifter-master-audit | 17/17 |
-| grimoire master-audit | 11/11 |
-| eris-morn master-audit | 8/8 |
+| `lore/drifter-master-audit.sh` | 18/18 |
+| `grimoire-master-audit.sh` | 11/11 |
+| `eris-master-audit.sh` | 13/13 |
 | quote verification | 0 unverified |
 | attribution | 0 non-Drifter quotes |
-| fresh-clone onboarding | seeded memory + built database + 17/17 |
+| fresh-clone onboarding | seeded memory + built database + 18/18 |
 
 Fan-made. Not affiliated with or endorsed by Bungie.

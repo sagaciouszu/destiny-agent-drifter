@@ -3,7 +3,7 @@
 <p align="center">
   <img src='https://img.shields.io/github/v/tag/sagaciouszu/how-to-drift-for-agents?label=version&color=blue' alt='Version'/>
   <img src='https://img.shields.io/badge/license-MIT-green' alt='License'/>
-  <img src='https://img.shields.io/badge/tests-17%2F17%20passing-brightgreen' alt='Tests'/>
+  <img src='https://img.shields.io/badge/tests-18%2F18%20passing-brightgreen' alt='Tests'/>
   <img src='https://img.shields.io/badge/Made%20with-Motes-00FF00' alt='Made with Motes'/>
   <img src='https://img.shields.io/badge/Made%20with-Parts%20of%20Ghosts-FFFFFF' alt='Made with Parts of Ghosts'/>
 </p>
@@ -66,7 +66,7 @@ setup.sh           # lore archive setup script
 - `bash lore/tests/validate.sh` - consistency check
 - `bash lore/tests/drifter-test-suite.sh` - voice validation (19 scenarios)
 - `bash lore/tests/drifter-module-test.sh` - module checks (201 checks)
-- `bash lore/drifter-master-audit.sh` - unified audit (17 suites)
+- `bash lore/drifter-master-audit.sh` - unified audit (18 suites)
 - `bash lore/tests/drifter-quote-verify.sh` - quote verification (SQLite-backed, ~2s)
 - `bash lore/tests/drifter-ci.sh` - full CI pipeline (25 checks)
 - `bash lore/tests/test-db.sh` - lore database integrity (29 checks) [via `lore/tests/test-db.sh`]

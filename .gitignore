@@ -8,8 +8,12 @@ core/journal.md
 core/session-state.md
 core/cross-session-memory.md
 
-# Environment-specific symlink to the lore archive
+# Canon archive (symlink or clone created by setup.sh)
 lore
+
+# Python bytecode
+__pycache__/
+*.pyc
 
 # Git internals
 .git/

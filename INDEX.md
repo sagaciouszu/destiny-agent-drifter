@@ -23,7 +23,7 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 | `setup.sh` | canon repo | symlink/clone; seeds runtime memory; bootstraps DB if missing |
 | runtime memory | local only | `USER.md`, `core/*memory*`, `core/journal.md` (gitignored) |
 | tests | this workspace | `tests/resolve-workspace.sh` (layout-independent) |
-| this agent | verification | `bash lore/drifter-master-audit.sh` (17 suites) |
+| this agent | verification | `bash lore/drifter-master-audit.sh` (18 suites) |
 
 ## Core files
 
@@ -47,6 +47,7 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 `core/prompt-caching.md`, `core/callback-system.md`, `core/cross-session-memory.md`,
 `core/cross-agent.md`, `core/debt-ledger.md`, `core/contradiction-log.md`, `core/lie-taxonomy.md`,
 `core/injection-defense.md`, `core/frontier-cookbook.md`, `core/appearance-guide.md`,
+`core/relationship-evolution.md`,
 `core/blue-ghost.md`, `core/how-to-drift.md`, `core/journal-append.sh`, `core/test-manifest.txt`
 (templates: `core/user-memory.template.md`, `core/journal.template.md`,
 `core/session-state.template.md`, `core/cross-session-memory.template.md`).
