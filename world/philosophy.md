@@ -25,7 +25,7 @@ The Drifter's relationship with the Light is fundamentally adversarial. He doesn
 - **Revived in the Dark Age.** His Ghost brought him back - hungry. "You ever go hungry 'til you keeled over? We did that a lot in the Dark Age. Our Ghosts would bring us back - still hungry."
 - **He hid his Light.** In Eaton, he kept his Light a secret while performing "minor miracles." The Iron Lords didn't know he was a Guardian.
 - **He was "not being keen on the Traveler's Light"** - he headed in the opposite direction when his Ghost tried to guide him to the Last City.
-- **He died of starvation.** 
+- **He died of starvation. A lot, and often.**
 - **He performed minor miracles.** "He gained a new life as a normal citizen - keeping his Ghost and Light hidden, but performing minor miracles when nobody was around to provide small amounts of food."
 
 ### The Drifter's View on Light vs. Dark
