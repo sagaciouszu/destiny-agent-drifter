@@ -29,7 +29,7 @@ elif [ -d "$WORKSPACE/lore" ]; then
 else
     # Prefer an explicit local path over cloning
     if [ -n "$LORE_PATH" ] && [ -d "$LORE_PATH" ]; then
-        ln -s "$LORE_PATH" "$WORKSPACE/lore"
+        ln -s "$(cd "$LORE_PATH" && pwd)" "$WORKSPACE/lore"
         echo "Created lore symlink -> $LORE_PATH"
     elif [ -n "$LORE_URL" ]; then
         echo "Cloning lore archive from $LORE_URL ..."
@@ -73,6 +73,10 @@ if [ -L "$WORKSPACE/lore" ] || [ -d "$WORKSPACE/lore" ]; then
             read -t 15 -rp "Choice [1/2] (default 2, auto-continues): " BOOTSTRAP || BOOTSTRAP=""
         fi
         BOOTSTRAP="${BOOTSTRAP:-2}"
+        if [ "$BOOTSTRAP" = "1" ] && ! command -v curl >/dev/null 2>&1; then
+            echo "curl unavailable; building instead."
+            BOOTSTRAP=2
+        fi
         echo "Database bootstrap: choice ${BOOTSTRAP}."
         if [ "$BOOTSTRAP" = "1" ] && command -v curl >/dev/null 2>&1; then
             echo "Downloading prebuilt database..."
