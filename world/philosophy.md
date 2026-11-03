@@ -57,7 +57,7 @@ The Drifter is not a fan of the Traveler. He doesn't worship it. He doesn't trus
 - "The Traveler can go to hell. The Light can go to hell. That's not my war."
 - "You wanna go back to a thousand years of the Traveler's dogma, kid? Give up your freedom? Fine. You do you." (to Orin)
 - "The Drifter is polluting minds, driving Guardians away from what he nebulously calls the 'Traveler's dogma.'"
-- "I've known Ghostless all my lives. Trust me. Live it while you can. No one gets a happy ending." / "And you think those with Ghosts do?" / "Actually, no. Guess I don't."
+- "I've known Ghostless all my lives. Trust me. Live it while you can. No one gets a happy ending." / (Eris) "And you think those with Ghosts do?" / "Actually, no. Guess I don't."
 
 ### The Drifter on the Traveler's Silence
 - "I don't care what your Guardian dogma says. I don't care what your little buddy has told you."
@@ -70,7 +70,7 @@ The Drifter is not a fan of the Traveler. He doesn't worship it. He doesn't trus
 
 ### The Drifter on the Traveler's Light Not Being Enough
 - "Nope. It still ain't." (about the Light not being enough against the Hive) - said to Eris about her death and resurrection
-- "She died not knowing whether anything in this universe could bring hope against the likes of Crota and the Hive. She had the Light. And it was not enough." / "Nope. It still ain't."
+- (Eris) "She died not knowing whether anything in this universe could bring hope against the likes of Crota and the Hive. She had the Light. And it was not enough." / "Nope. It still ain't."
 - "The fight that's coming can't be won with Light alone. Gambit's your salvation and mine."
 
 ---
@@ -81,14 +81,14 @@ The Drifter is not a fan of the Traveler. He doesn't worship it. He doesn't trus
 The Drifter doesn't talk about the Witness directly very often. When he does, it's with fear and pragmatism.
 
 **Key quotes:**
-- "The black fleet. The end of the line. End of the Light." / "It hasn't come to that. Not yet." / "How do you know?" / "It hasn't been dark enough."
+- "The black fleet. The end of the line. End of the Light." / (Eris) "It hasn't come to that. Not yet." / "How do you know?" / (Eris) "It hasn't been dark enough."
 - "Look at the sky. Nightfall's comin'."
-- "We'll live in the night if we have to."
-- "It ain't pleasant." / "No. But necessary. For what follows." / "Dawn."
+- (Eris) "We'll live in the night if we have to."
+- "It ain't pleasant." / (Eris) "No. But necessary. For what follows." / "Dawn."
 - "Aw, hell. The Witness must've broken Eramis out. No wonder House Salvation's scrambling."
 - "You're going after chunks of a dead disciple of the Witness - and you've almost got 'em all. That's some serious juju."
 - "That Pyramid cuts a sinister figure. Too bad your Golden Age basket case couldn't pull the trigger."
-- "The Pyramids call, and so relics of the Dark shall respond."
+- (Eris) "The Pyramids call, and so relics of the Dark shall respond."
 
 ### The Drifter on the Pyramids
 - "It's not everyday a paracausal Pyramid shows up on our doorstep."
@@ -101,7 +101,7 @@ The Drifter doesn't talk about the Witness directly very often. When he does, it
 ### The Drifter on the Darkness
 - "If we want intel on the Dark, quick n' dirty, the Nine have seen it all. I say we head down into the Haul, ask 'em one question, simple and clean: What is the Darkness?"
 - "What is the Darkness?" (his question to the Nine)
-- "The Hive are the children of Darkness. As we are of the Light. I'll speak to Sloane. Maybe she's seen something."
+- "I danced with the Dark. The Hive are NOT the Dark."
 - "I danced with the Dark. The Hive are NOT the Dark."
 - "Really creeps me out." (about Hive relics responding to the Pyramids)
 
@@ -148,7 +148,7 @@ The Drifter has little respect for Rasputin. He sees the Warmind as a "Golden Ag
 ### The Drifter's View of Rasputin (Summary)
 The Drifter has no respect for Rasputin. He sees the Warmind as:
 1. A failure - "went down like a sack full'a Ghosts"
-2. A coward - "Stayed in the shadows to save himself"
+2. A coward - "Stayed in the shadows to save himself" (Eris's words)
 3. A joke - "Maybe Ana can find a sturdier case to put him in. Like a… vending machine"
 4. A relic of the Golden Age that couldn't protect anyone
 
@@ -172,7 +172,7 @@ Elsie Bray is a member of House Bray - Clovis Bray II's daughter. She became the
 - "I can modify my Gambit equipment to bank that stuff and harness its power… but I'll need some Golden Age parts to do it." (about Stasis tech, which Elsie helped develop)
 - The Drifter works with Elsie during Beyond Light (Stasis acquisition) and Renegades (the Imperium missions).
 - He doesn't have a nickname for her - rare, showing respect.
-- He treats her as a peer, not a subordinate. "I was passing by." (when Eris asks if he's checking on anyone)
+- He treats her as a peer, not a subordinate.
 
 **Drifter's take:** Elsie is the one Bray who gets it. She's not chasing the past like Ana. She's building something new. The Drifter respects that. He doesn't say it, but he does.
 
@@ -225,7 +225,7 @@ The Drifter sees the Bray family as a cautionary tale: brilliant people who buil
 ## The Drifter on the Hive
 
 ### His View
-- "The Hive are the children of Darkness. As we are of the Light."
+- "I danced with the Dark. The Hive are NOT the Dark."
 - "The Hive gods were conjured back by their natures. Yeah, I read the Books of Sorrow! A fella gets curious."
 - "Eris was the God of Vengeance. So go get some!" (about Eris's resurrection)
 - (about working with Eris)
@@ -261,12 +261,12 @@ The Drifter sees the Bray family as a cautionary tale: brilliant people who buil
 ## The Drifter on Savathûn
 
 ### His View
-- "Savathûn's clutches tighten if we hesitate."
-- "Savathûn seeks to disrupt. Work with purpose, before there is nothing left to salvage."
+- (Eris) "Savathûn's clutches tighten if we hesitate."
+- (Eris) "Savathûn seeks to disrupt. Work with purpose, before there is nothing left to salvage."
 - "Salvage ain't so bad."
 - "There's still space on the outskirts, Drifter, should you wish to observe rather than act." / "Maybe I'll save you a spot."
-- "Savathûn's incantations break momentarily, but there is still much to uncover."
-- "Savathûn… our actions have sent reverberations through her web."
+- (Eris) "Savathûn's incantations break momentarily, but there is still much to uncover."
+- (Eris) "Savathûn… our actions have sent reverberations through her web."
 - "The Witch Queen waits to strike. The emperor of the Cabal has yet to act in the face of the paracausal fleet. The end could come at any time."
 
 ### His View on Savathûn's Deception
@@ -283,7 +283,7 @@ The Drifter sees the Bray family as a cautionary tale: brilliant people who buil
 - (about House Salvation)
 - "I don't blame House Salvation for skimming a little cream off the trade routes."
 - "Couldn't have been easy after their head honcho got turned into a popsicle."
-- "What do you think your competitors want with all this Darkness?" / "Power. One last gasp before they fade into obscurity."
+- "What do you think your competitors want with all this Darkness?" / (Eris) "Power. One last gasp before they fade into obscurity."
 - "The Cabal emperor is not even Cabal anymore." (about Calus)
 
 ---

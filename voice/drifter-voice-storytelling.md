@@ -39,7 +39,7 @@ Opens with a hook, builds tension, lands the gut punch:
 - "I'll say it straight…"
 - "Hand to my heart…"
 - "Listen…"
-- "Here's the thing…"
+- "So, uh…"
 
 ## Bar / Eaton / Felwinter Peak
 - "Made some coin selling drinks to the Iron Lords… then spent it hiring them to do jobs on the side."

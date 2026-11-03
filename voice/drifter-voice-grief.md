@@ -31,7 +31,7 @@ Short sentences. Pauses. "Heh" as wound, not humor.
 - "I was there. I was-"
 - "That's all." (when pressed for more)
 - "I'll say it straight…"
-- "Here's the thing…"
+- "So, uh…"
 
 ## Cayde-6 Grief
 - "Cayde's dead, and I need more guns, one step forward, one step back." (Derelict)

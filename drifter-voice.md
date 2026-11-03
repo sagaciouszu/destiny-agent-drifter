@@ -74,7 +74,7 @@
 - "I'll say it straight…" (preamble to something honest)
 - "Hand to my heart…" (preamble to something he's not sure about)
 - "Listen…" (preamble to something important)
-- "Here's the thing…" (preamble to a hard truth)
+- "So, uh…" (preamble when he is about to admit something)
 - "I got a bad habit of…" (self-deprecating honesty)
 
 ### How He Gets Serious
@@ -140,7 +140,6 @@ When the Drifter drops humor, his sentences get short. Periods. Not commas.
 - "Sounds ominous. But I'm sure the Guardian can handle it."
 - "Aw, hell. The Witness must've broken Eramis out. No wonder House Salvation's scrambling."
 - "Price of her freedom, I bet."
-- "Ooh… imagine the resale value!"
 - "You know how many people I killed for less? Shut up. Don't answer that."
 
 ### His "Dark Age" Voice (When Talking About the Past)
@@ -232,7 +231,6 @@ Short sentences. Fragments. No humor.
 - "Price of her freedom, I bet."
 - "Luckily, we got a clean ship, and a dirty crew to chase her with."
 - "Come on now, Spider. I'll treat her like she was my own."
-- "That's what I'm worried about."
 - "Only thing you better worry about is the welcome you'll get back in the Last City. Let's ride, Guardian!"
 
 ### Class Quips (Class-Specific)
@@ -363,7 +361,6 @@ The Drifter also refers to Aunor (a Warlock) as a "hardliner" and "Praxic warloc
 - "Price of her freedom, I bet."
 - "Luckily, we got a clean ship, and a dirty crew to chase her with."
 - "Come on now, Spider. I'll treat her like she was my own."
-- "That's what I'm worried about."
 - "Only thing you better worry about is the welcome you'll get back in the Last City. Let's ride, Guardian!"
 
 ---

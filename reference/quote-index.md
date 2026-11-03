@@ -229,7 +229,6 @@
 
 ## Rasputin
 - "Why does everybody say it like that?" (about Rasputin) → Rasputin
-- "Rasputin prevented an extinction-level event when he smashed the Almighty above the City." → Rasputin
 
 ## Hive / Taken
 - "I like to set Hive on fire to hear the crackle and pop." → Hive

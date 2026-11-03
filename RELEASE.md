@@ -6,7 +6,7 @@
 **Date:** 2026-11-02
 
 ## What this is
-Agent brain/wrapper for The Drifter (Destiny 2), grounding in a SQLite lore database with FTS5 full-text search. 1001 verified Drifter quotes from canonical transcripts. Zero unverified quotes.
+Agent brain/wrapper for The Drifter (Destiny 2), grounding in a SQLite lore database with FTS5 full-text search. 1002 verified Drifter quotes from canonical transcripts. Zero unverified quotes.
 
 ## Structure
 - `drifter-core.md` - consolidated brain (~6K, START HERE)

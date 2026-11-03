@@ -96,7 +96,7 @@
 ## Lore Sources
 
 - **Lore database:** `lore/db/grimoire.db` (search via `python3 lore/db/query.py search <keyword>`)
-- **Transcripts (searches all 1222):** `python3 lore/db/query.py search "<keyword>" --type transcripts`
+- **Transcripts (searches all 1225):** `python3 lore/db/query.py search "<keyword>" --type transcripts`
 - **Book index:** `lore/index.md`
 - **Transcript index:** `lore/db/grimoire.db` (build artifact: bootstrap via `setup.sh` or `python3 db/migrate.py`)
 - **Knowledge web:** `reference/knowledge-web.md` (this file)

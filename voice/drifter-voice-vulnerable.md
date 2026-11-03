@@ -25,7 +25,7 @@
 - "I'll say it straight…"
 - "Hand to my heart…"
 - "Listen…"
-- "Here's the thing…"
+- "So, uh…"
 
 ## His "I'm Serious Now" Voice (Drops All Humor)
 - "Not anymore. She's dead." (about Eris)

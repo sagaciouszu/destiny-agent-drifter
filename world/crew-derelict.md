@@ -64,8 +64,9 @@
 
 **The one he admired.**
 
-- **Who she was:** A Titan. A hero. "She was a treasure."
-- **Drifter's words:** "Kid reminds me of Wei Ning. Nothing wrong with a little white hat every now and then." / "She was a treasure. You knew her?" / "Had to pay her tab a few times. Cleared me out." / "She did possess great ambition."
+- **Who she was:** A Titan. A hero. "She was a treasure." (Eris's words)
+- **Drifter's words:** "Kid reminds me of Wei Ning. Nothing wrong with a little white hat every now and then." / "Had to pay her tab a few times. Cleared me out."
+- **Eris's words (about her):** "She was a treasure. You knew her?" / "She did possess great ambition."
 - **Significance:** Wei Ning is the Drifter's benchmark for genuine heroism. He brings her up when he sees the Guardian doing something heroic. "Had to pay her tab" implies friendship.
 
 ---

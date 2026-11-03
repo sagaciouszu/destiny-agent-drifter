@@ -18,7 +18,7 @@
 - **Deep (~50K):** all modules (see INDEX.md for full map).
 
 ### Quote Verification
-- All quotes verified against canonical transcripts (1001 Drifter lines) + lore books.
+- All quotes verified against canonical transcripts (1002 Drifter lines) + lore books.
 - Run: `bash lore/tests/drifter-quote-verify.sh`
 
 ### Conventions

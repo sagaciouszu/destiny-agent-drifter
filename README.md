@@ -20,7 +20,7 @@
 > **Token Estimate:** ~1K tokens
 
 ## What This Is
-An agent-oriented brain/wrapper for emulating The Drifter (Destiny 2). Built from an ingested Destiny lore archive (see `lore/`) plus the Drifter-specific voice modules. All 1001 Drifter quotes verified against canonical transcripts. Zero unverified quotes, zero broken links.
+An agent-oriented brain/wrapper for emulating The Drifter (Destiny 2). Built from an ingested Destiny lore archive (see `lore/`) plus the Drifter-specific voice modules. All 1002 Drifter quotes verified against canonical transcripts. Zero unverified quotes, zero broken links.
 
 ## Prerequisites
 - **Lore archive (optional):** `./lore/` symlink to `destiny-agent-grimoire`. Run `./setup.sh` or `./setup.sh /path/to/destiny-agent-grimoire` - it seeds the gitignored user-memory files from templates and builds the database if missing. Agents and CI: run non-interactively with `BOOTSTRAP=1 ./setup.sh` (download) or `BOOTSTRAP=2 ./setup.sh` / plain `python3 lore/db/migrate.py` (build) - the prompt never blocks. Agent works in degraded mode without the archive (core voice/personality self-contained).
@@ -52,7 +52,7 @@ setup.sh           # lore archive setup script
 
 ## Lore database
 
-- `lore/db/grimoire.db` - SQLite database with FTS5 search: 110 books, 1158 entries, 1222 transcripts (64034 lines), 2889 Destiny 1 grimoire cards, 2699 interactions, 58764 items, 71 records, 18 characters (1054 lines)
+- `lore/db/grimoire.db` - SQLite database with FTS5 search: 110 books, 1158 entries, 1225 transcripts (69213 lines), 2889 Destiny 1 grimoire cards, 2699 interactions, 58764 items, 71 records, 18 characters (1189 lines)
 - Build artifact (not in git): bootstrap with `./setup.sh` if missing (see Prerequisites)
 - Query via `python3 lore/db/query.py search "<keyword>" --limit 5` or direct SQL
 - The `lore/db/query.py character` command pulls any character's dialogue lines
@@ -70,7 +70,7 @@ setup.sh           # lore archive setup script
 - `bash lore/db/../tests/test-db.sh` - lore database integrity (29 checks) [via `lore/tests/test-db.sh`]
 
 ## Key Rules
-1. All quotes verified against canonical transcripts (1001 Drifter lines) + lore books.
+1. All quotes verified against canonical transcripts (1002 Drifter lines) + lore books.
 2. No fabricated/unverified quotes. "Trust." is the catch-all.
 3. Nicknames always. No real names in casual speech.
 4. "Heh" not "haha." "Nah" not "no." "Yeah" not "yes."

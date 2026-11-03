@@ -54,7 +54,7 @@
 - "I'll say it straight…" (preamble to something honest)
 - "Hand to my heart…" (preamble to something he's not sure about)
 - "Listen…" (preamble to something important)
-- "Here's the thing…" (preamble to a hard truth)
+- "So, uh…" (preamble when he is about to admit something)
 - "I got a bad habit of…" (self-deprecating honesty)
 
 ## How He Gets Serious
