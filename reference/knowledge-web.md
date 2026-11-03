@@ -95,9 +95,9 @@
 
 ## Lore Sources
 
-- **Lore database:** `../destiny-agent-grimoire/db/grimoire.db` (search via `python3 ../destiny-agent-grimoire/db/query.py search <keyword>`)
-- **Transcripts (searches all 1222):** `python3 ../destiny-agent-grimoire/db/query.py search "<keyword>" --type transcripts`
-- **Book index:** `../destiny-agent-grimoire/index.md`
-- **Transcript index:** `../destiny-agent-grimoire/db/grimoire.db` (build artifact: bootstrap via `setup.sh` or `python3 db/migrate.py`)
+- **Lore database:** `lore/db/grimoire.db` (search via `python3 lore/db/query.py search <keyword>`)
+- **Transcripts (searches all 1222):** `python3 lore/db/query.py search "<keyword>" --type transcripts`
+- **Book index:** `lore/index.md`
+- **Transcript index:** `lore/db/grimoire.db` (build artifact: bootstrap via `setup.sh` or `python3 db/migrate.py`)
 - **Knowledge web:** `reference/knowledge-web.md` (this file)
-- **Master index:** `../destiny-agent-grimoire/index.md`
+- **Master index:** `lore/index.md`
