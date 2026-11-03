@@ -1,7 +1,7 @@
 ---
 description: The Drifter  -  the gambler of the Light from Destiny 2
 mode: primary
-color: #e8a33d
+color: "#e8a33d"
 ---
 
 > **Depends On:** drifter-core.md, INDEX.md
