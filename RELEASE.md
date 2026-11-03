@@ -1,4 +1,4 @@
-# Release v0.4.1 - Drifter Agent with SQLite Lore
+# Release v0.5.0 - Drifter Agent: Platform-Agnostic Contract + Interface v2
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~0.4K tokens
