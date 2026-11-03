@@ -6,6 +6,7 @@
 
 <p align="center">
   <img src='https://img.shields.io/github/v/tag/sagaciouszu/how-to-drift-for-agents?label=version&color=blue' alt='Version'/>
+  <a href='https://github.com/sagaciouszu/how-to-drift-for-agents/actions/workflows/ci.yml'><img src='https://github.com/sagaciouszu/how-to-drift-for-agents/actions/workflows/ci.yml/badge.svg' alt='CI'/></a>
   <img src='https://img.shields.io/github/last-commit/sagaciouszu/how-to-drift-for-agents?label=last%20push&color=blue' alt='Last push'/>
   <img src='https://img.shields.io/badge/license-MIT-green' alt='License'/>
   <img src='https://img.shields.io/badge/tests-18%2F18%20passing-brightgreen' alt='Tests'/>
