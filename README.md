@@ -39,7 +39,7 @@ Interactive (asks download or build):
 ./setup.sh
 ```
 
-Prebuilt database, no prompt (fastest):
+Prebuilt database, no prompt (fastest, checksum verified):
 
 ```bash
 BOOTSTRAP=1 ./setup.sh

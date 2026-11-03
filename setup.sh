@@ -7,6 +7,7 @@ set -e
 WORKSPACE="$(cd "$(dirname "$0")" && pwd)"
 LORE_URL="${LORE_URL:-https://github.com/sagaciouszu/destiny-agent-grimoire.git}"
 RELEASE_DB_URL="${RELEASE_DB_URL:-https://github.com/sagaciouszu/destiny-agent-grimoire/releases/latest/download/grimoire.db}"
+RELEASE_SUMS_URL="${RELEASE_SUMS_URL:-https://github.com/sagaciouszu/destiny-agent-grimoire/releases/latest/download/SHA256SUMS}"
 LORE_PATH=""
 MCP_CHOICE=""
 for arg in "$@"; do
@@ -100,11 +101,32 @@ if [ -L "$WORKSPACE/lore" ] || [ -d "$WORKSPACE/lore" ]; then
         echo "Database bootstrap: choice ${BOOTSTRAP}."
         if [ "$BOOTSTRAP" = "1" ] && command -v curl >/dev/null 2>&1; then
             echo "Downloading prebuilt database..."
-            if curl -fsSL "$RELEASE_DB_URL" -o "$WORKSPACE/lore/db/grimoire.db"; then
-                echo "Database downloaded."
+            TMP_DB="$WORKSPACE/lore/db/grimoire.db.part"
+            if curl -fsSL "$RELEASE_DB_URL" -o "$TMP_DB"; then
+                VERIFIED=0
+                if command -v sha256sum >/dev/null 2>&1 && \
+                   curl -fsSL "$RELEASE_SUMS_URL" -o "$TMP_DB.sums" 2>/dev/null; then
+                    EXPECTED=$(awk '$2=="grimoire.db"{print $1}' "$TMP_DB.sums" | head -1)
+                    ACTUAL=$(sha256sum "$TMP_DB" | awk '{print $1}')
+                    rm -f "$TMP_DB.sums"
+                    [ -n "$EXPECTED" ] && [ "$EXPECTED" = "$ACTUAL" ] && VERIFIED=1
+                else
+                    echo "WARNING: release checksum unavailable; the download cannot be verified."
+                    VERIFIED=2
+                fi
+                if [ "$VERIFIED" = "0" ]; then
+                    echo "Checksum mismatch; discarding the download and building from checkout."
+                    rm -f "$TMP_DB"
+                    python3 "$WORKSPACE/lore/db/migrate.py"
+                    echo "Database built."
+                else
+                    mv "$TMP_DB" "$WORKSPACE/lore/db/grimoire.db"
+                    [ "$VERIFIED" = "1" ] && echo "Database downloaded and verified." \
+                        || echo "Database downloaded (unverified)."
+                fi
             else
                 echo "Download failed; building from checkout instead."
-                rm -f "$WORKSPACE/lore/db/grimoire.db"
+                rm -f "$TMP_DB"
                 python3 "$WORKSPACE/lore/db/migrate.py"
                 echo "Database built."
             fi
