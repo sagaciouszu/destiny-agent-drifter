@@ -5,36 +5,20 @@
 
 **Date:** 2026-11-02
 
-## What this is
-Agent brain/wrapper for The Drifter (Destiny 2), grounding in a SQLite lore database with FTS5 full-text search. 1002 verified Drifter quotes from canonical transcripts. Zero unverified quotes.
+## Highlights
 
-## Structure
-- `drifter-core.md` - consolidated brain (~6K, START HERE)
-- `core/` - 43 modules (relationships, arcs, guardrails, moods, threats, debt, etc.)
-- `world/` - 4 worldbuilding files
-- `voice/` - 9 voice sub-files (core, gambler, grief, combat, etc.)
-- `reference/` - 5 analysis files (knowledge-web, quote-index etc.)
-- `lore/` - symlink to destiny-agent-grimoire (SQLite DB)
+- **AGENTS.md rewritten** - platform-neutral operating contract: hard rules, canon/quoting policy, data access, load protocol, platform bindings, connection matrix
+- **INDEX.md rewritten** - entry points for OpenCode and generic runtimes, connection matrix, module inventory, measured load tiers, topic map
+- **Grimoire interface v2 wired in** - `verify` quote check, `list` discovery, `--json`, snippet-first search across AGENTS/INDEX/TOOLS/agent def/core/knowledge-web
+- **Runtime memory is now gitignored** - `USER.md` and core memory files are templates seeded by `setup.sh`; personal conversation data can never be pushed
+- **Agent-safe bootstrap** - setup offers prebuilt download or local build, honors `BOOTSTRAP=1|2`, never blocks (timeout + EOF-safe)
+- **Voice integrity** - cross-character attribution check (exchanges, headings, reported speech, impressions handled); all other characters' lines removed from Drifter voice files
+- **Measured tiers** - minimal ~6.2K, standard ~18.6K, deep ~124K (previously asserted, now measured)
 
-## Lore integration
-All lore queries route through `lore/db/grimoire.db`:
-- `python3 lore/db/query.py search "<term>" --limit 5` - FTS5 search
-- `python3 lore/db/query.py character "drifter" --limit 20` - Drifter's canon lines
-- `sqlite3 lore/db/grimoire.db "SELECT ..."` - direct SQL
+## Verification
 
-## Test results
-- drifter-master-audit.sh: 17/17 PASS
-- validate.sh: 0 unverified, 0 missing refs
-- drifter-quote-verify.sh (SQLite): 2897 checked, 0 unverified
-- multi-turn emotional arc: 10/10
-- voice-scorer: 100.4/100 PASS
-- CI pipeline: 25/25 PASS
+- `lore/drifter-master-audit.sh`: 17/17
+- quotes: 0 unverified; attribution: 0 non-Drifter quotes
+- fresh-clone onboarding: seeded memory + built database + 17/17
 
-## Installation
-```bash
-cd ~/Work/how-to-drift-for-agents
-./setup.sh /path/to/destiny-agent-grimoire
-```
-
-## Attribution
-Not affiliated with Bungie. All Destiny content © Bungie Inc.
+Fan-made. Not affiliated with or endorsed by Bungie.
