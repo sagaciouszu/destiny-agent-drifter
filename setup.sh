@@ -36,6 +36,12 @@ for t in USER.template.md core/user-memory.template.md core/journal.template.md 
     fi
 done
 
+# Runtime memory is personal: readable by the owner only
+for f in "$WORKSPACE/USER.md" "$WORKSPACE"/core/*memory*.md \
+         "$WORKSPACE/core/journal.md" "$WORKSPACE/core/session-state.md"; do
+    [ -f "$f" ] && chmod 600 "$f" 2>/dev/null || true
+done
+
 # Lore archive
 # A committed/stale symlink can arrive dangling on another machine
 if [ -L "$WORKSPACE/lore" ] && [ ! -e "$WORKSPACE/lore" ]; then
