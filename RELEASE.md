@@ -1,4 +1,4 @@
-# v0.7.0 - Verified onboarding and faster quote checks
+# v0.8.0 - MCP reading tools and pagination
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~0.2K tokens
@@ -7,11 +7,10 @@
 
 ## What's Changed
 
-- **Verified onboarding:** the prebuilt database is checked against release `SHA256SUMS`; a mismatch discards it and builds locally
-- **Privacy:** seeded `USER.md` and memory files are owner-only (`0600`)
-- **MCP:** documentation consolidated into `lore/mcp-server/README.md`; install with `./setup.sh --mcp`
-- **Canon:** starvation philosophy entry now quotes *A Man with No Name: Dogma*
-- **Verification:** quote checks accept `--speaker` and `--exact`; database checks are 37
+- **MCP reading tools:** `book`, `transcript`, `find_item`, `record`, plus `offset` on search, character and listings
+- **Resources:** books, characters, records and stats are exposed as read-only resources
+- **CLI parity:** the same reading commands and pagination are available through `lore/db/query.py`
+- **Tests:** MCP matrix now covers 138 calls across ten tools and four resources
 
 ## Verification
 
