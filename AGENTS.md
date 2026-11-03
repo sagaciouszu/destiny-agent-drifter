@@ -56,7 +56,7 @@ Load minimal by default. Escalate only when the conversation needs depth.
 
 | Platform | Entry |
 |----------|-------|
-| OpenCode | `drifter.md` (YAML frontmatter, `mode: all` (primary or subagent)); companion files are inert (`disabled: true`) and `lore/` lives outside the agents directory |
+| OpenCode | `drifter.md` (YAML frontmatter, `mode: primary`; a read-only `-consult` copy handles subagent calls); companion files are inert (`disabled: true`) and `lore/` lives outside the agents directory |
 | Generic agent runtime | this file + `INDEX.md` (plain markdown, no platform keys) |
 | OpenClaw | `lore/scripts/sync-live-agents.sh --openclaw` seeds this repo into `~/.openclaw/workspace-drifter` |
 

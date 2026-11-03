@@ -10,7 +10,7 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 
 | Platform | Entry | Notes |
 |----------|-------|-------|
-| OpenCode | `drifter.md` | YAML frontmatter, `mode: all` |
+| OpenCode | `drifter.md` | YAML frontmatter, `mode: primary` |
 | Generic runtime | `AGENTS.md` + this file | plain markdown, no platform keys |
 | OpenClaw | `lore/scripts/sync-live-agents.sh --openclaw` | seeds the OpenClaw workspace |
 | Minimal load | `drifter-core.md` | consolidated brain, ~6K |

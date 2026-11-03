@@ -82,7 +82,7 @@ Register the path it prints (`lore/mcp-server/run.sh`) in your client. Details:
 OpenClaw: sync with `lore/scripts/sync-live-agents.sh --openclaw`.
 
 Point your runtime at `INDEX.md` (any agent runtime) or `drifter.md` (OpenCode,
-YAML frontmatter, `mode: all` so series peers can consult it as a subagent). For
+YAML frontmatter, `mode: primary`; sync also installs a read-only `-consult` copy for peers). For
 OpenCode, deploy with `lore/scripts/sync-live-agents.sh`: it installs
 `drifter.md`, keeps companions inert under `drifter/`, keeps `lore/` outside
 `agents/` and registers this agent in `series/agents.json`. Then set
