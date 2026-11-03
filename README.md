@@ -13,7 +13,7 @@
   <img src='https://img.shields.io/badge/Made%20with-Parts%20of%20Ghosts-FFFFFF' alt='Made with Parts of Ghosts'/>
 </p>
 
-**Version:** 0.5.1 | **Last push:** 2026-11-02 | **Status:** Active
+**Version:** 0.5.1 | **Last push:** 2026-11-03 | **Status:** Active
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~1.6K tokens
@@ -100,6 +100,9 @@ Load in this order:
 - Lookup: `search`, `character`, `item`, `list`, `stats`; every command accepts
   `--json`, search returns snippets unless `--full`.
 - Standard: `lore/STANDARDS.md` is the database and quote contract.
+- MCP (optional): `lore/mcp-server/run.sh` serves the same tools over stdio
+  for clients without shell access; read-only, official SDK. Install once with
+  `WITH_MCP=1 ./setup.sh` or `bash lore/mcp-server/install.sh`.
 - Runtime memory: `USER.md` and `core/*memory*`, `core/journal.md` are gitignored
   and seeded from templates by `setup.sh`. They never leave the machine.
 

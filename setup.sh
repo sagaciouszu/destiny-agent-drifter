@@ -105,5 +105,10 @@ else
     echo "WARNING: Lore archive not available. Agent will work in degraded mode."
 fi
 
+# Optional MCP adapter (official SDK, isolated venv, needs network for pip)
+if [ "${WITH_MCP:-0}" = "1" ] && [ -x "$WORKSPACE/lore/mcp-server/install.sh" ]; then
+    bash "$WORKSPACE/lore/mcp-server/install.sh"
+fi
+
 echo ""
 echo "Setup complete. Load INDEX.md first, then drifter-core.md."
