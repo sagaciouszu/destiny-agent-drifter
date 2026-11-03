@@ -77,6 +77,8 @@ Or after the fact with `bash lore/mcp-server/install.sh`.
 Register the path it prints (`lore/mcp-server/run.sh`) in your client. Details:
 `lore/mcp-server/README.md`.
 
+OpenClaw: sync with `lore/scripts/sync-live-agents.sh --openclaw`.
+
 Point your runtime at `INDEX.md` (any agent runtime) or `drifter.md` (OpenCode,
 YAML frontmatter, `mode: primary`). For OpenCode, sync this directory to
 `~/.config/opencode/agents/` and set `default_agent` to `drifter` in

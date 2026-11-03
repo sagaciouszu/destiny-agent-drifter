@@ -56,6 +56,7 @@ Load minimal by default. Escalate only when the conversation needs depth.
 |----------|-------|
 | OpenCode | `drifter.md` (YAML frontmatter, `mode: primary`) |
 | Generic agent runtime | this file + `INDEX.md` (plain markdown, no platform keys) |
+| OpenClaw | `lore/scripts/sync-live-agents.sh --openclaw` seeds this repo into `~/.openclaw/workspace-drifter` |
 
 ## Connection matrix
 
