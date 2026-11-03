@@ -1,19 +1,16 @@
-# v0.5.1 - Documentation and verification overhaul
+# v0.6.0 - MCP onboarding and attribution-aware verification
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~0.2K tokens
 
-**2026-11-02**
+**2026-11-03**
 
 ## What's Changed
 
-- **README:** banner, version, last push and a Guardian-first quick start, then the agent contract; same skeleton as Eris
-- **Docs rewritten:** `SOUL.md`, `TOOLS.md`, `INDEX.md` and templates share one section order across both agents
-- **Release notes:** compact What's Changed format, gated to 40 lines
-- **Tests centralized:** suites live in the archive; one shared `lore/tests/agent-audit.sh` runner
-- **Parity gates:** setup scripts, `.gitignore`, document sections and load tiers are checked against Eris
-- **Onboarding:** offline smoke test covers symlink and clone modes (24 checks)
+- **MCP onboarding:** `./setup.sh --mcp` or the interactive prompt installs the adapter; one install serves both agents
+- **Verification:** quote checks accept `--speaker "Name"` for attribution and `--exact` for full lines
+- **Docs:** standardized README, section order across both agents, source credits and thanks
 
 ## Verification
 
-18/18 audit, 0 unverified quotes, fresh-clone onboarding PASS.
+18/18 audit, 6/6 MCP contract, 0 unverified quotes, fresh-clone onboarding PASS.
