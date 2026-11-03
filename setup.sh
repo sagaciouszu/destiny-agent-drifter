@@ -7,7 +7,21 @@ set -e
 WORKSPACE="$(cd "$(dirname "$0")" && pwd)"
 LORE_URL="${LORE_URL:-https://github.com/sagaciouszu/destiny-agent-grimoire.git}"
 RELEASE_DB_URL="${RELEASE_DB_URL:-https://github.com/sagaciouszu/destiny-agent-grimoire/releases/latest/download/grimoire.db}"
-LORE_PATH="${1:-}"
+LORE_PATH=""
+MCP_CHOICE=""
+for arg in "$@"; do
+    case "$arg" in
+        --mcp) MCP_CHOICE=1 ;;
+        --no-mcp) MCP_CHOICE=0 ;;
+        --help|-h)
+            echo "usage: $0 [lore-path] [--mcp|--no-mcp]"
+            echo "  lore-path   use an existing grimoire checkout instead of cloning"
+            echo "  --mcp       install the optional MCP adapter (ships with the archive)"
+            exit 0 ;;
+        *) LORE_PATH="$arg" ;;
+    esac
+done
+WITH_MCP="${WITH_MCP:-$MCP_CHOICE}"
 
 echo "=== Drifter Agent Setup ==="
 echo "Workspace: $WORKSPACE"
@@ -105,13 +119,20 @@ else
     echo "WARNING: Lore archive not available. Agent will work in degraded mode."
 fi
 
-# Optional MCP adapter (official SDK, isolated venv, needs network for pip)
-if [ "${WITH_MCP:-0}" = "1" ] && [ -x "$WORKSPACE/lore/mcp-server/install.sh" ]; then
-    bash "$WORKSPACE/lore/mcp-server/install.sh"
-fi
-
-if [ "${WITH_MCP:-0}" != "1" ] && [ -x "$WORKSPACE/lore/mcp-server/install.sh" ]; then
-    echo "Optional: typed MCP tools -> WITH_MCP=1 ./setup.sh"
+# Optional MCP adapter. It lives in the grimoire archive, so one install serves
+# every agent that mounts this checkout (Drifter, Eris, or anything else).
+if [ -x "$WORKSPACE/lore/mcp-server/install.sh" ]; then
+    if [ -z "${WITH_MCP:-}" ] && [ -t 0 ]; then
+        echo ""
+        echo "MCP adapter (ships with the grimoire archive; one install serves both agents)"
+        read -t 15 -rp "Install for MCP clients without a shell? [y/N] " ans || ans=""
+        case "$ans" in y|Y|yes|YES) WITH_MCP=1 ;; *) WITH_MCP=0 ;; esac
+    fi
+    if [ "${WITH_MCP:-0}" = "1" ]; then
+        bash "$WORKSPACE/lore/mcp-server/install.sh"
+    else
+        echo "Optional: typed MCP tools -> ./setup.sh --mcp (or WITH_MCP=1 ./setup.sh)"
+    fi
 fi
 
 echo ""

@@ -63,11 +63,14 @@ Reuse an existing checkout instead of cloning:
 bash lore/drifter-master-audit.sh
 ```
 
-**Optional: MCP clients.** Install the typed tool adapter once:
+**Optional: MCP clients.** The adapter ships with the Grimoire archive, so one
+install serves every agent that mounts it. Install during onboarding:
 
 ```bash
-WITH_MCP=1 ./setup.sh
+./setup.sh --mcp
 ```
+
+Or after the fact with `bash lore/mcp-server/install.sh`.
 
 Register the path it prints (`lore/mcp-server/run.sh`) in your client. Details:
 `lore/mcp-server/README.md`.
@@ -112,8 +115,10 @@ Load in this order:
 - Standard: `lore/STANDARDS.md` is the database and quote contract.
 - **MCP (optional):** `lore/mcp-server/run.sh` serves six typed tools over stdio:
   `search`, `character`, `item`, `verify`, `list_records`, `stats`. Read-only,
-  official SDK, limits clamped to 1-100. Install with `WITH_MCP=1 ./setup.sh`
-  or `bash lore/mcp-server/install.sh`; register the printed path.
+  official SDK, limits clamped to 1-100. It ships in the Grimoire archive, so one
+  install serves both agents. Install with `./setup.sh --mcp` (interactive
+  prompt also offers it) or `bash lore/mcp-server/install.sh`; register the
+  printed path.
 - Runtime memory: `USER.md` and `core/*memory*`, `core/journal.md` are gitignored
   and seeded from templates by `setup.sh`. They never leave the machine.
 
@@ -168,8 +173,8 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
   directory, or set `WORKSPACE=$PWD`.
 - **OpenCode does not list the agent:** confirm the directory under
   `~/.config/opencode/agents/` and `default_agent` in `opencode.json`.
-- **MCP client shows no Grimoire tools:** run `WITH_MCP=1 ./setup.sh`, then
-  use the absolute path to `lore/mcp-server/run.sh` in the client config.
+- **MCP client shows no Grimoire tools:** run `./setup.sh --mcp`, then use the
+  absolute path to `lore/mcp-server/run.sh` in the client config.
 - **Degraded mode:** without the archive the persona files still work; canon
   queries and quote verification do not.
 

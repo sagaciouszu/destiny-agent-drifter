@@ -80,7 +80,7 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
   as the Drifter's voice.
 - Interface: `python3 lore/db/query.py verify "<line>"` (quote check), `list` (discovery), `--json` anywhere.
 - MCP (optional): `lore/mcp-server/run.sh` (six typed tools; install with
-  `WITH_MCP=1 ./setup.sh`; docs in `lore/mcp-server/README.md`).
+  `./setup.sh --mcp`; docs in `lore/mcp-server/README.md`).
 - Commands: `bash lore/drifter-master-audit.sh` (all suites),
   `bash lore/tests/drifter-quote-verify.sh` (0 unverified),
   `python3 lore/tests/drifter-voice-scorer.py "<line>"` (voice score).

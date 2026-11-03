@@ -37,7 +37,7 @@ agent runtime may load it. Persona detail lives in `SOUL.md` + `drifter-core.md`
 - Discovery: `python3 lore/db/query.py list books|characters|speakers|records`
 - Every command accepts `--json` for compact output.
 - MCP (optional): `lore/mcp-server/run.sh` exposes the same lookups as typed
-  tools; install with `WITH_MCP=1 ./setup.sh`. Read-only, no SQL tool.
+  tools; install with `./setup.sh --mcp`. One install serves both agents.
 - Database missing (build artifact): run `./setup.sh`, or `python3 lore/db/migrate.py`.
 
 ## Load protocol
