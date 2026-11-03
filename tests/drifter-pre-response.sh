@@ -5,7 +5,7 @@
 
 RESPONSE="$1"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-LORE_ROOT="${2:-$(cd "$SCRIPT_DIR/.." && pwd)}"
+LORE_ROOT="${2:-$(cd "$SCRIPT_DIR/../lore" && pwd)}"
 WORKSPACE="${3:-$(bash "$SCRIPT_DIR/../lore/tests/resolve-workspace.sh" "$0")}"
 [ -n "$WORKSPACE" ] && [ -d "$WORKSPACE" ] || { echo "FATAL: workspace unresolved (WORKSPACE=$WORKSPACE) - set WORKSPACE or run from the agent repo"; exit 1; }
 
