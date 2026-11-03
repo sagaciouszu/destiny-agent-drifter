@@ -31,8 +31,8 @@
 
 ## Verification
 
-- Full agent audit: `bash lore/drifter-master-audit.sh` (18 suites).
-- Quote verification: `bash lore/tests/drifter-quote-verify.sh` (0 unverified
+- Full agent audit: `bash tests/master-audit.sh` (20 suites).
+- Quote verification: `bash tests/drifter-quote-verify.sh` (0 unverified
   against 1002 canonical Drifter lines).
 - Database integrity: `bash lore/tests/test-db.sh` (38 checks).
 - File conformance: `python3 lore/tests/conformance.py` (PASS).

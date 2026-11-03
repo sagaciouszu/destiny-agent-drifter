@@ -61,7 +61,7 @@ Reuse an existing checkout instead of cloning:
 **Step 3: verify.**
 
 ```bash
-bash lore/drifter-master-audit.sh
+bash tests/master-audit.sh
 ```
 
 ### 🐍 Optional: MCP clients
@@ -82,9 +82,10 @@ Register the path it prints (`lore/mcp-server/run.sh`) in your client. Details:
 OpenClaw: sync with `lore/scripts/sync-live-agents.sh --openclaw`.
 
 Point your runtime at `INDEX.md` (any agent runtime) or `drifter.md` (OpenCode,
-YAML frontmatter, `mode: primary`). For OpenCode, deploy with
-`lore/scripts/sync-live-agents.sh`: it keeps only `drifter.md` active, marks
-companion files inert and keeps `lore/` outside `agents/`. Then set
+YAML frontmatter, `mode: all` so series peers can consult it as a subagent). For
+OpenCode, deploy with `lore/scripts/sync-live-agents.sh`: it installs
+`drifter.md`, keeps companions inert under `drifter/`, keeps `lore/` outside
+`agents/` and registers this agent in `series/agents.json`. Then set
 `default_agent` to `drifter` in `~/.config/opencode/opencode.json`.
 
 ## Requirements
@@ -161,13 +162,13 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 
 | Suite | Command | Expected |
 |---|---|---|
-| Full agent audit | `bash lore/drifter-master-audit.sh` | 18/18 |
-| Voice scenarios | `bash lore/tests/drifter-test-suite.sh` | 19 scenarios |
-| Module completeness | `bash lore/tests/drifter-module-test.sh` | 202 checks |
-| Quote verification | `bash lore/tests/drifter-quote-verify.sh` | 0 unverified |
+| Full agent audit | `bash tests/master-audit.sh` | 20/20 |
+| Voice scenarios | `bash tests/drifter-test-suite.sh` | 19 scenarios |
+| Module completeness | `bash tests/drifter-module-test.sh` | 202 checks |
+| Quote verification | `bash tests/drifter-quote-verify.sh` | 0 unverified |
 | Database integrity | `bash lore/tests/test-db.sh` | 38 checks |
 | Query interface | `bash lore/tests/query-interface-test.sh` | 41 checks |
-| CI pipeline | `bash lore/tests/drifter-ci.sh` | 25 checks |
+| CI pipeline | `bash tests/drifter-ci.sh` | 25 checks |
 | MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 7/7 checks |
 | File conformance | `python3 lore/tests/conformance.py` | PASS |
 

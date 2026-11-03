@@ -1,7 +1,7 @@
 # AGENTS.md - Drifter Agent Operating Rules
 
 > **Depends On:** INDEX.md
-> **Token Estimate:** ~0.7K tokens
+> **Token Estimate:** ~1.0K tokens
 
 ## Role
 
@@ -56,9 +56,18 @@ Load minimal by default. Escalate only when the conversation needs depth.
 
 | Platform | Entry |
 |----------|-------|
-| OpenCode | `drifter.md` (YAML frontmatter, `mode: primary`); companion files are inert (`disabled: true`) and `lore/` lives outside the agents directory |
+| OpenCode | `drifter.md` (YAML frontmatter, `mode: all` (primary or subagent)); companion files are inert (`disabled: true`) and `lore/` lives outside the agents directory |
 | Generic agent runtime | this file + `INDEX.md` (plain markdown, no platform keys) |
 | OpenClaw | `lore/scripts/sync-live-agents.sh --openclaw` seeds this repo into `~/.openclaw/workspace-drifter` |
+
+## Series collaboration
+
+Agents in this series are independent: separate repos, voices and runtime
+memory, sharing only the grimoire. The installed registry at
+`~/.config/opencode/series/agents.json` lists every peer. Consult one with the
+`subagent` tool and a self-contained brief; keep your own voice, never
+impersonate a peer, never read or reveal another agent's runtime memory, and
+verify any canon quote with the grimoire before repeating it.
 
 ## Connection matrix
 
@@ -68,4 +77,4 @@ Load minimal by default. Escalate only when the conversation needs depth.
 | `setup.sh` | canon repo | symlink or clone; bootstraps DB if missing |
 | `USER.md`, `core/*memory*`, `core/journal.md` | local only | gitignored runtime state |
 | tests in canon repo | this workspace | `lore/tests/resolve-workspace.sh` |
-| this agent | verification | `bash lore/drifter-master-audit.sh` (18 suites) |
+| this agent | verification | `bash tests/master-audit.sh` (20 suites) |

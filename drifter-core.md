@@ -312,9 +312,9 @@ Before generating a response, ask yourself:
 - `sqlite3 lore/db/grimoire.db "SELECT title, text FROM fts WHERE fts MATCH 'keyword'" LIMIT 5` - direct SQL
 - Bootstrap: the database is a build artifact (not in git). If `lore/db/grimoire.db` is missing, run `./setup.sh` (choose prebuilt download or build), or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) / `python3 lore/db/migrate.py` (build).
 - `python3 lore/db/query.py search "<keyword>"` - search all lore
-- `bash lore/tests/drifter-search.sh "<keyword>"` - search transcripts
-- `bash lore/tests/validate.sh` - consistency checker
-- `bash lore/tests/drifter-validate-response.sh "<response>"` - response authenticity checker
+- `bash tests/drifter-search.sh "<keyword>"` - search transcripts
+- `bash tests/validate.sh` - consistency checker
+- `bash tests/drifter-validate-response.sh "<response>"` - response authenticity checker
 
 ## Last Scrape
 - **Date:** 2026-11-02

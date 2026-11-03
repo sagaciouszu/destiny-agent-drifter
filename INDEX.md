@@ -10,7 +10,7 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 
 | Platform | Entry | Notes |
 |----------|-------|-------|
-| OpenCode | `drifter.md` | YAML frontmatter, `mode: primary` |
+| OpenCode | `drifter.md` | YAML frontmatter, `mode: all` |
 | Generic runtime | `AGENTS.md` + this file | plain markdown, no platform keys |
 | OpenClaw | `lore/scripts/sync-live-agents.sh --openclaw` | seeds the OpenClaw workspace |
 | Minimal load | `drifter-core.md` | consolidated brain, ~6K |
@@ -24,7 +24,7 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 | `setup.sh` | canon repo | symlink/clone; seeds runtime memory; bootstraps DB if missing |
 | runtime memory | local only | `USER.md`, `core/*memory*`, `core/journal.md` (gitignored) |
 | tests in canon repo | this agent workspace | `lore/tests/resolve-workspace.sh` (layout-independent) |
-| this agent | verification | `bash lore/drifter-master-audit.sh` (18 suites) |
+| this agent | verification | `bash tests/master-audit.sh` (20 suites) |
 
 ## Core files
 
@@ -82,9 +82,9 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 - Interface: `python3 lore/db/query.py verify "<line>"` (quote check), `book`/`transcript`/`find-item`/`record`/`character-info` (reads), `verify-many` (batch), `list` (discovery), `--json` anywhere.
 - MCP (optional): `lore/mcp-server/run.sh`; install `./setup.sh --mcp`; details in
   `lore/mcp-server/README.md`.
-- Commands: `bash lore/drifter-master-audit.sh` (all suites),
-  `bash lore/tests/drifter-quote-verify.sh` (0 unverified),
-  `python3 lore/tests/drifter-voice-scorer.py "<line>"` (voice score).
+- Commands: `bash tests/master-audit.sh` (all suites),
+  `bash tests/drifter-quote-verify.sh` (0 unverified),
+  `python3 tests/drifter-voice-scorer.py "<line>"` (voice score).
 
 ## Topic map
 

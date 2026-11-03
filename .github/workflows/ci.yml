@@ -35,4 +35,4 @@ jobs:
       - name: Drifter audit
         env:
           WORKSPACE: ${{ github.workspace }}
-        run: bash lore/drifter-master-audit.sh
+        run: bash tests/master-audit.sh

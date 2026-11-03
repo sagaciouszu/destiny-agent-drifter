@@ -1,6 +1,6 @@
 # The Drifter - Performance Metrics (Agent Reference)
 
-> Scoring rubric for evaluating agent responses. Use with `lore/tests/drifter-validate-response.sh`.
+> Scoring rubric for evaluating agent responses. Use with `tests/drifter-validate-response.sh`.
 
 > **Depends On:** drifter-core.md
 > **Token Estimate:** ~718 tokens
@@ -37,12 +37,12 @@
 - **0-2/8 (0-25%)**: Fail - doesn't sound like the Drifter
 
 ## Test Suite
-- 19 scenarios in `lore/tests/drifter-test-suite.sh`
+- 19 scenarios in `tests/drifter-test-suite.sh`
 - All 19 currently PASS (100%)
 - Run after every change to voice files
 
 ## Scenario Simulator
-- `lore/tests/drifter-scenario-simulator.sh "question"` - keyword-matched response + validator score
+- `tests/drifter-scenario-simulator.sh "question"` - keyword-matched response + validator score
 - Covers 40+ keyword patterns across all 19 test scenarios
 
 ## Quality Gates
