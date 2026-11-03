@@ -63,6 +63,15 @@ Reuse an existing checkout instead of cloning:
 bash lore/drifter-master-audit.sh
 ```
 
+**Optional: MCP clients.** Install the typed tool adapter once:
+
+```bash
+WITH_MCP=1 ./setup.sh
+```
+
+Register the path it prints (`lore/mcp-server/run.sh`) in your client. Details:
+`lore/mcp-server/README.md`.
+
 Point your runtime at `INDEX.md` (any agent runtime) or `drifter.md` (OpenCode,
 YAML frontmatter, `mode: primary`). For OpenCode, sync this directory to
 `~/.config/opencode/agents/` and set `default_agent` to `drifter` in
@@ -77,6 +86,7 @@ YAML frontmatter, `mode: primary`). For OpenCode, sync this directory to
 | `python3` 3.8+ | queries, migration, tests | standard library only |
 | `sqlite3` | optional raw SQL | the query CLI uses Python's built-in driver |
 | `curl` | optional prebuilt database | falls back to a local build |
+| MCP SDK (optional) | typed tools for clients without a shell | Python 3.10+; one-time install |
 | ~450 MB disk | checkout plus built database | database is ~128 MB |
 
 No API keys, accounts or network access are required at runtime.
@@ -100,9 +110,10 @@ Load in this order:
 - Lookup: `search`, `character`, `item`, `list`, `stats`; every command accepts
   `--json`, search returns snippets unless `--full`.
 - Standard: `lore/STANDARDS.md` is the database and quote contract.
-- MCP (optional): `lore/mcp-server/run.sh` serves the same tools over stdio
-  for clients without shell access; read-only, official SDK. Install once with
-  `WITH_MCP=1 ./setup.sh` or `bash lore/mcp-server/install.sh`.
+- **MCP (optional):** `lore/mcp-server/run.sh` serves six typed tools over stdio:
+  `search`, `character`, `item`, `verify`, `list_records`, `stats`. Read-only,
+  official SDK, limits clamped to 1-100. Install with `WITH_MCP=1 ./setup.sh`
+  or `bash lore/mcp-server/install.sh`; register the printed path.
 - Runtime memory: `USER.md` and `core/*memory*`, `core/journal.md` are gitignored
   and seeded from templates by `setup.sh`. They never leave the machine.
 
@@ -145,6 +156,7 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 | Database integrity | `bash lore/tests/test-db.sh` | 35 checks |
 | Query interface | `bash lore/tests/query-interface-test.sh` | 23 checks |
 | CI pipeline | `bash lore/tests/drifter-ci.sh` | 25 checks |
+| MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 6/6 |
 | File conformance | `python3 lore/tests/conformance.py` | PASS |
 
 ## Troubleshooting
@@ -156,6 +168,8 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
   directory, or set `WORKSPACE=$PWD`.
 - **OpenCode does not list the agent:** confirm the directory under
   `~/.config/opencode/agents/` and `default_agent` in `opencode.json`.
+- **MCP client shows no Grimoire tools:** run `WITH_MCP=1 ./setup.sh`, then
+  use the absolute path to `lore/mcp-server/run.sh` in the client config.
 - **Degraded mode:** without the archive the persona files still work; canon
   queries and quote verification do not.
 

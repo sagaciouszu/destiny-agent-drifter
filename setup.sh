@@ -110,5 +110,9 @@ if [ "${WITH_MCP:-0}" = "1" ] && [ -x "$WORKSPACE/lore/mcp-server/install.sh" ];
     bash "$WORKSPACE/lore/mcp-server/install.sh"
 fi
 
+if [ "${WITH_MCP:-0}" != "1" ] && [ -x "$WORKSPACE/lore/mcp-server/install.sh" ]; then
+    echo "Optional: typed MCP tools -> WITH_MCP=1 ./setup.sh"
+fi
+
 echo ""
 echo "Setup complete. Load INDEX.md first, then drifter-core.md."

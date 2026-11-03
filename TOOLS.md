@@ -23,8 +23,10 @@
 - Quote safety: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon).
 - Contract: `lore/STANDARDS.md`.
 - MCP (optional): `lore/mcp-server/run.sh` exposes `search`, `character`, `item`,
-  `verify`, `list_records`, `stats` as typed tools for runtimes without a shell.
-  Install with `WITH_MCP=1 ./setup.sh` or `bash lore/mcp-server/install.sh`.
+  `verify`, `list_records`, `stats` as typed tools over stdio for clients
+  without a shell. Install with `WITH_MCP=1 ./setup.sh` or
+  `bash lore/mcp-server/install.sh`; register the printed path. Read-only, no
+  SQL tool, limits clamp to 1-100. Details: `lore/mcp-server/README.md`.
 - Bootstrap: the database is a build artifact. If it is missing run `./setup.sh`,
   or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) or
   `python3 lore/db/migrate.py` (build).
