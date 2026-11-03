@@ -153,7 +153,7 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 | Voice scenarios | `bash lore/tests/drifter-test-suite.sh` | 19 scenarios |
 | Module completeness | `bash lore/tests/drifter-module-test.sh` | 202 checks |
 | Quote verification | `bash lore/tests/drifter-quote-verify.sh` | 0 unverified |
-| Database integrity | `bash lore/tests/test-db.sh` | 35 checks |
+| Database integrity | `bash lore/tests/test-db.sh` | 36 checks |
 | Query interface | `bash lore/tests/query-interface-test.sh` | 23 checks |
 | CI pipeline | `bash lore/tests/drifter-ci.sh` | 25 checks |
 | MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 6/6 |
