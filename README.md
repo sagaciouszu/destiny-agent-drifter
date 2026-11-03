@@ -184,9 +184,9 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 
 MIT licensed. Fan-made. Not affiliated with or endorsed by Bungie.
 
-- **Destiny 2** content is Bungie's property.
-- **Ishtar Collective** (https://www.ishtar-collective.net): primary lore source.
-- **Destiny Lore Vault** (YouTube): audio used for voice calibration.
+- **Destiny 1 and Destiny 2** content and related intellectual property belong to Bungie.
+- **Ishtar Collective** (https://www.ishtar-collective.net): the primary text archive, a titanic labor of love.
+- **Destiny Lore Vault** (https://www.youtube.com/@DestinyLoreVault): the recording archive, a titanic labor of love.
 - **Destiny community**: transcription, analysis and preservation, with
   **special thanks to every Guardian making their own fate in 2026 and beyond**.
 
