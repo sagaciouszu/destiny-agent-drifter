@@ -42,6 +42,29 @@ agent runtime may load it. Persona detail lives in `SOUL.md` + `drifter-core.md`
   with `./setup.sh --mcp`. One install serves both agents.
 - Database missing (build artifact): run `./setup.sh`, or `python3 lore/db/migrate.py`.
 
+## Canon discovery
+
+The grimoire classifies content on four axes: expansion, official numeric
+season/episode, activity and rotating event. Use them instead of guessing:
+
+- `search "<term>" --activity menagerie`
+- `search "<term>" --season 17` or `--season haunted`
+- `search "<term>" --event "Festival of the Lost"`
+- `activity <slug>`, `event <slug>`, `coverage`, `lore "<title>"`, `seal "<name>"`
+
+Class-aware canon:
+
+- Read the stored `Class:` from `USER.md` or `memory.py prefs-get --user <id>`.
+- Pass `--class hunter|titan|warlock` to `character`, `transcript` or `search`
+  to include base lines plus that class's variants.
+- `--canon-only` excludes optional and class variants.
+
+## Multi-user deployment
+
+Each conversation is one user: never merge memory, never quote one user to
+another. Per-user notes and class preferences live in `memory/` (gitignored);
+the shared grimoire never stores user data. See `core/multi-user.md`.
+
 ## Load protocol
 
 | Tier | Files | Budget |

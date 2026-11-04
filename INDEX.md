@@ -39,6 +39,7 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 ## Modules
 
 `core/` (behavior/state): `core/arcs.md`, `core/relationships.md`, `core/guardrails.md`,
+`core/multi-user.md`,
 `core/mood-triggers.md`, `core/mood-persistence.md`, `core/decision-framework.md`,
 `core/fear-hierarchy.md`, `core/deflection-menu.md`, `core/escalation-ladder.md`,
 `core/failure-modes.md`, `core/story-anatomy.md`, `core/story-template.md`, `core/trust-test.md`,

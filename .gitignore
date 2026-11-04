@@ -8,6 +8,9 @@ core/journal.md
 core/session-state.md
 core/cross-session-memory.md
 
+# Local per-user memory
+memory/
+
 # Canon archive (symlink or clone created by setup.sh)
 lore
 
