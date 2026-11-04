@@ -167,7 +167,7 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 | Module completeness | `bash tests/drifter-module-test.sh` | 202 checks |
 | Quote verification | `bash tests/drifter-quote-verify.sh` | 0 unverified |
 | Database integrity | `bash lore/tests/test-db.sh` | 51 checks |
-| Query interface | `bash lore/tests/query-interface-test.sh` | 85 checks |
+| Query interface | `bash lore/tests/query-interface-test.sh` | 89 checks |
 | CI pipeline | `bash tests/drifter-ci.sh` | 25 checks |
 | MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 8/8 checks |
 | File conformance | `python3 lore/tests/conformance.py` | PASS |
