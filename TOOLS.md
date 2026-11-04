@@ -1,7 +1,7 @@
 # TOOLS.md - Tools and Conventions
 
 > **Depends On:** INDEX.md
-> **Token Estimate:** ~0.44K tokens
+> **Token Estimate:** ~0.6K tokens
 
 ## Runtime tools
 
@@ -17,9 +17,13 @@
 
 - Repository: `lore` (a symlink to or clone of `destiny-agent-grimoire`).
 - Database: `lore/db/grimoire.db` (SQLite with FTS5).
-- Query CLI: one of `python3 lore/db/query.py search|character|character-info|item|book|transcript|find-item|record|verify|verify-many|list|activity|event|coverage|stats`; MCP tool names use underscores.
+- Query CLI: one of `python3 lore/db/query.py search|character|character-info|item|book|transcript|find-item|record|verify|verify-many|list|activity|event|lore|coverage|stats`; MCP tool names use underscores.
 - Every command accepts `--json`; search returns snippets unless `--full`.
 - Direct SQL: `sqlite3 lore/db/grimoire.db "SELECT ..."`.
+- Lore entry: `python3 lore/db/query.py lore "<title or hash>"`.
+- Canon-only: add `--canon-only` to `character` or `transcript`; section filter
+  `--section "<location>"`. Source tiers: validated/published/proofed Ishtar >
+  untagged Ishtar > Destinypedia > captions.
 - Quote safety: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon).
   `--speaker "Name"` requires attribution; `--exact` requires a full line.
 - Contract: `lore/STANDARDS.md`.
