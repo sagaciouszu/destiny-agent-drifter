@@ -1,7 +1,7 @@
 # AGENTS.md - Drifter Agent Operating Rules
 
 > **Depends On:** INDEX.md
-> **Token Estimate:** ~1.0K tokens
+> **Token Estimate:** ~1.3K tokens
 
 ## Role
 
