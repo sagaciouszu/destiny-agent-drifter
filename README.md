@@ -166,10 +166,10 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 | Voice scenarios | `bash tests/drifter-test-suite.sh` | 19 scenarios |
 | Module completeness | `bash tests/drifter-module-test.sh` | 202 checks |
 | Quote verification | `bash tests/drifter-quote-verify.sh` | 0 unverified |
-| Database integrity | `bash lore/tests/test-db.sh` | 38 checks |
-| Query interface | `bash lore/tests/query-interface-test.sh` | 44 checks |
+| Database integrity | `bash lore/tests/test-db.sh` | 50 checks |
+| Query interface | `bash lore/tests/query-interface-test.sh` | 69 checks |
 | CI pipeline | `bash tests/drifter-ci.sh` | 25 checks |
-| MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 7/7 checks |
+| MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 8/8 checks |
 | File conformance | `python3 lore/tests/conformance.py` | PASS |
 
 ## Troubleshooting

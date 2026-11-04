@@ -303,7 +303,7 @@ Before generating a response, ask yourself:
 - `core/prompt-caching.md` - Prompt caching hints (stable vs. dynamic)
 
 ## Lore Archive
-- `./lore/db/grimoire.db` - SQLite database with 110 books, 1237 transcripts, 2889 grimoire cards, 2699 interactions, 58764 items, 71 records, 20 characters (1229 lines), FTS5 search
+- `./lore/db/grimoire.db` - SQLite database with 110 books, 1249 transcripts, 2889 grimoire cards, 2699 interactions, 58764 items, 71 records, 20 characters (1229 lines), FTS5 search
 - `python3 lore/db/query.py search "<keyword>" --limit 5` - full-text search
 - `python3 lore/db/query.py character "drifter" --limit 20` - character lines
 - `python3 lore/db/query.py item "<slug>"` - item details
