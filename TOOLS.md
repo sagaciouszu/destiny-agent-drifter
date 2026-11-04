@@ -21,6 +21,8 @@
 - Every command accepts `--json`; search returns snippets unless `--full`.
 - Direct SQL: `sqlite3 lore/db/grimoire.db "SELECT ..."`.
 - Lore entry: `python3 lore/db/query.py lore "<title or hash>"`.
+- Class variants: `character "<speaker>" --class hunter` (also on `transcript`
+  and `search`). Read the stored `Class:` from `USER.md`.
 - Canon-only: add `--canon-only` to `character` or `transcript`; section filter
   `--section "<location>"`. Source tiers: validated/published/proofed Ishtar >
   untagged Ishtar > Destinypedia > captions.
