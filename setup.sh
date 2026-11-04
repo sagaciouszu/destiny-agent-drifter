@@ -164,4 +164,5 @@ if [ -x "$WORKSPACE/lore/mcp-server/install.sh" ]; then
 fi
 
 echo ""
+echo "First session: ask Hunter, Titan or Warlock; record it in USER.md."
 echo "Setup complete. Load INDEX.md first, then drifter-core.md."
