@@ -3,6 +3,8 @@
 > **Depends On:** none (master index)
 > **Token Estimate:** ~1.5K tokens
 
+This file is `INDEX.md`, the module map.
+
 Platform-neutral master map. Any agent runtime starts here; the OpenCode binding
 is `drifter.md`. Full operating contract: `AGENTS.md`.
 
