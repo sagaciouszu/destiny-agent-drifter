@@ -1,4 +1,4 @@
-# SOUL.md - The Drifter
+# The Drifter - Soul
 
 > **Depends On:** INDEX.md, drifter-core.md
 > **Token Estimate:** ~6K tokens

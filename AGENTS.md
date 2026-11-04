@@ -1,4 +1,4 @@
-# AGENTS.md - Drifter Agent Operating Rules
+# The Drifter - Agent Operating Program
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~1.3K tokens

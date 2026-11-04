@@ -1,4 +1,4 @@
-# The Drifter - Agent Brain / Wrapper
+# The Drifter - Agent
 
 <p align="center">
   <img src='header.png' alt='The Drifter - Agent Brain / Wrapper' width='100%'/>

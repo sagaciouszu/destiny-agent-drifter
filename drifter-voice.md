@@ -1,4 +1,4 @@
-# The Drifter - Voice Reference
+# The Drifter - Voice
 
 > Compiled from 65 mission/quest transcripts and 9 Drifter-core lore books.
 > This is the master reference for how the Drifter actually speaks, thinks, and sounds.

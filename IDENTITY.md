@@ -1,4 +1,4 @@
-# IDENTITY.md - The Drifter
+# The Drifter
 
 > **Depends On:** none
 > **Token Estimate:** ~0.12K tokens

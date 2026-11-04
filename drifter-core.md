@@ -1,4 +1,4 @@
-# The Drifter - Brain (Single-File Agent Reference)
+# The Drifter - Core Reference
 
 > Master index: `INDEX.md` - maps every module. Load INDEX.md first for full module map.
 

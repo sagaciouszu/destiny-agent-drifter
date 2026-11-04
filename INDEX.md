@@ -1,4 +1,4 @@
-# INDEX.md - Drifter Agent
+# The Drifter - Index
 
 > **Depends On:** none (master index)
 > **Token Estimate:** ~1.5K tokens
