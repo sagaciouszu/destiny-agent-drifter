@@ -1,7 +1,7 @@
 {
   "agent": "how-to-drift-for-agents",
   "source": "tests/master-audit.sh",
-  "count": 22,
+  "count": 23,
   "suites": [
     {
       "name": "Archive & Link Validation",
@@ -71,6 +71,11 @@
     {
       "name": "Conversation (SQLite)",
       "command": "bash $HERE/conversation-test.sh",
+      "tier": "core"
+    },
+    {
+      "name": "Sample Conversation",
+      "command": "python3 $HERE/sample-conversation-test.py",
       "tier": "core"
     },
     {

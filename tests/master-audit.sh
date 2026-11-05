@@ -40,6 +40,7 @@ SUITES=(
     "Voice Consistency|bash $HERE/drifter-voice-consistency.sh | grep -q 'VOICE CONSISTENCY CHECK COMPLETE'"
     "Quote Cross-Check (0 unverified)|bash $HERE/drifter-quote-verify.sh | grep -q 'PASS'"
     "Conversation (SQLite)|bash $HERE/conversation-test.sh"
+    "Sample Conversation|python3 $HERE/sample-conversation-test.py"
     "Golden Voice Snapshots|bash $HERE/golden-voice-test.sh | grep -q 'Failed: 0'"
     "Connection|bash $HERE/connection-test.sh | grep -q 'Failed: 0'"
     "Memory Isolation|python3 $HERE/memory-test.py | grep -q 'memory isolation'"
