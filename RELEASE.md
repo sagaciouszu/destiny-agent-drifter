@@ -18,7 +18,7 @@
 - README version stamp refreshed.
 - New three-turn sample conversation fixture with real canon Drifter lines.
 
-- `setup.sh` now points OpenClaw's MCP config at this checkout with an absolute path (idempotent; backs up `openclaw.json` first).
+- `setup.sh` now points OpenClaw's MCP config at this checkout with an absolute path (idempotent; backs up the OpenClaw config first).
 
 ## Verification
 
