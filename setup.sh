@@ -56,8 +56,25 @@ elif [ -d "$WORKSPACE/lore" ]; then
 else
     # Prefer an explicit local path over cloning
     if [ -n "$LORE_PATH" ] && [ -d "$LORE_PATH" ]; then
-        ln -s "$(cd "$LORE_PATH" && pwd)" "$WORKSPACE/lore"
-        echo "Created lore symlink -> $LORE_PATH"
+        LORE_ABS="$(cd "$LORE_PATH" && pwd)"
+        ln -s "$LORE_ABS" "$WORKSPACE/lore" 2>/dev/null || true
+        if [ -L "$WORKSPACE/lore" ]; then
+            echo "Created lore symlink -> $LORE_ABS"
+        else
+            # Windows (Git Bash): ln may copy or fail; use a junction, then clone.
+            if [ -e "$WORKSPACE/lore" ]; then
+                chmod -R u+w "$WORKSPACE/lore" 2>/dev/null || true
+                rm -rf "$WORKSPACE/lore"
+            fi
+            if command -v cmd >/dev/null 2>&1 && \
+               cmd //c mklink /J "$(cygpath -w "$WORKSPACE/lore" 2>/dev/null || echo "$WORKSPACE/lore")" \
+                                  "$(cygpath -w "$LORE_ABS" 2>/dev/null || echo "$LORE_ABS")" >/dev/null 2>&1; then
+                echo "Created lore junction -> $LORE_ABS"
+            else
+                git clone "$LORE_ABS" "$WORKSPACE/lore"
+                echo "Cloned lore archive from $LORE_ABS"
+            fi
+        fi
     elif [ -n "$LORE_URL" ]; then
         echo "Cloning lore archive from $LORE_URL ..."
         git clone "$LORE_URL" "$WORKSPACE/lore"
@@ -72,8 +89,9 @@ else
         echo "Option 2: Symlink to a local copy:"
         echo "  ./setup.sh /path/to/destiny-agent-grimoire"
         echo ""
-        echo "Option 3: Create the symlink manually:"
-        echo "  ln -s /path/to/destiny-agent-grimoire $WORKSPACE/lore"
+        echo "Option 3: Create the link manually:"
+        echo "  Unix:      ln -s /path/to/destiny-agent-grimoire $WORKSPACE/lore"
+        echo "  Windows:   mklink /J lore C:\\path\\to\\destiny-agent-grimoire"
         echo ""
         echo "Without the lore archive, the agent still functions in degraded mode"
         echo "(core voice, personality, and behavioral rules are self-contained)."
