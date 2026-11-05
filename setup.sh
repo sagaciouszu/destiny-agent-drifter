@@ -181,6 +181,12 @@ if [ -x "$WORKSPACE/lore/mcp-server/install.sh" ]; then
     fi
 fi
 
+# OpenClaw: give the global config an absolute grimoire MCP path (idempotent).
+if [ -f "$WORKSPACE/lore/scripts/ensure-openclaw-mcp.sh" ]; then
+    bash "$WORKSPACE/lore/scripts/ensure-openclaw-mcp.sh" "$WORKSPACE/lore" \
+        || echo "warning: OpenClaw MCP config was not updated"
+fi
+
 echo ""
 echo "First session: ask Hunter, Titan or Warlock; record it in USER.md."
 echo "Setup complete. Load INDEX.md first, then drifter-core.md."
