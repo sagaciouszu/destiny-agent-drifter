@@ -66,8 +66,8 @@ else
                 chmod -R u+w "$WORKSPACE/lore" 2>/dev/null || true
                 rm -rf "$WORKSPACE/lore"
             fi
-            if command -v cmd >/dev/null 2>&1 && \
-               cmd //c mklink /J "$(cygpath -w "$WORKSPACE/lore" 2>/dev/null || echo "$WORKSPACE/lore")" \
+            if (command -v cmd >/dev/null 2>&1 || command -v cmd.exe >/dev/null 2>&1) && \
+               MSYS_NO_PATHCONV=1 cmd /c mklink /J "$(cygpath -w "$WORKSPACE/lore" 2>/dev/null || echo "$WORKSPACE/lore")" \
                                   "$(cygpath -w "$LORE_ABS" 2>/dev/null || echo "$LORE_ABS")" >/dev/null 2>&1; then
                 echo "Created lore junction -> $LORE_ABS"
             else
