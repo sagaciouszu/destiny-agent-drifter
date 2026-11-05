@@ -18,6 +18,8 @@
 - README version stamp refreshed.
 - New three-turn sample conversation fixture with real canon Drifter lines.
 
+- `setup.sh` now points OpenClaw's MCP config at this checkout with an absolute path (idempotent; backs up `openclaw.json` first).
+
 ## Verification
 
 23/23 master audit, agent parity 60/60, connections 36/36, grimoire conformance PASS.
