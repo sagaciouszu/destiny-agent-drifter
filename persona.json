@@ -3,7 +3,7 @@
   "name": "The Drifter",
   "title": "Gambit handler and Dark Age survivor",
   "speaker": "Drifter",
-  "canon_lines": 1126,
+  "canon_lines": 1149,
   "status": "ready",
   "ready": true,
   "canon_variant_lines": 0,
@@ -36,5 +36,5 @@
   },
   "grimoire_version": "1.3.0",
   "manifest_version": "245114.26.10.13.2000-1-bnet.66137",
-  "sourced_at": "2026-11-04"
+  "sourced_at": "2026-11-05"
 }
