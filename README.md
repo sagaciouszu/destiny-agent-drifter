@@ -162,13 +162,13 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 
 | Suite | Command | Expected |
 |---|---|---|
-| Full agent audit | `bash tests/master-audit.sh` | 20/20 |
+| Full agent audit | `bash tests/master-audit.sh` | 23/23 |
 | Voice scenarios | `bash tests/drifter-test-suite.sh` | 19 scenarios |
 | Module completeness | `bash tests/drifter-module-test.sh` | 202 checks |
 | Quote verification | `bash tests/drifter-quote-verify.sh` | 0 unverified |
 | Database integrity | `bash lore/tests/test-db.sh` | 51 checks |
 | Query interface | `bash lore/tests/query-interface-test.sh` | 89 checks |
-| CI pipeline | `bash tests/drifter-ci.sh` | 25 checks |
+| CI pipeline | `bash tests/drifter-ci.sh` | 35 checks |
 | MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 8/8 checks |
 | File conformance | `python3 lore/tests/conformance.py` | PASS |
 

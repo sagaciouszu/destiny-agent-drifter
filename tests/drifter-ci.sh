@@ -1,11 +1,19 @@
 #!/bin/bash
-# Drifter CI Pipeline
-# Runs all validation, consistency, voice, and coherency checks.
+# Drifter CI pipeline: the shared master-audit suite list (tests/suites-lib.sh)
+# plus the CI-only gates (archive integrity, lore/tests/ci-checks.py, script syntax).
+# Input: none (ARCHIVE/WORKSPACE env override the derived lore root and workspace).
+# Output: one PASS/FAIL line per check (with up to 3 failing output lines), then a
+# "CI RESULTS: P/T PASSED (F failed)" scorecard and a FAILURES list.
 # Usage: ./drifter-ci.sh
 # Exit code: 0 if all pass, 1 if any fail.
 
-ARCHIVE="${ARCHIVE:-$(cd "$(dirname "$0")/../lore" && pwd)}"
-WORKSPACE="${WORKSPACE:-$(bash "$(dirname "$0")/../lore/tests/resolve-workspace.sh" "$0")}"
+HERE="$(cd "$(dirname "$0")" && pwd)"
+ARCHIVE="${ARCHIVE:-$(cd "$HERE/../lore" && pwd)}"
+LORE="$ARCHIVE"
+WORKSPACE="${WORKSPACE:-$(bash "$HERE/../lore/tests/resolve-workspace.sh" "$0")}"
+
+# Single source of suite definitions, shared with master-audit.sh.
+source "$HERE/suites-lib.sh"
 
 PASS=0; FAIL=0; TOTAL=0
 FAILURES=""
@@ -32,56 +40,31 @@ echo "Archive: $ARCHIVE"
 echo "Workspace: $WORKSPACE"
 echo ""
 
-echo "--- 1. Archive Integrity ---"
+echo "--- 1. Master audit suites (shared with master-audit.sh) ---"
+for entry in "${SUITES[@]}"; do
+    run_check "${entry%%|*}" "${entry#*|}"
+done
+
+echo ""
+echo "--- 2. Archive Integrity ---"
 run_check "Books exist (110+)" "[ $(ls $ARCHIVE/source/books/*.md 2>/dev/null | wc -l) -ge 110 ]"
 run_check "Transcripts exist (60+)" "[ $(ls $ARCHIVE/source/transcripts/*.md 2>/dev/null | grep -v index | wc -l) -ge 60 ]"
 run_check "Index exists" "[ -f $ARCHIVE/index.md ]"
 
 echo ""
-echo "--- 2. Quote Verification ---"
-run_check "All quotes verified (0 unverified)" "bash $(dirname "$0")/drifter-quote-verify.sh | grep -q 'PASS: All quotes verified'"
-
-echo ""
-echo "--- 3. Cross-Reference Validation ---"
-run_check "No broken refs (0 missing)" "bash $(dirname "$0")/drifter-xref-validate.sh | grep -q 'Broken references: 0'"
-
-echo ""
-echo "--- 4. Module Completeness ---"
-run_check "All modules exist (201 checks)" "bash $(dirname "$0")/drifter-module-test.sh | grep -q 'Failed: 0'"
-
-echo ""
-echo "--- 5. Voice Validation ---"
-run_check "Single-turn voice (19 scenarios)" "bash $(dirname "$0")/drifter-test-suite.sh | grep -q 'Failed: 0'"
-run_check "N-gram voice scorer (PASS)" "python3 $(dirname "$0")/drifter-voice-scorer.py 'Hey, hero. Bank those Motes! Heh. Trust.' | grep -q 'PASS'"
-run_check "10-turn emotional arc" "bash $(dirname "$0")/drifter-multiturn-test.sh | grep -q '10/10'"
-run_check "Voice consistency check" "bash $(dirname "$0")/drifter-voice-consistency.sh | grep -q 'VOICE CONSISTENCY CHECK COMPLETE'"
-
-echo ""
-echo "--- 6. Coherency & Hallucination ---"
-run_check "No unverified quotes" "bash $(dirname "$0")/drifter-quote-verify.sh | grep -q 'Unverified quotes: 0'"
+echo "--- 3. Grimoire conformance (lore/tests/ci-checks.py) ---"
 run_check "No stale file references" "python3 $ARCHIVE/tests/ci-checks.py stale $WORKSPACE"
 run_check "No circular dependencies" "python3 $ARCHIVE/tests/ci-checks.py circular $WORKSPACE"
 run_check "No self-dependencies" "python3 $ARCHIVE/tests/ci-checks.py selfdeps $WORKSPACE"
-
-echo ""
-echo "--- 7. Hygiene ---"
 run_check "No em-dashes in agent files" "python3 $ARCHIVE/tests/ci-checks.py emdashes $WORKSPACE"
 run_check "No personal paths" "python3 $ARCHIVE/tests/ci-checks.py personal $WORKSPACE"
 run_check "No gitignored refs in instructions" "python3 $ARCHIVE/tests/ci-checks.py gitignored $WORKSPACE"
 run_check "All headers present" "python3 $ARCHIVE/tests/ci-checks.py headers $WORKSPACE"
 
 echo ""
-echo "--- 8. Script Integrity ---"
-run_check "All .sh syntax valid" "for f in $ARCHIVE/*.sh; do bash -n \$f || exit 1; done"
-run_check "All scripts executable" "for f in $ARCHIVE/*.sh; do [ -x \$f ] || exit 1; done"
-
-echo ""
-echo "--- 9. Coherency (scenario sim + tape gen) ---"
-run_check "Scenario simulator (PASS/PARTIAL)" "bash $(dirname "$0")/drifter-scenario-simulator.sh 'Tell me about Malfeasance' | grep -qE 'PASS|PARTIAL'"
-run_check "Tape generator (PASS)" "bash $(dirname "$0")/drifter-tape-generator.sh 'ghosts' | grep -q 'PASS'"
-run_check "Gambit sim (VICTORY)" "bash $(dirname "$0")/drifter-gambit-sim.sh --auto | grep -q 'VICTORY'"
-run_check "Lore freshness" "bash $(dirname "$0")/drifter-freshness-check.sh | grep -q 'FRESHNESS CHECK COMPLETE'"
-run_check "Conflict check" "bash $(dirname "$0")/drifter-conflict-check.sh | grep -q 'CONFLICT CHECK COMPLETE'"
+echo "--- 4. Script Integrity ---"
+run_check "All .sh syntax valid" "(for f in $ARCHIVE/*.sh; do bash -n \$f || exit 1; done)"
+run_check "All scripts executable" "(for f in $ARCHIVE/*.sh; do [ -x \$f ] || exit 1; done)"
 
 echo ""
 echo "============================================================"

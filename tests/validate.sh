@@ -1,4 +1,5 @@
 #!/bin/bash
+# Archive/link validation: workspace links, module dirs, lore symlink and unverified quotes in agent files; input: none (ARCHIVE/WORKSPACE env, defaults derived from this script's location); output: counts ("missing: N", "unverified quotes: N") plus section banners; exit codes: 1 if the workspace cannot be resolved, 0 otherwise (callers gate on the count lines).
 ARCHIVE="${ARCHIVE:-$(cd "$(dirname "$0")/../lore" && pwd)}"
 WORKSPACE="${WORKSPACE:-$(bash "$(dirname "$0")/../lore/tests/resolve-workspace.sh" "$0")}"
 

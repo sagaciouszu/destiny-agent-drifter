@@ -26,7 +26,7 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 | `setup.sh` | canon repo | symlink/clone; seeds runtime memory; bootstraps DB if missing |
 | runtime memory | local only | `USER.md`, `core/*memory*`, `core/journal.md` (gitignored) |
 | tests in canon repo | this agent workspace | `lore/tests/resolve-workspace.sh` (layout-independent) |
-| this agent | verification | `bash tests/master-audit.sh` (20 suites) |
+| this agent | verification | `bash tests/master-audit.sh` (23 suites) |
 
 ## Core files
 

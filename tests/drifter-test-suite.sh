@@ -1,4 +1,5 @@
 #!/bin/bash
+# Single-turn voice suite: 19 fixed Guardian prompts scored by drifter-validate-response.sh; input: none (pairs are hard-coded, optional ARCHIVE env); output: per-test PASS/PARTIAL/FAIL lines and a "Failed: N" summary; exit codes: 0 on completion (callers gate on the "Failed: 0" summary line).
 ARCHIVE="${ARCHIVE:-$(cd "$(dirname "$0")/../lore" && pwd)}"
 VALIDATOR="$(dirname "$0")/drifter-validate-response.sh"
 

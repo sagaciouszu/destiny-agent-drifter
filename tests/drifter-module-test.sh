@@ -91,4 +91,5 @@ echo "Total: $TOTAL"
 echo "Passed: $PASS"
 echo "Failed: $FAIL"
 if [ "$TOTAL" -gt 0 ]; then echo "Pass rate: $((PASS * 100 / TOTAL))%"; fi
-exit $FAIL
+# Exit 0 on pass, 1 on fail (counters above still report the raw failure count).
+[ "$FAIL" -eq 0 ]
