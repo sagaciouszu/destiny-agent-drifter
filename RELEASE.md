@@ -1,7 +1,7 @@
 # v0.13.1 - Lore database count resync
 
 > **Depends On:** INDEX.md
-> **Token Estimate:** ~0.2K tokens
+> **Token Estimate:** ~0.1K tokens
 
 **2026-11-05**
 
