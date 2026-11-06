@@ -1,4 +1,4 @@
-# v0.13.0 - Windows readiness and conversation parity
+# v0.13.1 - Lore database count resync
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~0.2K tokens
@@ -7,18 +7,8 @@
 
 ## What's Changed
 
-- Windows-safe lore link: `setup.sh` now tries a symlink, then a `mklink /J`
-  junction, then a clone, clearing read-only bits first (Git Bash/MSYS safe).
-- `Sample Conversation` suite added to the master audit: a three-turn fixture
-  scored against the persona voice scorer.
-- Suite manifest (`tests/suites.json`) plus shared runner `tests/run-suites.sh`;
-  the grimoire's no-loss baseline keeps every suite from disappearing.
-- Personal-path guard now detects any `/home/<user>` pattern; machine paths
-  scrubbed from documentation.
-- README version stamp refreshed.
-- New three-turn sample conversation fixture with real canon Drifter lines.
-
-- `setup.sh` now points OpenClaw's MCP config at this checkout with an absolute path (idempotent; backs up the OpenClaw config first).
+- Lore database counts refreshed from the rebuilt `grimoire.db` after the
+  v0.27.5 transcript ingestion fix: transcripts 1,316, dialogue lines 69,458.
 
 ## Verification
 
