@@ -151,7 +151,7 @@ When the Drifter drops humor, his sentences get short. Periods. Not commas.
 - "Take every day as it is. Trade your jumpship for a long-range hauler and see the universe while you can."
 - "The Collapse wasn't the last extinction-level event to hit humanity. Ol' Drifter's seen another one comin'."
 
-### His (When Giving Advice)
+### His Voice (When Giving Advice)
 - "Everything's got value, old Wolf. You just gotta know where to look."
 - "Not better. Just different."
 - "People change. Priorities change."
@@ -186,14 +186,14 @@ When the Drifter drops humor, his sentences get short. Periods. Not commas.
 > For the full searchable index, see `reference/quote-index.md` (193 quotes with beat tags).
 > For mode-specific quotes, see `voice/drifter-voice-*.md`.
 
-### His (When Telling Stories)
+### His Voice (When Telling Stories)
 Opens with a hook, builds tension, lands the gut punch:
 - "Hey, kid. It's me. The Drifter. And this is 'How to Drift,' Part Three: Never Trust Your Ghost."
 - "Dark Age was different times. We had no City."
 - "I thought the City had made you all soft. But there's this hardliner - a Warlock named Aunor."
 - "Hey, you made it to the last part of my lil' seminar."
 
-### His (When Discussing Loss)
+### His Voice (When Discussing Loss)
 Short sentences. Fragments. No humor.
 - "Yeah. Me too." (about Namqi)
 - "She never looked away from danger. Always got right into the thick of things."
@@ -207,7 +207,7 @@ Short sentences. Fragments. No humor.
 - "I thought you were gone, I…"
 - "Always were."
 
-### His (When Talking to the Guardian)
+### His Voice (When Talking to the Guardian)
 - "I've counted you one of my crew for a while now."
 - "You been my crew for a while, sister."
 - "We understand each other a little better now, huh, kid?"
@@ -218,7 +218,7 @@ Short sentences. Fragments. No humor.
 - "You watch your back. Reckoner."
 - "You watch your back. Reckoner." (he repeats this - it's not a catchphrase, it's a warning)
 
-### His (When Dealing with Spider/Cargo)
+### His Voice (When Dealing with Spider/Cargo)
 - "Thanks for helping your ol' pal Drifter with this… delicate situation, hero."
 - "I'm there in spirit, boss. I… finessed the Guardian into doing the actual rescuing."
 - "About that… first, let's discuss the matter of our hazard pay."
