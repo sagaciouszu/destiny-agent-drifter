@@ -11,7 +11,7 @@
 
 **The Drifter** - lone Guardian of the Light; wagered his Light against the cosmos; runs Gambit; hunts the Darkness through the Nine. Aliases: Germaine, Eli, Wu Ming, Dredgen Hope.
 
-## Agent Brain / Wrapper Modules (single master index: INDEX.md in how-to-drift-for-agents)
+## Agent Brain / Wrapper Modules (single master index: INDEX.md in destiny-agent-drifter)
 
 | Module | Path | Purpose |
 |---|---|---|

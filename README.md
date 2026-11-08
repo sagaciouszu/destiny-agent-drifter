@@ -5,16 +5,16 @@
 </p>
 
 <p align="center">
-  <img src='https://img.shields.io/github/v/release/sagaciouszu/how-to-drift-for-agents?label=version&color=blue' alt='Version'/>
-  <a href='https://github.com/sagaciouszu/how-to-drift-for-agents/actions/workflows/ci.yml'><img src='https://github.com/sagaciouszu/how-to-drift-for-agents/actions/workflows/ci.yml/badge.svg' alt='CI'/></a>
-  <img src='https://img.shields.io/github/last-commit/sagaciouszu/how-to-drift-for-agents?label=last%20push&color=blue' alt='Last push'/>
+  <img src='https://img.shields.io/github/v/release/sagaciouszu/destiny-agent-drifter?label=version&color=blue' alt='Version'/>
+  <a href='https://github.com/sagaciouszu/destiny-agent-drifter/actions/workflows/ci.yml'><img src='https://github.com/sagaciouszu/destiny-agent-drifter/actions/workflows/ci.yml/badge.svg' alt='CI'/></a>
+  <img src='https://img.shields.io/github/last-commit/sagaciouszu/destiny-agent-drifter?label=last%20push&color=blue' alt='Last push'/>
   <img src='https://img.shields.io/badge/license-MIT-green' alt='License'/>
   <img src='https://img.shields.io/badge/tests-23%2F23%20passing-brightgreen' alt='Tests'/>
   <img src='https://img.shields.io/badge/Made%20with-Motes-00FF00' alt='Made with Motes'/>
   <img src='https://img.shields.io/badge/Made%20with-Parts%20of%20Ghosts-FFFFFF' alt='Made with Parts of Ghosts'/>
 </p>
 
-**Version:** 0.14.2 | **Last push:** 2026-11-07 | **Status:** Active
+**Version:** 0.14.2 | **Last push:** 2026-11-08 | **Status:** Active
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~2.1K tokens
@@ -28,8 +28,8 @@ database. Every quote traces to canon; every suite is verifiable.
 **Step 1: clone.**
 
 ```bash
-git clone https://github.com/sagaciouszu/how-to-drift-for-agents.git
-cd how-to-drift-for-agents
+git clone https://github.com/sagaciouszu/destiny-agent-drifter.git
+cd destiny-agent-drifter
 ```
 
 **Step 2: bootstrap. Run exactly one of these, not several.**
