@@ -21,6 +21,8 @@ SUITES=(
     "Conversation (SQLite)|bash $HERE/conversation-test.sh"
     "Sample Conversation|python3 $HERE/sample-conversation-test.py"
     "Golden Voice Snapshots|bash $HERE/golden-voice-test.sh | grep -q 'Failed: 0'"
+    "Suite Manifest|python3 $HERE/suite-manifest-test.py | grep -q 'manifest matches audit'"
+    "Shared Helpers|bash $HERE/shared-helpers-test.sh | grep -q 'Passed:.*Failed: 0'"
     "Connection|bash $HERE/connection-test.sh | grep -q 'Failed: 0'"
     "Memory Isolation|python3 $HERE/memory-test.py | grep -q 'memory isolation'"
     "Depends On Coverage|python3 $LORE/tests/check-agent-structure.py deps $WORKSPACE"
