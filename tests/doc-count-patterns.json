@@ -1,0 +1,20 @@
+{
+ "patterns": [
+  {
+   "regex": "All \\\\d+ Drifter quotes",
+   "replacement": "All {speaker_like} Drifter quotes"
+  },
+  {
+   "regex": "canonical transcripts \\\\(\\\\d+ Drifter lines\\\\)",
+   "replacement": "canonical transcripts ({speaker_like} Drifter lines)"
+  },
+  {
+   "regex": "\\\\b\\\\d{3,4} Drifter transcript lines in the database",
+   "replacement": "{speaker_exact} Drifter transcript lines in the database"
+  },
+  {
+   "regex": "\\\\b\\\\d{3,4} verified Drifter quotes",
+   "replacement": "{speaker_like} verified Drifter quotes"
+  }
+ ]
+}
