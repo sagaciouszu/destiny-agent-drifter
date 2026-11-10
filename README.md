@@ -16,12 +16,15 @@
 
 **Version:** 0.14.4 | **Last push:** 2026-11-10 | **Status:** Active
 
+**Documentation site:** <https://sagaciouszu.github.io/destiny-agent-grimoire-site/personas/drifter/>
+**Limits and provenance:** <https://sagaciouszu.github.io/destiny-agent-grimoire-site/grimoire/limits/>
+
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~2.1K tokens
 
-A complete, platform-agnostic roleplay brain for The Drifter: voice rules, memory,
+A self-contained, platform-agnostic roleplay brain for The Drifter: voice rules, memory,
 behavior modules and a verified quote corpus, backed by the Destiny Agent Grimoire
-database. Every quote traces to canon; every suite is verifiable.
+database. Every shipped quote is checked against the canon; every suite is runnable.
 
 ## Quick start for Guardians
 
@@ -213,5 +216,5 @@ All the community projects out there are continual labors of love. Neither this
 archive nor the community around it would exist without the efforts of everyone
 who has worked on Destiny.
 
-All quotes trace to canonical transcripts and lore books; audits report zero
-unverified quotes and zero broken links.
+All shipped quotes trace to transcripts or lore books in the library; audits
+report zero unverified quotes and zero broken links.
