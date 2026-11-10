@@ -102,3 +102,20 @@
 - **Quote check:** `python3 ../destiny-agent-grimoire/db/query.py verify "<line>"` (exit 1 = not canon)
 - **Knowledge web:** `reference/knowledge-web.md` (this file)
 - **Master index:** `lore/index.md`
+
+<!-- knowledge-web:begin -->
+## Canon snapshot (generated)
+
+> Generated from `db/grimoire.db` by `scripts/generate-knowledge-web.py`.
+> Do not hand-edit this block; run the script with `--apply`.
+
+| Measure | Value |
+|---|---|
+| Canonical lines | 1149 |
+| Transcripts | 103 |
+| Activities | prophecy (118), contact (92), the-nether (54), salvage (48), deep-dives (28) |
+| Seasons | season-of-arrivals (317), season-of-the-drifter (164), season-of-the-deep (136), season-of-plunder (74), episode-heresy (71) |
+| Story chapters | the_sack_of_the_dreaming_city (378), the_nightmares_return (299), the_lightfall (136), renegades (120), the_final_shape (102) |
+| Source tiers | ishtar_main (877), ishtar_web (189), youtube_captions (39), destinypedia (28), cutscene (15), ishtar_commons (1) |
+| Frequent co-speakers | Eris Morn (1002), Sloane (328), Emissary (159), Zavala (112), Lord Saladin (84), Ghost (83) |
+<!-- knowledge-web:end -->

@@ -10,19 +10,46 @@ RELEASE_DB_URL="${RELEASE_DB_URL:-https://github.com/sagaciouszu/destiny-agent-g
 RELEASE_SUMS_URL="${RELEASE_SUMS_URL:-https://github.com/sagaciouszu/destiny-agent-grimoire/releases/latest/download/SHA256SUMS}"
 LORE_PATH=""
 MCP_CHOICE=""
+DRY_RUN=0
 for arg in "$@"; do
     case "$arg" in
+        --dry-run) DRY_RUN=1 ;;
         --mcp) MCP_CHOICE=1 ;;
         --no-mcp) MCP_CHOICE=0 ;;
         --help|-h)
-            echo "usage: $0 [lore-path] [--mcp|--no-mcp]"
+            echo "usage: $0 [lore-path] [--mcp|--no-mcp] [--dry-run]"
             echo "  lore-path   use an existing grimoire checkout instead of cloning"
             echo "  --mcp       install the optional MCP adapter (ships with the archive)"
+            echo "  --dry-run   print the plan and change nothing"
             exit 0 ;;
         *) LORE_PATH="$arg" ;;
     esac
 done
 WITH_MCP="${WITH_MCP:-$MCP_CHOICE}"
+
+if [ "$DRY_RUN" = "1" ]; then
+    if [ -L "$WORKSPACE/lore" ] && [ ! -e "$WORKSPACE/lore" ]; then
+        echo "[dry-run] remove dangling lore symlink -> $(readlink "$WORKSPACE/lore")"
+    elif [ -e "$WORKSPACE/lore" ]; then
+        echo "[dry-run] use existing lore at $WORKSPACE/lore"
+    elif [ -n "$LORE_PATH" ]; then
+        echo "[dry-run] link lore -> $LORE_PATH"
+    else
+        echo "[dry-run] clone lore from $LORE_URL"
+    fi
+    if [ -f "$WORKSPACE/lore/db/grimoire.db" ]; then
+        echo "[dry-run] use existing database"
+    elif [ -n "$LORE_PATH" ] && [ -f "$LORE_PATH/db/grimoire.db" ]; then
+        echo "[dry-run] use database from $LORE_PATH"
+    elif [ -n "${GRIMOIRE_DB:-}" ] && [ -f "$GRIMOIRE_DB" ]; then
+        echo "[dry-run] copy database from $GRIMOIRE_DB"
+    else
+        echo "[dry-run] download or build the database"
+    fi
+    echo "[dry-run] seed runtime memory and update OpenClaw MCP"
+    echo "dry-run: nothing was changed"
+    exit 0
+fi
 
 echo "=== Drifter Agent Setup ==="
 echo "Workspace: $WORKSPACE"
@@ -97,6 +124,14 @@ else
         echo "(core voice, personality, and behavioral rules are self-contained)."
         exit 0
     fi
+fi
+
+# A local database can replace the download/build path (offline and CI).
+if [ -d "$WORKSPACE/lore" ] && [ ! -f "$WORKSPACE/lore/db/grimoire.db" ] \
+   && [ -n "${GRIMOIRE_DB:-}" ] && [ -f "$GRIMOIRE_DB" ]; then
+    mkdir -p "$WORKSPACE/lore/db"
+    cp "$GRIMOIRE_DB" "$WORKSPACE/lore/db/grimoire.db"
+    echo "Copied local database from $GRIMOIRE_DB"
 fi
 
 # Verify
