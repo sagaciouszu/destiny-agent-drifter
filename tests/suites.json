@@ -1,7 +1,7 @@
 {
   "agent": "destiny-agent-drifter",
   "source": "tests/master-audit.sh",
-  "count": 25,
+  "count": 27,
   "suites": [
     {
       "name": "Archive & Link Validation",
@@ -101,6 +101,16 @@
     {
       "name": "Memory Isolation",
       "command": "python3 $HERE/memory-test.py | grep -q 'memory isolation'",
+      "tier": "core"
+    },
+    {
+      "name": "Multi-User Isolation",
+      "command": "grep -q 'Never quote or summarize one user' $WORKSPACE/core/multi-user.md && grep -q 'memory.py' $WORKSPACE/core/multi-user.md",
+      "tier": "core"
+    },
+    {
+      "name": "Persona Freshness",
+      "command": "python3 $HERE/persona-freshness.py",
       "tier": "core"
     },
     {

@@ -1,6 +1,7 @@
 #!/bin/bash
-# Setup script for the Drifter agent brain/wrapper.
-# Handles lore archive acquisition and symlink creation.
+# Seed this agent workspace: link or clone the grimoire and get the database.
+# Usage: ./setup.sh [grimoire-repo-path] [--mcp|--no-mcp] [--dry-run]
+# GRIMOIRE_DB=/path/to/grimoire.db copies a local database instead of downloading.
 
 set -e
 
@@ -22,7 +23,15 @@ for arg in "$@"; do
             echo "  --mcp       install the optional MCP adapter (ships with the archive)"
             echo "  --dry-run   print the plan and change nothing"
             exit 0 ;;
-        *) LORE_PATH="$arg" ;;
+        -*)
+            echo "unknown option: $arg" >&2
+            exit 2 ;;
+        *)
+            if [ -n "$LORE_PATH" ]; then
+                echo "only one lore path may be given" >&2
+                exit 2
+            fi
+            LORE_PATH="$arg" ;;
     esac
 done
 WITH_MCP="${WITH_MCP:-$MCP_CHOICE}"
@@ -51,7 +60,7 @@ if [ "$DRY_RUN" = "1" ]; then
     exit 0
 fi
 
-echo "=== Drifter Agent Setup ==="
+echo "=== Agent Setup ==="
 echo "Workspace: $WORKSPACE"
 
 # Seed runtime memory files from templates (memory is gitignored: never committed)
@@ -201,11 +210,11 @@ else
 fi
 
 # Optional MCP adapter. It lives in the grimoire archive, so one install serves
-# every agent that mounts this checkout (Drifter, Eris, or anything else).
+# every agent that mounts this checkout.
 if [ -x "$WORKSPACE/lore/mcp-server/install.sh" ]; then
     if [ -z "${WITH_MCP:-}" ] && [ -t 0 ]; then
         echo ""
-        echo "MCP adapter (ships with the grimoire archive; one install serves both agents)"
+        echo "MCP adapter (ships with the grimoire archive; one install serves every agent)"
         read -t 15 -rp "Install for MCP clients without a shell? [y/N] " ans || ans=""
         case "$ans" in y|Y|yes|YES) WITH_MCP=1 ;; *) WITH_MCP=0 ;; esac
     fi
@@ -224,4 +233,4 @@ fi
 
 echo ""
 echo "First session: ask Hunter, Titan or Warlock; record it in USER.md."
-echo "Setup complete. Load INDEX.md first, then drifter-core.md."
+echo "Setup complete. Load INDEX.md first; it lists your load order."

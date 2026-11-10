@@ -96,14 +96,15 @@ OpenCode, deploy with `lore/scripts/sync-live-agents.sh`: it installs
 | Requirement | Needed for | Notes |
 |---|---|---|
 | `git` | cloning the lore archive | setup falls back to a local path |
-| `bash` 4+ | setup and audits | |
+| `bash` 4+ | setup and audits | Windows: use Git Bash or WSL; macOS ships 3.2, install 4+ |
 | `python3` 3.8+ | queries, migration, tests | standard library only |
 | `sqlite3` | optional raw SQL | the query CLI uses Python's built-in driver |
 | `curl` | optional prebuilt database | falls back to a local build |
 | MCP SDK (optional) | typed tools for clients without a shell | Python 3.10+; one-time install |
 | ~400 MB disk | checkout plus built database | database is ~300 MB |
 
-No API keys, accounts or network access are required at runtime.
+No API keys, accounts or network access are required at runtime. If `sha256sum` is
+missing (stock macOS), `shasum -a 256` is an equivalent for the checksum step.
 
 ## For agents
 
@@ -170,10 +171,10 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 | Voice scenarios | `bash tests/drifter-test-suite.sh` | 19 scenarios |
 | Module completeness | `bash tests/drifter-module-test.sh` | 202 checks |
 | Quote verification | `bash tests/drifter-quote-verify.sh` | 0 unverified |
-| Database integrity | `bash lore/tests/test-db.sh` | 65 checks |
+| Database integrity | `bash lore/tests/test-db.sh` | 67 checks |
 | Suite manifest | `python3 tests/suite-manifest-test.py` | manifest matches audit |
 | Shared helpers | `bash tests/shared-helpers-test.sh` | Passed: every helper matches |
-| Query interface | `bash lore/tests/query-interface-test.sh` | 89 checks |
+| Query interface | `bash lore/tests/query-interface-test.sh` | 97 checks |
 | CI pipeline | `bash tests/drifter-ci.sh` | 35 checks |
 | MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 8/8 checks |
 | File conformance | `python3 lore/tests/conformance.py` | PASS |

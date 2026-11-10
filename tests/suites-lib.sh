@@ -25,6 +25,8 @@ SUITES=(
     "Shared Helpers|bash $HERE/shared-helpers-test.sh | grep -q 'Passed:.*Failed: 0'"
     "Connection|bash $HERE/connection-test.sh | grep -q 'Failed: 0'"
     "Memory Isolation|python3 $HERE/memory-test.py | grep -q 'memory isolation'"
+    "Multi-User Isolation|grep -q 'Never quote or summarize one user' $WORKSPACE/core/multi-user.md && grep -q 'memory.py' $WORKSPACE/core/multi-user.md"
+    "Persona Freshness|python3 $HERE/persona-freshness.py"
     "Depends On Coverage|python3 $LORE/tests/check-agent-structure.py deps $WORKSPACE"
     "Token Estimate Coverage|python3 $LORE/tests/check-agent-structure.py tokens $WORKSPACE"
     "No Em-Dashes|python3 $LORE/tests/check-agent-structure.py dashes $WORKSPACE"

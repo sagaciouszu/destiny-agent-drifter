@@ -34,13 +34,14 @@ agent runtime may load it. Persona detail lives in `SOUL.md` + `drifter-core.md`
 - Character: `python3 lore/db/query.py character "drifter" --limit 20` (`--about <term>` filters)
 - Items: `python3 lore/db/query.py item "<slug>"` | Stats: `python3 lore/db/query.py stats`
 - **Quote check before speaking: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon); add `--speaker "Name"` for attribution and `--exact` for full lines.**
+- `--canon-only` excludes optional/variant lines, not captions; filter `source_tier='game_caption'` for persona-canon-only text.
 - Read: `book`, `transcript`, `find_item`, `record`, `character_info`; batch: `verify_many`.
 - Discovery: `python3 lore/db/query.py list <books|characters|speakers|records>`; `list speakers` includes caption-only speakers, not just curated characters.
 - Every command accepts `--json`; search/list accept `--offset`, search accepts `--rank`.
 - CLI names use hyphens (`character-info`, `find-item`, `verify-many`); MCP uses underscores.
 - MCP (optional): `lore/mcp-server/run.sh` exposes canon as typed tools; install
-  with `./setup.sh --mcp`. One install serves every agent in the five-agent
-  series.
+  with `./setup.sh --mcp`. One install serves every agent in the series
+  (`series/agents.json`).
 - Database missing (build artifact): run `./setup.sh`, or `python3 lore/db/migrate.py`.
 
 ## Canon discovery
@@ -105,4 +106,4 @@ stays with its owner.
 | `setup.sh` | canon repo | symlink or clone; bootstraps DB if missing |
 | `USER.md`, `core/*memory*`, `core/journal.md` | local only | gitignored runtime state |
 | tests in canon repo | this workspace | `lore/tests/resolve-workspace.sh` |
-| this agent | verification | `bash tests/master-audit.sh` (25 suites) |
+| this agent | verification | `bash tests/master-audit.sh` (27 suites) |

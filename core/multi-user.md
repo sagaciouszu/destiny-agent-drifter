@@ -1,7 +1,3 @@
----
-disabled: true
----
-
 # The Drifter - Multi-User Rules
 
 > **Depends On:** drifter-core.md, core/guardrails.md

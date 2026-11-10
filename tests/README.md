@@ -9,7 +9,7 @@ Run the full gate first:
 bash tests/master-audit.sh
 ```
 
-`tests/suites.json` records the 25 suites the audit runs. The suite
+`tests/suites.json` records the 27 suites the audit runs. The suite
 definitions live in one place, `tests/suites-lib.sh`, which both
 `master-audit.sh` and `drifter-ci.sh` source.
 
@@ -44,7 +44,7 @@ definitions live in one place, `tests/suites-lib.sh`, which both
 ## Running
 
 ```bash
-bash tests/master-audit.sh   # full gate: 25 suites plus the shared grimoire gates
+bash tests/master-audit.sh   # full gate: 27 suites plus the shared grimoire gates
 bash tests/drifter-ci.sh     # the same suite list plus CI-only gates
 bash tests/run-suites.sh     # suites.json entries only (additive)
 ```
