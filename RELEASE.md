@@ -1,4 +1,4 @@
-# v0.14.5 - Honesty pass
+# v0.14.6 - Truth and onboarding pass
 
 > **Depends On:** INDEX.md
 > **Token Estimate:** ~152 tokens
@@ -6,15 +6,13 @@
 
 ## What's Changed
 
-- README claims now match the evidence: quotes trace to transcripts or lore books
-  in this library, not to an official Bungie publication; the checker proves
-  presence in the corpus.
-- The project now links to the site's Limits and provenance page, which records
-  the caption tier, missing timelines, source gaps and non-completeness.
+- `core/multi-user.md` is enabled again; it was disabled while documented as adopted.
+- Multi-User Isolation and Persona Freshness are back in the audit, 25 to 27 suites.
+- AGENTS states the caption caveat and points series counts at `series/agents.json`.
+- Adopts the shared setup.sh and the stricter shared-helper guard.
 
 ## Verification
 
-- `bash tests/master-audit.sh`: 25/25.
+- `bash tests/master-audit.sh`: 27/27.
 - `python3 tests/persona-freshness.py`: rc 0.
 - `python3 lore/tests/conformance.py`: PASS.
-

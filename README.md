@@ -14,7 +14,7 @@
   <img src='https://img.shields.io/badge/Made%20with-Parts%20of%20Ghosts-FFFFFF' alt='Made with Parts of Ghosts'/>
 </p>
 
-**Version:** 0.14.5 | **Last push:** 2026-11-10 | **Status:** Active
+**Version:** 0.14.6 | **Last push:** 2026-11-10 | **Status:** Active
 
 **Documentation site:** <https://sagaciouszu.github.io/destiny-agent-grimoire-site/personas/drifter/>
 **Limits and provenance:** <https://sagaciouszu.github.io/destiny-agent-grimoire-site/grimoire/limits/>
