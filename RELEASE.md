@@ -1,51 +1,26 @@
-# v0.14.3 - Access contract and knowledge-web snapshot
+# v0.14.4 - Sync with destiny-agent-grimoire v0.40.0
 
 > **Depends On:** INDEX.md
-> **Token Estimate:** ~0.4K tokens
+> **Token Estimate:** ~235 tokens
 **2026-11-10**
+
+The mounted archive moved to grimoire v0.40.0 (schema 1.10.0). Persona counts
+are unchanged; the persona was sourced against schema 1.9.0 and does not need
+re-sourcing for this release.
 
 ## What's Changed
 
-- `setup.sh`: `--dry-run`, `GRIMOIRE_DB` local database, and dangling `lore/`
-  recovery. Drifter/Eris keep their MCP and bootstrap options.
-- `reference/knowledge-web.md`: generated canon snapshot (lines, transcripts,
-  activities, seasons, chapters, source tiers and co-speakers) checked from the
-  database.
+- `v_canon_speakers` (230 persona-canon speakers) is available through
+  `python3 lore/db/query.py list canon-speakers`; `v_speakers` remains the
+  423-row discovery view.
+- `character` and `transcript` accept `--tier` and `--exclude-tier` (MCP
+  `tier` / `exclude_tier`).
+- `TOOLS.md` documents the tier filters and the canon-speaker listing.
+- Persona count-claim patterns now live in `tests/doc-count-patterns.json`,
+  not the shared grimoire script.
 
 ## Verification
 
 - `bash tests/master-audit.sh`: 25/25.
+- `python3 tests/persona-freshness.py`: rc 0.
 - `python3 lore/tests/conformance.py`: PASS.
-
-# v0.14.2 - Sync with destiny-agent-grimoire v0.29.0
-
-> **Depends On:** INDEX.md
-> **Token Estimate:** ~0.3K tokens
-**2026-11-07**
-
-The shared lore database behind this agent is now destiny-agent-grimoire
-v0.29.0 (schema 1.5.0):
-
-- `transcript_lines` now records attribution provenance for game captions
-  (`speaker_source`: `ishtar_containment` / `dialogue_node` / `line_prefix`);
-  counts unchanged (2,422 transcripts / 78,740 lines).
-- Game captions remain excluded from persona canon (the DB predicate
-  `source_tier != 'game_caption'` holds); no persona canon changes.
-- Verification: this repo's audits green against the released DB
-  (`tests/persona-freshness.py` rc=0); main `grimoire-master-audit.sh`
-  14/14; every gate referenced by this repo unchanged.
-
-No content change. The full agent audits are run against the released
-database at each push.
-
-## What's Changed
-
-- Sync with destiny-agent-grimoire v0.29.0 (schema 1.5.0; caption attribution
-  provenance stored on caption lines)
-- Persona canon unchanged (captions excluded by source-tier predicate)
-- Counts match the released DB
-
-## Verification
-
-Full master-audit green; persona-freshness passes against the released DB;
-all suite counts verified.

@@ -1,0 +1,56 @@
+# Changelog - The Drifter
+
+Full release history. The current release notes are in `RELEASE.md`;
+the GitHub release for each tag carries the same notes.
+
+# v0.14.3 - Access contract and knowledge-web snapshot
+
+> **Depends On:** INDEX.md
+> **Token Estimate:** ~0.4K tokens
+**2026-11-10**
+
+## What's Changed
+
+- `setup.sh`: `--dry-run`, `GRIMOIRE_DB` local database, and dangling `lore/`
+  recovery. Drifter/Eris keep their MCP and bootstrap options.
+- `reference/knowledge-web.md`: generated canon snapshot (lines, transcripts,
+  activities, seasons, chapters, source tiers and co-speakers) checked from the
+  database.
+
+## Verification
+
+- `bash tests/master-audit.sh`: 25/25.
+- `python3 lore/tests/conformance.py`: PASS.
+
+# v0.14.2 - Sync with destiny-agent-grimoire v0.29.0
+
+> **Depends On:** INDEX.md
+> **Token Estimate:** ~0.3K tokens
+**2026-11-07**
+
+The shared lore database behind this agent is now destiny-agent-grimoire
+v0.29.0 (schema 1.5.0):
+
+- `transcript_lines` now records attribution provenance for game captions
+  (`speaker_source`: `ishtar_containment` / `dialogue_node` / `line_prefix`);
+  counts unchanged (2,422 transcripts / 78,740 lines).
+- Game captions remain excluded from persona canon (the DB predicate
+  `source_tier != 'game_caption'` holds); no persona canon changes.
+- Verification: this repo's audits green against the released DB
+  (`tests/persona-freshness.py` rc=0); main `grimoire-master-audit.sh`
+  14/14; every gate referenced by this repo unchanged.
+
+No content change. The full agent audits are run against the released
+database at each push.
+
+## What's Changed
+
+- Sync with destiny-agent-grimoire v0.29.0 (schema 1.5.0; caption attribution
+  provenance stored on caption lines)
+- Persona canon unchanged (captions excluded by source-tier predicate)
+- Counts match the released DB
+
+## Verification
+
+Full master-audit green; persona-freshness passes against the released DB;
+all suite counts verified.

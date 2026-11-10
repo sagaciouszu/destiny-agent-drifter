@@ -36,6 +36,12 @@
   or non-interactively `BOOTSTRAP=1 ./setup.sh` (download) or
   `python3 lore/db/migrate.py` (build).
 
+- Source tiers: `--tier <tier>` includes only that tier and
+  `--exclude-tier <tier>` excludes it (for example
+  `--exclude-tier game_caption`). `list canon-speakers` is the
+  persona-canon membership list (230 speakers); `list speakers` remains the
+  423-row discovery view.
+
 ## Verification
 
 - Full agent audit: `bash tests/master-audit.sh` (25 suites).
