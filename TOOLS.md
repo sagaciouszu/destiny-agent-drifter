@@ -23,9 +23,10 @@
 - Lore entry: `python3 lore/db/query.py lore "<title or hash>"`.
 - Class variants: `character "<speaker>" --class hunter` (also on `transcript`
   and `search`). Read the stored `Class:` from `USER.md`.
-- Canon-only: add `--canon-only` to `character` or `transcript`; section filter
-  `--section "<location>"`. Source tiers: validated/published/proofed Ishtar >
-  untagged Ishtar > Destinypedia > captions.
+- Canon-only: `--canon-only` on `character` or `transcript` excludes optional/variant
+  lines but not caption-tier rows; filter `source_tier='game_caption'` explicitly
+  for persona-canon-only text. Section filter `--section "<location>"`. Source tiers:
+  validated/published/proofed Ishtar > untagged Ishtar > Destinypedia > captions.
 - Quote safety: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon).
   `--speaker "Name"` requires attribution; `--exact` requires a full line.
 - Contract: `lore/STANDARDS.md`.
@@ -40,7 +41,7 @@
 - Full agent audit: `bash tests/master-audit.sh` (25 suites).
 - Quote verification: `bash tests/drifter-quote-verify.sh` (0 unverified
   against 1149 canonical Drifter lines).
-- Database integrity: `bash lore/tests/test-db.sh` (61 checks).
+- Database integrity: `bash lore/tests/test-db.sh` (65 checks).
 - File conformance: `python3 lore/tests/conformance.py` (PASS).
 
 ## Conventions

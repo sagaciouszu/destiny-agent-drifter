@@ -35,7 +35,7 @@ agent runtime may load it. Persona detail lives in `SOUL.md` + `drifter-core.md`
 - Items: `python3 lore/db/query.py item "<slug>"` | Stats: `python3 lore/db/query.py stats`
 - **Quote check before speaking: `python3 lore/db/query.py verify "<line>"` (exit 1 = not canon); add `--speaker "Name"` for attribution and `--exact` for full lines.**
 - Read: `book`, `transcript`, `find_item`, `record`, `character_info`; batch: `verify_many`.
-- Discovery: `python3 lore/db/query.py list <books|characters|speakers|records>`.
+- Discovery: `python3 lore/db/query.py list <books|characters|speakers|records>`; `list speakers` includes caption-only speakers, not just curated characters.
 - Every command accepts `--json`; search/list accept `--offset`, search accepts `--rank`.
 - CLI names use hyphens (`character-info`, `find-item`, `verify-many`); MCP uses underscores.
 - MCP (optional): `lore/mcp-server/run.sh` exposes canon as typed tools; install
