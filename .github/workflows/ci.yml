@@ -33,7 +33,7 @@ jobs:
       - name: Onboarding
         run: ./setup.sh --no-mcp "$PWD/lore"
 
-      - name: Drifter audit
+      - name: Agent audit
         env:
           WORKSPACE: ${{ github.workspace }}
         run: bash tests/master-audit.sh

@@ -167,7 +167,7 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 
 | Suite | Command | Expected |
 |---|---|---|
-| Full agent audit | `bash tests/master-audit.sh` | 25/25 |
+| Full agent audit | `bash tests/master-audit.sh` | 27/27 |
 | Voice scenarios | `bash tests/drifter-test-suite.sh` | 19 scenarios |
 | Module completeness | `bash tests/drifter-module-test.sh` | 202 checks |
 | Quote verification | `bash tests/drifter-quote-verify.sh` | 0 unverified |

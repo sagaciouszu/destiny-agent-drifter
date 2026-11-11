@@ -17,6 +17,7 @@ lore
 # Python bytecode
 __pycache__/
 *.pyc
+.venv/
 
 # Git internals
 .git/
