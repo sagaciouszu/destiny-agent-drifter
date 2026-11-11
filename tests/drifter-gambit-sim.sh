@@ -10,14 +10,14 @@ if [ "${1:-}" = "--auto" ]; then AUTO=1; fi
 
 BANK=0
 TARGET=75
-FACTIONS=("Hive! Bring a sword." "Fallen on the horizon!" "Cabal on the field!" "Vex on the field!" "Scorn approaching!")
+FACTIONS=("Hive on the field! Bring the heat." "Fallen skulking in! Watch your flanks." "Cabal dropping heavy! Don't get squished." "Vex blinking through! Shoot the cores." "Scorn crawling close! Don't let 'em bank.")
 FACTION="${FACTIONS[$((RANDOM % ${#FACTIONS[@]}))]}"
 
 echo "=== GAMBIT MATCH SIMULATOR (OPTIONAL) ==="
-echo "Drifter: Alright, mavericks. Ready to see what we're fightin' today?"
-echo "Drifter: (flicking jade coin) Ding, Ding, Ding, Ding, Ding!"
+echo "Drifter: Hey, mavericks. Let's see what we're shootin' at today, yeah?"
+echo "Drifter: (tossing a jade coin) Ding, ding, ding!"
 echo "Drifter: $FACTION"
-echo "Drifter: Prepare for transmat!"
+echo "Drifter: Transmat's hot! Move it!"
 echo ""
 
 STEP=0
@@ -35,19 +35,19 @@ while [ "$BANK" -lt "$TARGET" ]; do
             BANK=$((BANK + 15))
             if [ "$BANK" -gt "$TARGET" ]; then BANK=$TARGET; fi
             echo "Action : Banked 15 Motes ($BANK/$TARGET)"
-            echo "Drifter: Giant blocker outbound! You're a terrible friend, but you'll get paid!"
+            echo "Drifter: Giant blocker outbound! You're a menace, but you'll get paid!"
             ;;
         2)
             BANK=$((BANK + 10))
             if [ "$BANK" -gt "$TARGET" ]; then BANK=$TARGET; fi
             echo "Action : Cleared Bank & Banked 10 Motes ($BANK/$TARGET)"
-            echo "Drifter: Medium Blocker outbound! Hey, you fight dirty. I like it."
+            echo "Drifter: Medium blocker out! Heh, you fight dirty. I like it."
             ;;
         3)
             BANK=$((BANK + 15))
             if [ "$BANK" -gt "$TARGET" ]; then BANK=$TARGET; fi
             echo "Action : Invaded enemy side & wiped 4 Guardians! ($BANK/$TARGET)"
-            echo "Drifter: Portal's up! Go look 'em in the eyes. Hahaha! I'm sorry, were they saying something?! 'Cause they're dead now!!"
+            echo "Drifter: Portal's up! Go look 'em in the eyes. Heh. They're quiet now, ain't they?"
             ;;
         *)
             BANK=$((BANK + 15))
@@ -57,8 +57,8 @@ while [ "$BANK" -lt "$TARGET" ]; do
 done
 
 echo "=== PRIMEVAL PHASE (75/75 MOTES) ==="
-echo "Drifter: Bank down! Ring that dinner bell. Stretch. Soup's on!"
-echo "Drifter: Envoys are in the dirt! Now focus on the Primeval!"
-echo "Drifter: Primeval's compromised. Burn it down!"
-echo "Drifter: Hey. Takes a special kind of guardian to kill a special kind of primeval. Proud of you, brother/sister."
+echo "Drifter: Bank down! Ring that bell. Stretch. Soup's ready!"
+echo "Drifter: Envoys in the dirt! Now burn the Primeval!"
+echo "Drifter: Primeval's cracked. Burn it down!"
+echo "Drifter: Hey. Takes a special kind to kill a special kind of primeval. Proud of you, hero."
 echo "=== VICTORY - GAMBIT SIMULATION COMPLETE ==="

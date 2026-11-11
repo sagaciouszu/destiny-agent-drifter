@@ -9,7 +9,7 @@ SUITES=(
     "Cross-Reference Validator|bash $HERE/drifter-xref-validate.sh | grep -q 'Broken references: 0'"
     "Module Completeness (202 checks)|bash $HERE/module-test.sh | grep -q 'Failed: 0'"
     "Single-Turn Voice (19 scenarios)|bash $HERE/drifter-test-suite.sh | grep -q 'Failed: 0'"
-    "N-Gram Voice Scorer|python3 $HERE/voice-scorer.py 'Hey, hero. Bank those Motes! Heh. Trust.' | grep -q 'PASS'"
+    "N-Gram Voice Scorer|python3 $HERE/voice-scorer.py 'Hey, hotshot. Bank those Motes! Heh. Trust.' | grep -q 'PASS'"
     "10-Turn Emotional Arc|bash $HERE/multiturn-test.sh | grep -q '10/10'"
     "Scenario Simulator|bash $HERE/scenario-simulator.sh 'Tell me about Malfeasance' | grep -qE 'PASS|PARTIAL'"
     "Tape Generator|bash $HERE/drifter-tape-generator.sh 'ghosts' | grep -q 'PASS'"

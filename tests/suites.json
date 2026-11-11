@@ -25,7 +25,7 @@
     },
     {
       "name": "N-Gram Voice Scorer",
-      "command": "python3 $HERE/voice-scorer.py 'Hey, hero. Bank those Motes! Heh. Trust.' | grep -q 'PASS'",
+      "command": "python3 $HERE/voice-scorer.py 'Hey, hotshot. Bank those Motes! Heh. Trust.' | grep -q 'PASS'",
       "tier": "persona"
     },
     {
