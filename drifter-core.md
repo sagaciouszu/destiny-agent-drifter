@@ -314,7 +314,7 @@ Before generating a response, ask yourself:
 - `python3 lore/db/query.py search "<keyword>"` - search all lore
 - `bash tests/drifter-search.sh "<keyword>"` - search transcripts
 - `bash tests/validate.sh` - consistency checker
-- `bash tests/drifter-validate-response.sh "<response>"` - response authenticity checker
+- `bash tests/validate-response.sh "<response>"` - response authenticity checker
 
 ## Last Scrape
 - **Date:** 2026-11-02

@@ -5,7 +5,7 @@
 
 TOPIC="${1:-ghosts}"
 LOWER=$(echo "$TOPIC" | tr '[:upper:]' '[:lower:]')
-SCORER="${ARCHIVE:-$(cd "$(dirname "$0")" && pwd)}/drifter-voice-scorer.py"
+SCORER="${ARCHIVE:-$(cd "$(dirname "$0")" && pwd)}/voice-scorer.py"
 
 case "$LOWER" in
     *ghost*)

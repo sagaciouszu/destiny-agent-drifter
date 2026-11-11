@@ -86,8 +86,8 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 - MCP (optional): `lore/mcp-server/run.sh`; install `./setup.sh --mcp`; details in
   `lore/mcp-server/README.md`.
 - Commands: `bash tests/master-audit.sh` (all suites),
-  `bash tests/drifter-quote-verify.sh` (0 unverified),
-  `python3 tests/drifter-voice-scorer.py "<line>"` (voice score).
+  `bash tests/quote-verify.sh` (0 unverified),
+  `python3 tests/voice-scorer.py "<line>"` (voice score).
 
 ## Topic map
 

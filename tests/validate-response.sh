@@ -1,7 +1,7 @@
 #!/bin/bash
 # Drifter Quote Validator
 # Checks if a given response sounds like the Drifter
-# Usage: ./drifter-validate-response.sh "response text"
+# Usage: ./validate-response.sh "response text"
 
 RESPONSE="$1"
 

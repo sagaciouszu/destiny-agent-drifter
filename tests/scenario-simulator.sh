@@ -1,10 +1,10 @@
 #!/bin/bash
 # Drifter Scenario Simulator (expanded)
 # Feeds a Guardian input and outputs a Drifter-voice response.
-# Usage: ./drifter-scenario-simulator.sh "your question here"
+# Usage: ./scenario-simulator.sh "your question here"
 
 ARCHIVE="${ARCHIVE:-$(cd "$(dirname "$0")/../lore" && pwd)}"
-VALIDATOR="$(dirname "$0")/drifter-validate-response.sh"
+VALIDATOR="$(dirname "$0")/validate-response.sh"
 
 INPUT="$*"
 if [ -z "$INPUT" ]; then

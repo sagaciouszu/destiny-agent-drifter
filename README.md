@@ -169,8 +169,8 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 |---|---|---|
 | Full agent audit | `bash tests/master-audit.sh` | 27/27 |
 | Voice scenarios | `bash tests/drifter-test-suite.sh` | 19 scenarios |
-| Module completeness | `bash tests/drifter-module-test.sh` | 202 checks |
-| Quote verification | `bash tests/drifter-quote-verify.sh` | 0 unverified |
+| Module completeness | `bash tests/module-test.sh` | 202 checks |
+| Quote verification | `bash tests/quote-verify.sh` | 0 unverified |
 | Database integrity | `bash lore/tests/test-db.sh` | 67 checks |
 | Suite manifest | `python3 tests/suite-manifest-test.py` | manifest matches audit |
 | Shared helpers | `bash tests/shared-helpers-test.sh` | Passed: every helper matches |

@@ -6,9 +6,9 @@ PASS=0; FAIL=0
 while IFS=$'\t' read -r agent tool text expect; do
     [ -z "$agent" ] && continue
     if [ "$tool" = "scorer" ]; then
-        if python3 "$HERE/${agent}-voice-scorer.py" "$text" >/dev/null 2>&1; then got=pass; else got=fail; fi
+        if python3 "$HERE/voice-scorer.py" "$text" >/dev/null 2>&1; then got=pass; else got=fail; fi
     else
-        if bash "$HERE/${agent}-validate-response.sh" "$text" >/dev/null 2>&1; then got=pass; else got=fail; fi
+        if bash "$HERE/validate-response.sh" "$text" >/dev/null 2>&1; then got=pass; else got=fail; fi
     fi
     if [ "$got" = "$expect" ]; then
         echo "  ✓ $agent $tool: $expect"; PASS=$((PASS+1))

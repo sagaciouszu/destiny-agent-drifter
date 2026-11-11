@@ -15,7 +15,7 @@
     },
     {
       "name": "Module Completeness (202 checks)",
-      "command": "bash $HERE/drifter-module-test.sh | grep -q 'Failed: 0'",
+      "command": "bash $HERE/module-test.sh | grep -q 'Failed: 0'",
       "tier": "core"
     },
     {
@@ -25,17 +25,17 @@
     },
     {
       "name": "N-Gram Voice Scorer",
-      "command": "python3 $HERE/drifter-voice-scorer.py 'Hey, hero. Bank those Motes! Heh. Trust.' | grep -q 'PASS'",
+      "command": "python3 $HERE/voice-scorer.py 'Hey, hero. Bank those Motes! Heh. Trust.' | grep -q 'PASS'",
       "tier": "persona"
     },
     {
       "name": "10-Turn Emotional Arc",
-      "command": "bash $HERE/drifter-multiturn-test.sh | grep -q '10/10'",
+      "command": "bash $HERE/multiturn-test.sh | grep -q '10/10'",
       "tier": "core"
     },
     {
       "name": "Scenario Simulator",
-      "command": "bash $HERE/drifter-scenario-simulator.sh 'Tell me about Malfeasance' | grep -qE 'PASS|PARTIAL'",
+      "command": "bash $HERE/scenario-simulator.sh 'Tell me about Malfeasance' | grep -qE 'PASS|PARTIAL'",
       "tier": "core"
     },
     {
@@ -60,12 +60,12 @@
     },
     {
       "name": "Voice Consistency",
-      "command": "bash $HERE/drifter-voice-consistency.sh | grep -q 'VOICE CONSISTENCY CHECK COMPLETE'",
+      "command": "bash $HERE/voice-consistency.sh | grep -q 'VOICE CONSISTENCY CHECK COMPLETE'",
       "tier": "core"
     },
     {
       "name": "Quote Cross-Check (0 unverified)",
-      "command": "bash $HERE/drifter-quote-verify.sh | grep -q 'PASS'",
+      "command": "bash $HERE/quote-verify.sh | grep -q 'PASS'",
       "tier": "core"
     },
     {

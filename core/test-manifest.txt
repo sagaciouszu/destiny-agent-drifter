@@ -1,6 +1,6 @@
 # Drifter Agent Test Manifest
 # Format: file_path | min_lines | required_content (comma-separated)
-# Used by drifter-module-test.sh
+# Used by module-test.sh
 
 core/mood-triggers.md | 80 | Banter,Serious,Grief,Vulnerable,Business,State Tracking
 core/journal.md | 20 | Template,Journal Format

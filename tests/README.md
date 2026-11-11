@@ -13,6 +13,11 @@ bash tests/master-audit.sh
 definitions live in one place, `tests/suites-lib.sh`, which both
 `master-audit.sh` and `drifter-ci.sh` source.
 
+`suites-lib.sh` is intentionally a second, independent copy of the suite
+list: grimoire `tests/suite-manifest-test.py` parses both it and
+`suites.json` and cross-checks them for parity, so a silent edit to one
+cannot pass the other. It is not accidental duplication.
+
 | Test | Purpose |
 |---|---|
 | `master-audit.sh` | every local suite plus the shared grimoire gates |
@@ -21,18 +26,18 @@ definitions live in one place, `tests/suites-lib.sh`, which both
 | `run-suites.sh` | runs `suites.json` entries through `lore/tests/run-suite-manifest.py` |
 | `validate.sh` | archive links, module dirs, unverified quotes |
 | `drifter-xref-validate.sh` | every `Depends On:` reference resolves |
-| `drifter-module-test.sh` | manifest, structure, hygiene and header checks (202 checks) |
+| `module-test.sh` | manifest, structure, hygiene and header checks (202 checks) |
 | `drifter-test-suite.sh` | 19 single-turn voice scenarios |
-| `drifter-validate-response.sh` | 8-point regex voice check for one response |
-| `drifter-voice-scorer.py` | statistical voice score for one response |
-| `drifter-voice-consistency.sh` | non-Drifter speech patterns and cross-character attribution |
-| `drifter-multiturn-test.sh` | 10-turn emotional arc (10/10) |
-| `drifter-scenario-simulator.sh` | scenario response (PASS/PARTIAL) |
+| `validate-response.sh` | 8-point regex voice check for one response |
+| `voice-scorer.py` | statistical voice score for one response |
+| `voice-consistency.sh` | non-Drifter speech patterns and cross-character attribution |
+| `multiturn-test.sh` | 10-turn emotional arc (10/10) |
+| `scenario-simulator.sh` | scenario response (PASS/PARTIAL) |
 | `drifter-tape-generator.sh` | lore-backed tape generation (PASS) |
 | `drifter-gambit-sim.sh` | Gambit simulation (VICTORY) |
 | `drifter-freshness-check.sh` | database freshness and row counts |
 | `drifter-conflict-check.sh` | contradictory statements across agent files |
-| `drifter-quote-verify.sh` | every quoted string is canon (0 unverified) |
+| `quote-verify.sh` | every quoted string is canon (0 unverified) |
 | `conversation-test.sh` | SQLite conversation flow |
 | `sample-conversation-test.py` | recorded sample conversation |
 | `golden-voice-test.sh` | locked voice snapshots from `golden-voice.json` |
@@ -60,10 +65,10 @@ bash tests/run-suites.sh     # suites.json entries only (additive)
 ## Exit codes
 
 - Convention: 0 = pass, 1 = fail. `master-audit.sh`, `drifter-ci.sh` and the
-  counter-based tests (`drifter-module-test.sh`, `connection-test.sh`,
+  counter-based tests (`module-test.sh`, `connection-test.sh`,
   `golden-voice-test.sh`) return 1 when anything fails.
 - Voice scorers exit 2 when the grimoire database is missing
-  (`./drifter-voice-scorer.py` prints `database not found`); otherwise they exit
+  (`./voice-scorer.py` prints `database not found`); otherwise they exit
   0 at a score of 55 or above and 1 below it.
 - Some tests report failure only through their summary line (for example
   `drifter-test-suite.sh` prints `Failed: N` but exits 0); their suites gate on
@@ -86,7 +91,7 @@ bash tests/run-suites.sh     # suites.json entries only (additive)
   the tool's exit code into a verdict (0 = pass, non-zero = fail) and compares
   it with the expectation, so a verdict flip fails the suite even when both runs
   exit non-zero or both exit 0.
-- **Forbidden and consistency checks:** `drifter-voice-consistency.sh` flags
+- **Forbidden and consistency checks:** `voice-consistency.sh` flags
   Drifter-attributed quotes that match another speaker in the database and
-  out-of-voice patterns; `drifter-validate-response.sh` rejects responses that
+  out-of-voice patterns; `validate-response.sh` rejects responses that
   miss the voice markers.

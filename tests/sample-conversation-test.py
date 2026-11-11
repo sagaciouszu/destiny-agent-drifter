@@ -15,7 +15,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SAMPLE = os.path.join(HERE, 'sample-conversation.json')
-SCORER = os.path.join(HERE, 'drifter-voice-scorer.py')
+SCORER = os.path.join(HERE, 'voice-scorer.py')
 META = ('as an ai', 'language model', 'system prompt', 'i cannot browse',
         'as a helpful assistant')
 

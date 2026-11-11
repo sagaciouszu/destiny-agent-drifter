@@ -2,7 +2,7 @@
 # Drifter Module Test Suite (refactored)
 # Reads test-manifest.txt for file existence and content checks.
 # Also runs structural, consistency, and hygiene checks.
-# Usage: ./drifter-module-test.sh
+# Usage: ./module-test.sh
 
 WORKSPACE="${WORKSPACE:-$(bash "$(dirname "$0")/../lore/tests/resolve-workspace.sh" "$0")}"
 ARCHIVE="${ARCHIVE:-$(cd "$(dirname "$0")/../lore" && pwd)}"
@@ -67,8 +67,8 @@ echo ""
 echo "--- Hygiene Checks ---"
 check "no em-dashes in workspace" "! grep -rl '—' $WORKSPACE --include='*.md' --exclude-dir=lore --exclude-dir=.git 2>/dev/null | grep -q ."
 check "no en-dashes in workspace" "! grep -rl '–' $WORKSPACE --include='*.md' --exclude-dir=lore --exclude-dir=.git 2>/dev/null | grep -q ."
-check "no personal paths in workspace" "! grep -rEn '/home/[a-z]+' $WORKSPACE --include='*.md' --include='*.sh' --exclude-dir=lore --exclude-dir=.git --exclude=drifter-module-test.sh 2>/dev/null | grep -q ."
-check "no API keys or tokens" "! grep -rniE 'api[_-]?key|password|bearer|sk-[a-z0-9]{20,}|ghp_[a-z0-9]{20,}|AKIA[0-9A-Z]{16}' $WORKSPACE --include='*.md' --include='*.sh' --exclude-dir=lore --exclude-dir=.git --exclude=drifter-module-test.sh 2>/dev/null | grep -q ."
+check "no personal paths in workspace" "! grep -rEn '/home/[a-z]+' $WORKSPACE --include='*.md' --include='*.sh' --exclude-dir=lore --exclude-dir=.git --exclude=module-test.sh 2>/dev/null | grep -q ."
+check "no API keys or tokens" "! grep -rniE 'api[_-]?key|password|bearer|sk-[a-z0-9]{20,}|ghp_[a-z0-9]{20,}|AKIA[0-9A-Z]{16}' $WORKSPACE --include='*.md' --include='*.sh' --exclude-dir=lore --exclude-dir=.git --exclude=module-test.sh 2>/dev/null | grep -q ."
 check "quote inverted index fresh" "WORKSPACE=$WORKSPACE python3 $(dirname "$0")/build-quote-index.py --check --quiet"
 
 # --- Header checks ---

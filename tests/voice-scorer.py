@@ -6,7 +6,7 @@ in the grimoire database using vocabulary overlap, character/word n-gram
 similarity, sentence-length distribution, and signature marker density.
 
 Usage:
-  ./drifter-voice-scorer.py "Hey, hero. Bank those Motes! Heh. Trust."
+  ./voice-scorer.py "Hey, hero. Bank those Motes! Heh. Trust."
 Exit codes: 0 when the score passes (>= 55), 1 when it does not,
   2 when the grimoire database is missing (run ./setup.sh).
 """
@@ -180,7 +180,7 @@ def score_response(candidate, corpus_lines):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: drifter-voice-scorer.py \"<response>\"")
+        print("Usage: voice-scorer.py \"<response>\"")
         sys.exit(1)
     candidate = " ".join(sys.argv[1:])
     # Exit 2 when the grimoire DB is missing (series convention, cf. calus).

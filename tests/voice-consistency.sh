@@ -1,7 +1,7 @@
 #!/bin/bash
 # Drifter Voice Consistency Check
 # Scans all Drifter-attributed quotes for non-Drifter speech patterns.
-# Usage: ./drifter-voice-consistency.sh
+# Usage: ./voice-consistency.sh
 
 WORKSPACE="${WORKSPACE:-$(bash "$(dirname "$0")/../lore/tests/resolve-workspace.sh" "$0")}"
 echo "=== DRIFTER VOICE CONSISTENCY CHECK ==="
