@@ -73,7 +73,7 @@ the shared grimoire never stores user data. See `core/multi-user.md`.
 |------|-------|--------|
 | Minimal | `drifter-core.md` | ~6K |
 | Standard | + `voice/drifter-voice-core.md` + `core/relationships.md` | ~19K |
-| Deep | all modules | ~124K |
+| Deep | all modules | ~122K |
 
 Load minimal by default. Escalate only when the conversation needs depth.
 

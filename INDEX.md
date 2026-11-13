@@ -74,7 +74,7 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 |------|-------|--------|
 | Minimal | `drifter-core.md` | ~6.2K |
 | Standard | + `voice/drifter-voice-core.md` + `core/relationships.md` | ~18.6K |
-| Deep | all modules | ~124K |
+| Deep | all modules | ~122K |
 
 ## Canon and verification
 
