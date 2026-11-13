@@ -33,13 +33,13 @@ cannot pass the other. It is not accidental duplication.
 | `voice-consistency.sh` | non-Drifter speech patterns and cross-character attribution |
 | `multiturn-test.sh` | 10-turn emotional arc (10/10) |
 | `scenario-simulator.sh` | scenario response (PASS/PARTIAL) |
-| `drifter-tape-generator.sh` | lore-backed tape generation (PASS) |
+| `drifter-tape-generator.sh` | synthetic topic responses for scorer tests; not canon |
 | `drifter-gambit-sim.sh` | Gambit simulation (VICTORY) |
 | `drifter-freshness-check.sh` | database freshness and row counts |
 | `drifter-conflict-check.sh` | contradictory statements across agent files |
 | `quote-verify.sh` | every quoted string is canon (0 unverified) |
 | `conversation-test.sh` | SQLite conversation flow |
-| `sample-conversation-test.py` | recorded sample conversation |
+| `sample-conversation-test.py` | synthetic, non-canon sample conversation |
 | `golden-voice-test.sh` | locked voice snapshots from `golden-voice.json` |
 | `connection-test.sh` | grimoire database, query interface, lore/seal, MCP |
 | `memory-test.py` | per-user memory isolation |
@@ -87,7 +87,7 @@ bash tests/run-suites.sh     # suites.json entries only (additive)
 - **Verdict:** total score of 55 or more = PASS, 40 to 54 = PARTIAL, below 40 =
   FAIL; the process exits 0 only at 55 or above.
 - **Golden snapshots:** each case in `golden-voice.json` pairs an agent, a tool
-  (`scorer` or `validator`), sample text and an expected verdict. The test turns
+  (`scorer` or `validator`), authored synthetic text and an expected verdict. The test turns
   the tool's exit code into a verdict (0 = pass, non-zero = fail) and compares
   it with the expectation, so a verdict flip fails the suite even when both runs
   exit non-zero or both exit 0.

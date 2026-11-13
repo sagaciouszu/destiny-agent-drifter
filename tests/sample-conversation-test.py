@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Validate the recorded sample conversation required before finalize.
+"""Validate the synthetic sample conversation required before finalize.
 
 The file is tests/sample-conversation.json:
     {"turns": [{"user": "...", "agent": "..."}, ...]}
 
 Requires at least three turns, rejects meta/assistant phrasing, and scores each
-response against canon with the Drifter voice scorer. This is a coarse gate,
-not a substitute for review.
+synthetic response against the Drifter voice scorer. Fixture text is authored,
+not copied from canon. This is a coarse gate, not a substitute for review.
 """
 import json
 import os
