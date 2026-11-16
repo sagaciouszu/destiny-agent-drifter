@@ -9,7 +9,7 @@
   <a href='https://github.com/sagaciouszu/destiny-agent-drifter/actions/workflows/ci.yml'><img src='https://github.com/sagaciouszu/destiny-agent-drifter/actions/workflows/ci.yml/badge.svg' alt='CI'/></a>
   <img src='https://img.shields.io/github/last-commit/sagaciouszu/destiny-agent-drifter?label=last%20push&color=blue' alt='Last push'/>
   <img src='https://img.shields.io/badge/license-MIT-green' alt='License'/>
-  <img src='https://img.shields.io/badge/tests-27%2F27%20passing-brightgreen' alt='Tests'/>
+  <img src='https://img.shields.io/badge/tests-28%2F28%20passing-brightgreen' alt='Tests'/>
   <img src='https://img.shields.io/badge/Made%20with-Motes-00FF00' alt='Made with Motes'/>
   <img src='https://img.shields.io/badge/Made%20with-Parts%20of%20Ghosts-FFFFFF' alt='Made with Parts of Ghosts'/>
 </p>
@@ -167,7 +167,7 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 
 | Suite | Command | Expected |
 |---|---|---|
-| Full agent audit | `bash tests/master-audit.sh` | 27/27 |
+| Full agent audit | `bash tests/master-audit.sh` | 28/28 |
 | Voice scenarios | `bash tests/drifter-test-suite.sh` | 19 scenarios |
 | Module completeness | `bash tests/module-test.sh` | 202 checks |
 | Quote verification | `bash tests/quote-verify.sh` | 0 unverified |

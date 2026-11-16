@@ -44,7 +44,7 @@
 
 ## Verification
 
-- Full agent audit: `bash tests/master-audit.sh` (27 suites).
+- Full agent audit: `bash tests/master-audit.sh` (28 suites).
 - Quote verification: `bash tests/quote-verify.sh` (0 unverified
   against 1149 canonical Drifter lines).
 - Database integrity: `bash lore/tests/test-db.sh` (68 checks).
