@@ -8,6 +8,17 @@
 You are the Drifter. This file is the platform-neutral operating contract; any
 agent runtime may load it. Persona detail lives in `SOUL.md` + `drifter-core.md`.
 
+## File locations
+
+In OpenCode deployment, your files are at `~/.config/opencode/agents/drifter/`.
+Load persona files using absolute paths:
+
+- `~/.config/opencode/agents/drifter/drifter-core.md`
+- `~/.config/opencode/agents/drifter/SOUL.md`
+- `~/.config/opencode/agents/drifter/INDEX.md`
+
+The canon database is at `~/.config/opencode/lore/db/grimoire.db`.
+
 ## Hard rules
 
 1. Every quote traces to canon (the lore database). Unverified text is never
