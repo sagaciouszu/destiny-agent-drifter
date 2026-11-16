@@ -4,33 +4,21 @@
 # in exactly one place; add or change suites here only.
 # Requires $HERE (tests dir), $LORE (grimoire checkout) and $WORKSPACE (agent repo).
 # Each entry is "suite name|shell command"; exit contract is the caller's 0/1.
-SUITES=(
-    "Archive & Link Validation|bash $HERE/validate.sh | grep -q 'unverified quotes: 0' && bash $HERE/validate.sh | grep -q 'missing: 0'"
-    "Cross-Reference Validator|bash $HERE/drifter-xref-validate.sh | grep -q 'Broken references: 0'"
-    "Module Completeness (202 checks)|bash $HERE/module-test.sh | grep -q 'Failed: 0'"
-    "Single-Turn Voice (19 scenarios)|bash $HERE/drifter-test-suite.sh | grep -q 'Failed: 0'"
-    "N-Gram Voice Scorer|python3 $HERE/voice-scorer.py 'Hey, hotshot. Bank those Motes! Heh. Trust.' | grep -q 'PASS'"
-    "10-Turn Emotional Arc|bash $HERE/multiturn-test.sh | grep -q '10/10'"
-    "Scenario Simulator|bash $HERE/scenario-simulator.sh 'Tell me about Malfeasance' | grep -qE 'PASS|PARTIAL'"
-    "Tape Generator|bash $HERE/drifter-tape-generator.sh 'ghosts' | grep -q 'PASS'"
-    "Gambit Sim (auto)|bash $HERE/drifter-gambit-sim.sh --auto | grep -q 'VICTORY'"
-    "Lore Freshness|bash $HERE/drifter-freshness-check.sh | grep -q 'OK: Database is fresh'"
-    "Conflict Check|bash $HERE/drifter-conflict-check.sh 2>&1 | grep -q 'CONFLICT CHECK COMPLETE'"
-    "Voice Consistency|bash $HERE/voice-consistency.sh | grep -q 'VOICE CONSISTENCY CHECK COMPLETE'"
-    "Quote Cross-Check (0 unverified)|bash $HERE/quote-verify.sh | grep -q 'PASS'"
-    "Runtime Leak Guard (no memory in prompts)|python3 $HERE/runtime-leak-guard.py"
-    "Conversation (SQLite)|bash $HERE/conversation-test.sh"
-    "Sample Conversation|python3 $HERE/sample-conversation-test.py"
-    "Golden Voice Snapshots|bash $HERE/golden-voice-test.sh | grep -q 'Failed: 0'"
-    "Suite Manifest|python3 $HERE/suite-manifest-test.py | grep -q 'manifest matches audit'"
-    "Shared Helpers|bash $HERE/shared-helpers-test.sh | grep -q 'Passed:.*Failed: 0'"
-    "Connection|bash $HERE/connection-test.sh | grep -q 'Failed: 0'"
-    "Memory Isolation|python3 $HERE/memory-test.py | grep -q 'memory isolation'"
-    "Multi-User Isolation|grep -q 'Never quote or summarize one user' $WORKSPACE/core/multi-user.md && grep -q 'memory.py' $WORKSPACE/core/multi-user.md"
-    "Persona Freshness|python3 $HERE/persona-freshness.py"
-    "Depends On Coverage|python3 $LORE/tests/check-agent-structure.py deps $WORKSPACE"
-    "Token Estimate Coverage|python3 $LORE/tests/check-agent-structure.py tokens $WORKSPACE"
-    "No Em-Dashes|python3 $LORE/tests/check-agent-structure.py dashes $WORKSPACE"
-    "INDEX Completeness|python3 $LORE/tests/check-agent-structure.py index $WORKSPACE"
-    "No Personal Paths|python3 $LORE/tests/check-agent-structure.py paths $WORKSPACE"
+# tests/suites.json is the single suite registry. Suites load from it at
+# runtime so there is exactly one list to maintain; do not add an inline
+# SUITES block here. (Bash 3.2 compatible: no mapfile; count kept in a
+# scalar because empty-array expansion trips set -u on old bash.)
+SUITES=()
+SUITE_COUNT=0
+while IFS= read -r line; do
+    if [ -n "$line" ]; then
+        SUITES+=("$line")
+        SUITE_COUNT=$((SUITE_COUNT + 1))
+    fi
+done < <(python3 - "$HERE/suites.json" <<'PY'
+import json, sys
+for s in json.load(open(sys.argv[1], encoding='utf-8'))['suites']:
+    print(f"{s['name']}|{s['command']}")
+PY
 )
+[ "$SUITE_COUNT" -gt 0 ] || { echo "FATAL: no suites loaded from tests/suites.json"; exit 1; }

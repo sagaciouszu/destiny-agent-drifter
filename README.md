@@ -172,7 +172,7 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 | Module completeness | `bash tests/module-test.sh` | 202 checks |
 | Quote verification | `bash tests/quote-verify.sh` | 0 unverified |
 | Database integrity | `bash lore/tests/test-db.sh` | 68 checks |
-| Suite manifest | `python3 tests/suite-manifest-test.py` | manifest matches audit |
+| Suite manifest | `python3 tests/suite-manifest-test.py` | manifest valid |
 | Shared helpers | `bash tests/shared-helpers-test.sh` | Passed: every helper matches |
 | Query interface | `bash lore/tests/query-interface-test.sh` | 98 checks |
 | CI pipeline | `bash tests/drifter-ci.sh` | 39 checks |
