@@ -52,17 +52,45 @@ def main():
     big = '\n'.join(corpus)
     leaks = []
     scanned = 0
+    runtime_blob = []
     for rel in RUNTIME:
         path = os.path.join(REPO, rel)
         if not os.path.isfile(path):
             continue
-        for line in open(path, encoding='utf-8', errors='ignore').read().splitlines():
+        # A pristine seed is committed template content, not a leak: only
+        # scan runtime files the user (or a session) actually changed.
+        template = os.path.join(REPO, rel[:-3] + '.template.md')
+        if os.path.isfile(template):
+            try:
+                same = (open(path, encoding='utf-8', errors='ignore').read()
+                        == open(template, encoding='utf-8', errors='ignore').read())
+            except OSError:
+                same = False
+            if same:
+                continue
+        text = open(path, encoding='utf-8', errors='ignore').read()
+        runtime_blob.append(norm(text))
+        for line in text.splitlines():
             nq = norm(line.strip().strip('"'))
             if len(nq) < MIN_NORM:
                 continue
             scanned += 1
             if nq in big:
                 leaks.append(rel)
+                break
+    # Reverse direction: a verbatim prompt line pasted into runtime notes with
+    # surrounding user text. Check long prompt lines against runtime content.
+    combined = '\n'.join(runtime_blob)
+    if combined.strip():
+        for prompt in prompts:
+            for line in open(prompt, encoding='utf-8', errors='ignore').read().splitlines():
+                nq = norm(line.strip().strip('"'))
+                if len(nq) < MIN_NORM:
+                    continue
+                if nq in combined:
+                    leaks.append(os.path.relpath(prompt, REPO) + ' echoed in runtime notes')
+                    break
+            if leaks:
                 break
     print(f'runtime files scanned for long lines; prompt files checked: {len(prompts)}')
     if leaks:
