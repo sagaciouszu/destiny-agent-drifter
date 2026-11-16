@@ -72,9 +72,8 @@ is `drifter.md`. Full operating contract: `AGENTS.md`.
 
 | Tier | Files | Budget |
 |------|-------|--------|
-| Minimal | `drifter-core.md` | ~6.2K |
-| Standard | + `voice/drifter-voice-core.md` + `core/relationships.md` | ~18.6K |
-| Deep | all modules | ~118.5K |
+| Core | `drifter.md` + `drifter-core.md` + `AGENTS.md` + `INDEX.md` (always loaded) | ~15.5K |
+| Task-loaded | everything else, loaded per task | ~118.5K ref (not gated) |
 
 ## Canon and verification
 

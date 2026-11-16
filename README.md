@@ -112,9 +112,8 @@ Load in this order:
 
 | Tier | Files | Budget |
 |---|---|---|
-| Minimal | `drifter-core.md` | ~6.2K |
-| Standard | + `voice/drifter-voice-core.md` + `core/relationships.md` | ~18.6K |
-| Deep | all modules | ~118.5K |
+| Core | `drifter.md` + `drifter-core.md` + `AGENTS.md` + `INDEX.md` (always loaded) | ~15.5K |
+| Task-loaded | everything else, loaded per task | ~118.5K ref (not gated) |
 
 - Contract: `AGENTS.md` (platform-neutral rules, canon and quote policy).
 - Map: `INDEX.md` lists every module, tier and topic route.

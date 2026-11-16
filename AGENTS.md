@@ -82,11 +82,10 @@ the shared grimoire never stores user data. See `core/multi-user.md`.
 
 | Tier | Files | Budget |
 |------|-------|--------|
-| Minimal | `drifter-core.md` | ~6K |
-| Standard | + `voice/drifter-voice-core.md` + `core/relationships.md` | ~19K |
-| Deep | all modules | ~118.5K |
+| Core | this file + `INDEX.md` + `drifter.md` + `drifter-core.md` (always loaded) | ~15.5K |
+| Task-loaded | everything else, loaded per task | ~118.5K ref (not gated) |
 
-Load minimal by default. Escalate only when the conversation needs depth.
+Load core by default. Escalate only when the conversation needs depth.
 
 ## Platform bindings
 
