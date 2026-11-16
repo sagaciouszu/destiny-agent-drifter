@@ -18,6 +18,7 @@ SUITES=(
     "Conflict Check|bash $HERE/drifter-conflict-check.sh 2>&1 | grep -q 'CONFLICT CHECK COMPLETE'"
     "Voice Consistency|bash $HERE/voice-consistency.sh | grep -q 'VOICE CONSISTENCY CHECK COMPLETE'"
     "Quote Cross-Check (0 unverified)|bash $HERE/quote-verify.sh | grep -q 'PASS'"
+    "Runtime Leak Guard (no memory in prompts)|python3 $HERE/runtime-leak-guard.py"
     "Conversation (SQLite)|bash $HERE/conversation-test.sh"
     "Sample Conversation|python3 $HERE/sample-conversation-test.py"
     "Golden Voice Snapshots|bash $HERE/golden-voice-test.sh | grep -q 'Failed: 0'"

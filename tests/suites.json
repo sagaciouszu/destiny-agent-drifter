@@ -1,7 +1,7 @@
 {
   "agent": "destiny-agent-drifter",
   "source": "tests/master-audit.sh",
-  "count": 27,
+  "count": 28,
   "suites": [
     {
       "name": "Archive & Link Validation",
@@ -66,6 +66,11 @@
     {
       "name": "Quote Cross-Check (0 unverified)",
       "command": "bash $HERE/quote-verify.sh | grep -q 'PASS'",
+      "tier": "core"
+    },
+    {
+      "name": "Runtime Leak Guard (no memory in prompts)",
+      "command": "python3 $HERE/runtime-leak-guard.py",
       "tier": "core"
     },
     {
