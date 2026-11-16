@@ -87,7 +87,13 @@ for root,_,fs in os.walk(ws):
     if '/lore' in root or '/.git' in root or '/eris' in root:
         continue
     for f in fs:
-        if f.endswith('.md'): files.append(os.path.join(root,f))
+        if f.endswith('.md'):
+            rel=os.path.relpath(os.path.join(root,f),ws)
+            if rel in ('core/journal.md','USER.md','DREAMS.md',
+                       'core/user-memory.md','core/session-state.md',
+                       'core/cross-session-memory.md'):
+                continue
+            files.append(os.path.join(root,f))
 allq=set()
 for f in files:
     in_fence=False
