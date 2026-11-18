@@ -17,6 +17,14 @@ if [ ! -f "$LORE/db/grimoire.db" ]; then
     exit 1
 fi
 
+# Quote inverted index is a generated build artifact (gitignored, not committed):
+# rebuild it when stale so a fresh checkout self-heals before the suites run.
+if [ -f "$HERE/build-quote-index.py" ]; then
+    python3 "$HERE/build-quote-index.py" --check --quiet 2>/dev/null \
+        || python3 "$HERE/build-quote-index.py" \
+        || echo "warning: quote inverted index was not rebuilt"
+fi
+
 PASS=0; FAIL=0; TOTAL=0
 run() {
     TOTAL=$((TOTAL+1))
