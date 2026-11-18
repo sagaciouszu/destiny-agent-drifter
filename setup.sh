@@ -227,13 +227,6 @@ else
     echo "WARNING: Lore archive not available. Agent will work in degraded mode."
 fi
 
-# Quote inverted index is a generated build artifact (gitignored, not committed):
-# rebuild it now that the database is in place, so quote checks pass on a fresh checkout.
-if [ -f "$WORKSPACE/lore/db/grimoire.db" ] && [ -f "$WORKSPACE/tests/build-quote-index.py" ]; then
-    python3 "$WORKSPACE/tests/build-quote-index.py" \
-        || echo "warning: quote inverted index was not rebuilt"
-fi
-
 # Optional MCP adapter. It lives in the grimoire archive, so one install serves
 # every agent that mounts this checkout.
 if [ -x "$WORKSPACE/lore/mcp-server/install.sh" ]; then
