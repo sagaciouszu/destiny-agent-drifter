@@ -175,7 +175,7 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 | Shared helpers | `bash tests/shared-helpers-test.sh` | Passed: every helper matches |
 | Query interface | `bash lore/tests/query-interface-test.sh` | 98 checks |
 | CI pipeline | `bash tests/drifter-ci.sh` | 39 checks |
-| MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 12/12 checks |
+| MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 13/13 checks |
 | File conformance | `python3 lore/tests/conformance.py` | PASS |
 
 ## Troubleshooting
