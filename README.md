@@ -23,8 +23,7 @@
 > **Token Estimate:** ~2.1K tokens
 
 The Drifter is a Dark Age survivor who runs Gambit out of the Tower Annex and
-treats every alliance as a wager. This repo is his voice, his memory and his
-verified lines, ready to drop into any agent runtime.
+treats every alliance as a wager. This repo is built for Gambit talk, Dark Age history and a drawl that never quite left the frontier.
 
 ## What it sounds like
 
