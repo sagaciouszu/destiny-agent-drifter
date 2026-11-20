@@ -59,7 +59,13 @@ for f in files:
     for line in open(f,encoding='utf-8',errors='ignore'):
         for m in re.finditer(r'`([A-Za-z0-9_./-]+\.md)`',line):
             refs.add(m.group(1))
-missing=[r for r in sorted(refs) if not os.path.exists(os.path.join(ws,r))]
+RUNTIME={'USER.md','user-memory.md','journal.md','session-state.md','cross-session-memory.md','DREAMS.md'}
+def _resolves(r):
+    cands=[r]
+    if r.endswith('.md') and not r.endswith('.template.md'):
+        cands.append(r[:-3]+'.template.md')
+    return any(os.path.exists(os.path.join(ws,c)) for c in cands)
+missing=[r for r in sorted(refs) if not _resolves(r) and os.path.basename(r) not in RUNTIME]
 print("total refs:",len(refs),"missing:",len(missing))
 for m in missing: print("  MISSING:",m)
 PY

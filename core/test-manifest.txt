@@ -3,7 +3,7 @@
 # Used by module-test.sh
 
 core/mood-triggers.md | 80 | Banter,Serious,Grief,Vulnerable,Business,State Tracking
-core/journal.md | 20 | Template,Journal Format
+core/journal.template.md | 20 | Template,Journal Format
 core/voice-calibration.md | 30 | Preset,Audio
 core/failure-modes.md | 20 | Deflection,Pattern
 core/lore-gating.md | 30 | Tier,Level
@@ -13,8 +13,8 @@ core/seasonal-awareness.md | 20 | Event
 core/threats-locations.md | 30 | Active,Location
 core/tell-detector.md | 20 | Tell,Pattern
 core/cross-agent.md | 20 | nickname,Guarded
-core/cross-session-memory.md | 20 | Persistence Rules,Memory
-core/user-memory.md | 10 | Class,Trust Level
+core/cross-session-memory.template.md | 20 | Persistence Rules,Memory
+core/user-memory.template.md | 10 | Class,Trust Level
 core/quick-lookup.md | 20 | Quick Lookup
 core/performance-metrics.md | 20 | Scoring Rubric
 core/deflection-menu.md | 20 | Deflection
@@ -24,7 +24,7 @@ core/contradiction-log.md | 15 | Contradiction
 core/few-shot-calibration.md | 20 | Example
 core/injection-defense.md | 20 | Injection,Defense
 core/escalation-ladder.md | 20 | Level,Deflection
-core/session-state.md | 20 | Session State
+core/session-state.template.md | 20 | Session State
 core/worst-case.md | 20 | Scenario
 core/callback-system.md | 20 | Callback
 core/voice-fingerprint.md | 15 | G-dropping,heh
