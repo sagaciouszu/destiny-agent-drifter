@@ -154,7 +154,7 @@ TOOLS.md          # tool reference and conventions
 drifter.md        # OpenCode entry point (YAML frontmatter)
 drifter-core.md   # consolidated brain (minimal tier)
 drifter-voice.md  # master voice reference
-core/             # 38 behavioral and state modules
+core/             # 40 behavioral and state modules
 voice/            # 9 voice sub-files
 world/            # 4 worldbuilding files
 reference/        # 5 analysis files (quote index, knowledge web, patterns)
@@ -174,7 +174,7 @@ lore/             # created by setup.sh (symlink or clone, gitignored)
 | Suite manifest | `python3 tests/suite-manifest-test.py` | manifest valid |
 | Shared helpers | `bash tests/shared-helpers-test.sh` | Passed: every helper matches |
 | Query interface | `bash lore/tests/query-interface-test.sh` | 98 checks |
-| CI pipeline | `bash tests/drifter-ci.sh` | 39 checks |
+| CI pipeline | `bash tests/drifter-ci.sh` | 41 checks |
 | MCP contract | `lore/mcp-server/.venv/bin/python lore/tests/mcp-test.py` | 13/13 checks |
 | File conformance | `python3 lore/tests/conformance.py` | PASS |
 
